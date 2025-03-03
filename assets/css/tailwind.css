@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  body {
+    @apply bg-gradient-to-b from-gray-900 to-gray-950 font-Roboto_Slab;
+  }
+
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* Define Merienda font */
+@font-face {
+  font-family: "Piedra";
+  src: url("@/assets/font/Merienda,Piedra/Piedra/Piedra-Regular.ttf") 
+  format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto_Slab";
+  src: url("@/assets/font/Roboto_Slab/RobotoSlab-VariableFont_wght.ttf")
+  format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Add custom styles to match the barbering image's vibe */
+.container {
+  max-width: 1250px;
+}
+
+.logo-3d-effect {
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform: perspective(1000px) translateZ(10px) rotateY(10deg);
+  box-shadow: 
+    0 5px 10px rgba(0, 0, 0, 0.3),
+    0 10px 20px rgba(0, 0, 0, 0.2),
+    0 15px 30px rgba(0, 0, 0, 0.1),
+    0 6px 5px rgba(85, 1, 1, 0.5);
+  filter: brightness(1.1);
+}
+
+/* Add 3D effect to text */
+.text-3d-effect {
+  text-shadow: 
+    1px 1px 0 #000,
+    2px 2px 0 #000,
+    3px 3px 0 #000,
+    4px 4px 0 #000,
+    5px 5px 0 #000,
+    6px 6px 5px rgba(155, 132, 5, 0.5);
+  transform: perspective(500px) translateZ(0);
+  position: relative;
+  display: inline-block;
+}
