@@ -53,13 +53,8 @@
           <!-- Contact Details -->
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div>
-              <p class="text-gray-400">Phone:</p>
-              <a
-                href="tel:+855964674365"
-                target="_blank"
-                class="font-bold text-white hover:text-red-500 transition duration-300"
-                >096 4674365</a
-              >
+              <p class="text-gray-400">Nationality:</p>
+              <p class="font-bold text-white hover:text-red-500 transition duration-300">Cambodian</p>
             </div>
             <div>
               <p class="text-gray-400">Date of Birth:</p>
