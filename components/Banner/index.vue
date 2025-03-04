@@ -1,14 +1,14 @@
 <template>
   <section
     id="top"
-    class="text-white bg-gradient-to-r from-red-700 via-rose-900 to-red-700 py-12 lg:px-24 h-[80vh]"
+    class="text-white bg-gradient-to-r from-red-700 via-rose-900 to-red-700 py-12 lg:px-24 lg:h-[80vh]"
   >
     <div class="container mx-auto px-4 lg:mt-20">
       <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-8">
         <!-- Left Content -->
-        <div class="text-center lg:text-left">
+        <div class="text-center lg:text-left mt-4">
           <h1
-            class="text-[40px] md:text-[50px] lg:text-[60px] font-black text-white"
+            class="text-[30px] md:text-[50px] lg:text-[60px] font-black text-white text-3d-effect"
           >
             KHUN KIMHONG
           </h1>
@@ -150,7 +150,7 @@
 import { ref, onMounted, onUnmounted } from "vue";
 
 // Define the titles to cycle through, emphasizing your web development role
-const titles = ["Web Developer", "Software Engineer"];
+const titles = ["Web Developer", "Software Engineer" , "Full-Stack Developer"];
 
 // State to track the current title and fading effect
 const currentTitle = ref(titles[0]);

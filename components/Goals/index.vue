@@ -10,7 +10,7 @@
       </h1>
 
       <!-- Main Title -->
-      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center mb-16 mt-4 relative">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center mb-4 lg:mb-16 relative">
         My Development Process
       </h2>
 

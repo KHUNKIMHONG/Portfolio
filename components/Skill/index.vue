@@ -11,8 +11,8 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-start relative">
         <!-- Left Section: Skills List -->
         <div class="space-y-6 md:space-y-8 text-left">
-          <h2 class="text-3xl text-left md:text-4xl lg:text-5xl font-bold text-white tracking-wide">
-            Development Skills
+          <h2 class="text-3xl text-center lg:text-left md:text-4xl lg:text-5xl font-bold text-white tracking-wide">
+            My Development Skills
           </h2>
           <p class="text-gray-300 text-lg md:text-xl">
             A showcase of my expertise in frontend and backend development. I specialize in building modern, scalable,

@@ -39,4 +39,9 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+
+  devServer: {
+    port: 4000,  // Change this to the desired port
+    host: '0.0.0.0' // Allows access from the network
+  }
 })

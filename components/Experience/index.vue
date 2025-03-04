@@ -12,14 +12,14 @@
       </h1>
 
       <div
-        class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-start relative"
+        class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-start mt-12 relative"
       >
         <!-- Left Section: Brief Description -->
         <div class="space-y-6 md:space-y-8 text-left">
           <h2
-            class="text-3xl text-left md:text-4xl lg:text-5xl font-bold text-white tracking-wide"
+            class="text-3xl text-center lg:text-left md:text-4xl lg:text-5xl font-bold text-white tracking-wide"
           >
-            Professional Experience
+            My Professional Experience
           </h2>
           <p class="text-gray-300 text-lg md:text-xl">
             Over the years, I have had the opportunity to work in various roles

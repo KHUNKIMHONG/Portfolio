@@ -12,7 +12,7 @@
       </h1>
 
       <!-- Main Title -->
-      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-left mb-16 mt-4 lg:mt-24">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center lg:text-left mb-4 lg:mb-16 mt-4 lg:mt-24">
         My Projects
       </h2>
 
@@ -20,7 +20,7 @@
         A collection of my latest work, showcasing creativity, development, and
         design.
       </p>
-
+ 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div
           v-for="(project, index) in projects"

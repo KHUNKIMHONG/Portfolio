@@ -9,7 +9,7 @@
         </h1>
   
         <!-- Title -->
-        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-left mb-10 mt-4 relative lg:mt-16">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center lg:text-left mb-4 lg:mb-10 relative lg:mt-16">
           My Services
         </h2>
   

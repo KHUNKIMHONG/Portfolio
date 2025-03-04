@@ -10,12 +10,12 @@
       <h1
         class="text-[30px] md:text-[50px] lg:text-[60px] font-extrabold text-red-600 opacity-10 absolute top-5 md:top-10 left-1/2 transform -translate-x-1/2"
       >
-        CONTACT ME
+        CONTACT
       </h1>
 
       <!-- Left: Contact Form -->
       <div class="space-y-6">
-        <h2 class="text-3xl text-left md:text-4xl lg:text-5xl font-bold text-white tracking-wide">
+        <h2 class="text-3xl text-center lg:text-left md:text-4xl lg:text-5xl font-bold text-white tracking-wide">
           Contact Information
         </h2>
         <p class="text-gray-300 text-lg md:text-xl">
