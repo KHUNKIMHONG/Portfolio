@@ -8,6 +8,7 @@
     >
       <!-- Logo / Title with Close Button -->
       <div class="flex items-center justify-between w-full lg:w-auto space-x-2">
+        
         <div class="flex items-center space-x-2">
           <!-- Profile Image -->
           <img
@@ -72,7 +73,7 @@
       </div>
 
       <!-- Navigation Menu -->
-      <ul
+      <ul v-if="sections.length > 0"
         :class="[
           'lg:flex flex-col p-8 space-y-4 border border-yellow-900 rounded-md mt-2 bg-red-600 text-white text-lg absolute left-0 w-96 z-10 lg:text-sm lg:p-1 lg:border-hidden lg:relative top-16 lg:top-0 lg:w-auto lg:bg-transparent lg:flex-row lg:space-y-0 lg:space-x-6',
           isMenuOpen ? 'block' : 'hidden',
@@ -86,9 +87,8 @@
             @click="updateActiveSection(section)"
             class="hover:text-lime-400 block py-2 lg:py-1"
             :class="getLinkClass(section)"
-          >
-            {{ section.charAt(0).toUpperCase() + section.slice(1) }}
-          </a>
+            v-text="section.charAt(0).toUpperCase() + section.slice(1)"
+          />
         </li>
       </ul>
     </nav>
@@ -114,7 +114,7 @@ const sections = ref([
   "Project",
   "Workflow",
   "contact",
-]);
+].map(section => section.trim()));
 
 // Function to toggle the mobile menu
 const toggleMenu = (event) => {
@@ -156,12 +156,13 @@ const observeSections = () => {
   }, observerOptions);
 
   // Observe all sections
-  sections.value.forEach((sectionId) => {
+  sections.value.flatMap((sectionId) => {
     const sectionElement = document.getElementById(sectionId);
     if (sectionElement) observer.observe(sectionElement);
   });
 };
 
+//hook
 onMounted(() => {
   document.addEventListener("click", closeMenuOnClickOutside);
   observeSections();
@@ -181,36 +182,9 @@ const getLinkClass = (sectionId) => {
 
 <style scoped>
 /* Optional: add some custom styles for mobile view and alignment */
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
   .lg:hidden {
     display: block;
   }
-
-  /* Ensure the menu takes full width on mobile and aligns with the dark header */
-  .bg-gray-900 {
-    background-color: #1a202c;
-  }
-
-  /* Ensure text is white and readable on dark background */
-  .text-white {
-    color: #ffffff;
-  }
-}
-
-/* Add styles for the active link to match the green line in your image */
-.active-link {
-  position: relative;
-  display: inline-block; /* Ensures the link takes only the width of its content */
-}
-
-.active-link::after {
-  content: "";
-  position: absolute;
-  bottom: -2px; /* Adjust this value to position the line */
-  left: 0;
-  width: 100%;
-  height: 2px; /* Adjust the height of the line */
-  background-color: #1b0597; /* Green color to match your image */
-  transition: all 0.3s ease; /* Smooth transition for the line */
-}
+} */
 </style>

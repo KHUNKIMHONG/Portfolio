@@ -5,26 +5,15 @@
   >
     <div class="container mx-auto max-w-5xl">
       <!-- Faded "EDUCATION" Text in Background -->
-      <h1
-        class="text-[30px] md:text-[50px] lg:text-[60px] font-extrabold text-red-500 opacity-10 absolute top-5 md:top-10 left-1/2 transform -translate-x-1/2"
-      >
-        EDUCATION
-      </h1>
+      <h1 class="text-[30px] md:text-[50px] lg:text-[60px] font-extrabold text-red-500 opacity-10 absolute top-5 md:top-10 left-1/2 transform -translate-x-1/2"> EDUCATION</h1>
 
       <div
         class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-start mt-12 relative"
       >
         <!-- Left Section: Brief Description -->
         <div class="space-y-6 md:space-y-8 text-left">
-          <h2
-            class="text-3xl text-center lg:text-left md:text-4xl lg:text-5xl font-bold text-white tracking-wide"
-          >
-            My Academic Journey
-          </h2>
-          <p class="text-gray-300 text-lg md:text-xl">
-            From Primary School to High School, and now pursuing a Bachelor's in
-            Software Engineering, here’s a snapshot of my educational path.
-          </p>
+          <h2 class="text-3xl text-center lg:text-left md:text-4xl lg:text-5xl font-bold text-white tracking-wide">My Academic Journey</h2>
+          <p class="text-gray-300 text-lg md:text-xl">From Primary School to High School, and now pursuing a Bachelor's in Software Engineering, here’s a snapshot of my educational path.</p>
         </div>
 
         <!-- Right Section: Education Cards (Updated Styling) -->

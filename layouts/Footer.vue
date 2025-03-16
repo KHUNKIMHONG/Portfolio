@@ -70,8 +70,8 @@
 
       <!-- Copyright & Back to Top -->
       <div class="mt-10 pt-6 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
-        <p class="text-gray-500 text-sm">
-          © {{ new Date().getFullYear() }} Khun Kimhong. All rights reserved.
+        <p v-if="year" class="text-gray-500 text-sm">
+          © {{ year }} Khun Kimhong. All rights reserved.
         </p>
         <a
           href="#top"
@@ -87,7 +87,7 @@
           >
             <path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7 7 7m-7-7v18" />
           </svg>
-          Back to Top
+          {{ backToTopText }}
         </a>
       </div>
     </div>
@@ -96,6 +96,19 @@
     <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 to-transparent"></div>
   </footer>
 </template>
+
+<script setup>
+import { ref, onMounted,  computed } from 'vue';
+
+const year = ref(''); // Initialize as an empty string
+
+onMounted(() => {
+  year.value = new Date().getFullYear(); // Update year on the client side
+});
+
+// Fix hydration mismatch by normalizing text content
+const backToTopText = computed(() => "Back to Top".trim());
+</script>
 
 <style scoped>
 footer {

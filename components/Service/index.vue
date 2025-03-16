@@ -3,20 +3,14 @@
       <div class="container mx-auto max-w-6xl">
         <!-- Faded "SERVICES" Text in Background -->
         <h1
-          class="text-[30px] md:text-[50px] lg:text-[60px] font-extrabold text-red-500 opacity-10 absolute top-5 md:top-10 left-1/2 transform -translate-x-1/2"
-        >
-          SERVICES
-        </h1>
+        class="text-[30px] md:text-[50px] lg:text-[60px] font-extrabold text-red-500 opacity-10 absolute top-5 md:top-10 left-1/2 transform -translate-x-1/2"
+        v-text="'SERVICES'"
+        ></h1>
   
         <!-- Title -->
-        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center lg:text-left mb-4 lg:mb-10 relative lg:mt-16">
-          My Services
-        </h2>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center lg:text-left mb-4 lg:mb-10 relative lg:mt-16">My Services</h2>
   
-        <p class="text-gray-300 text-lg text-left mx-auto mb-10">
-          Helping businesses and individuals create modern, high-performing
-          websites and applications.
-        </p>
+        <p class="text-gray-300 text-lg text-left mx-auto mb-10">Helping businesses and individuals create modern, high-performing websites and applications.</p>
   
         <!-- Services Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

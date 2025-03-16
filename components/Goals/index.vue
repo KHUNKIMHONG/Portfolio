@@ -5,13 +5,13 @@
       <!-- Background Title -->
       <h1
         class="text-[30px] md:text-[50px] lg:text-[60px] font-extrabold text-red-500 opacity-5 absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/4 tracking-wider"
-      >
-        WORKFLOW
+        v-text="'WORKFLOW'">
       </h1>
 
       <!-- Main Title -->
-      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center mb-4 lg:mb-16 relative">
-        My Development Process
+      <h2 
+       class="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center mb-4 lg:mb-16 relative"
+       v-text="'My Development Process'">
       </h2>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">

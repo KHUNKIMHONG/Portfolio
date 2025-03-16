@@ -5,21 +5,12 @@
   >
     <div class="container mx-auto max-w-6xl">
       <!-- Faded "Projects" Text in Background -->
-      <h1
-        class="text-[30px] md:text-[50px] lg:text-[60px] font-extrabold text-red-500 opacity-10 absolute top-5 md:top-10 left-1/2 transform -translate-x-1/2"
-      >
-        PROJECT
-      </h1>
+      <h1 class="text-[30px] md:text-[50px] lg:text-[60px] font-extrabold text-red-500 opacity-10 absolute top-5 md:top-10 left-1/2 transform -translate-x-1/2">PROJECT</h1>
 
       <!-- Main Title -->
-      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center lg:text-left mb-4 lg:mb-16 mt-4 lg:mt-24">
-        My Projects
-      </h2>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center lg:text-left mb-4 lg:mb-16 mt-4 lg:mt-24">My Projects</h2>
 
-      <p class="text-lg text-left text-gray-300 mb-12">
-        A collection of my latest work, showcasing creativity, development, and
-        design.
-      </p>
+      <p class="text-lg text-left text-gray-300 mb-12">A collection of my latest work, showcasing creativity, development, and design.</p>
  
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div
@@ -56,16 +47,16 @@
               <button
                 @click="openModal(project)"
                 class="text-lime-400 hover:underline"
+                v-text="`View Details`"
               >
-                View Details
               </button>
               <a
                 v-if="project.github"
                 :href="project.github"
                 target="_blank"
                 class="text-blue-400 hover:underline"
+                v-text="`GitHub`"
               >
-                GitHub
               </a>
             </div>
           </div>

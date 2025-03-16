@@ -9,8 +9,8 @@
       <!-- Faded "EDUCATION" Text in Background -->
       <h1
         class="text-[30px] md:text-[50px] lg:text-[60px] font-extrabold text-red-600 opacity-10 absolute top-5 md:top-10 left-1/2 transform -translate-x-1/2"
+        v-text="'CONTACT'"
       >
-        CONTACT
       </h1>
 
       <!-- Left: Contact Form -->
@@ -156,11 +156,11 @@
       </div>
 
       <!-- Right: Contact Information -->
-      <div
+      <div 
         class="bg-gray-800 p-8 rounded-lg border border-red-400 shadow-lg space-y-6"
       >
-        <h2 class="text-3xl font-semibold text-white text-center">
-          Send a Message
+        <h2 class="text-3xl font-semibold text-white text-center"
+        v-text="'Send a Message'">
         </h2>
 
         <form @submit.prevent="sendEmail" class="space-y-4">
@@ -196,8 +196,8 @@
           <button
             type="submit"
             class="bg-red-600 hover:bg-red-500 text-white font-semibold py-3 px-6 rounded-lg w-full"
+            v-text="'Send Message'"
           >
-            Send Message
           </button>
         </form>
       </div>
@@ -205,25 +205,35 @@
   </section>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from "vue";
-import Swal from "sweetalert2";
+import alertMessage from "sweetalert2";
 
-const form = ref({
+interface Form {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}
+
+const form = ref<Form>({
   name: "",
   email: "",
   subject: "",
   message: "",
 });
 
-const sendEmail = () => {
+const sendEmail = (event: Event) => {
+  // Prevent form reload
+  event.preventDefault();
+
   if (
     !form.value.name ||
     !form.value.email ||
     !form.value.subject ||
     !form.value.message
   ) {
-    Swal.fire({
+    alertMessage.fire({
       icon: "error",
       title: "Oops...",
       text: "Please fill in all fields!",
@@ -239,8 +249,11 @@ const sendEmail = () => {
   )}`;
 
   try {
+    // Try to open the mail client
     window.location.href = mailtoLink;
-    Swal.fire({
+
+    // Confirm success
+    alertMessage.fire({
       icon: "success",
       title: "Message Sent!",
       text: "Your message has been successfully sent.",
@@ -250,7 +263,7 @@ const sendEmail = () => {
     // Clear form after sending
     form.value = { name: "", email: "", subject: "", message: "" };
   } catch (error) {
-    Swal.fire({
+    alertMessage.fire({
       icon: "error",
       title: "Error!",
       text: "Failed to send message. Please try again.",
