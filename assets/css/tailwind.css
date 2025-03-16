@@ -5,7 +5,7 @@
 
 @layer base {
   body {
-    @apply bg-gradient-to-b from-gray-900 to-gray-950 font-Roboto_Slab;
+    @apply bg-gradient-to-b from-gray-900 to-gray-950 font-Libra_Baskerville;
   }
 
 }
@@ -15,16 +15,8 @@ html {
 
 /* Define Merienda font */
 @font-face {
-  font-family: "Piedra";
-  src: url("@/assets/font/Merienda,Piedra/Piedra/Piedra-Regular.ttf") 
-  format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Roboto_Slab";
-  src: url("@/assets/font/Roboto_Slab/RobotoSlab-VariableFont_wght.ttf")
+  font-family: "Libra_Baskerville";
+  src: url("@/assets/font/Libre_Baskerville/LibreBaskerville-Regular.ttf") 
   format("truetype");
   font-weight: normal;
   font-style: normal;

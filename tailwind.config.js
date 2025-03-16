@@ -9,8 +9,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        Roboto_Slab: ['Roboto_Slab', 'sans-serif'],
-        Piedra: ['Piedra', 'sans-serif'],
+        Libra_Baskerville: ['Libra_Baskerville', 'sans-serif'],
       },
     },
   },
