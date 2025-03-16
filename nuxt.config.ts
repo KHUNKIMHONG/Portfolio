@@ -3,9 +3,11 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
 
-  //setup defual name and logo image for ower web display on header
+  // Set default name and logo image for web display on the header
   app: {
-    baseURL: "/Portfolio/", // ✅ Needed for GitHub Pages to serve assets correctly
+    baseURL: "/Portfolio/", // ✅ Needed for GitHub Pages
+    buildAssetsDir: "/_nuxt/", // ✅ Ensures assets load correctly
+
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
@@ -20,7 +22,7 @@ export default defineNuxtConfig({
         { 
           rel: 'icon', 
           type: 'image/x-icon', 
-          href: '/ower/ownPhoto.jpg' 
+          href: '/Portfolio/ower/ownPhoto.jpg' // ✅ Fixed path for GitHub Pages
         },
       ],      
     }
@@ -41,8 +43,13 @@ export default defineNuxtConfig({
     },
   },
 
+  nitro: {
+    preset: 'github_pages', // ✅ Ensures correct static deployment for GitHub Pages
+  },
+
   devServer: {
     port: 4000,  // Change this to the desired port
     host: '0.0.0.0' // Allows access from the network
   }
-})
+});
+
