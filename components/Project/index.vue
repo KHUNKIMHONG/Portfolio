@@ -1,25 +1,17 @@
 <template>
-  <section id="Project" class="min-h-screen py-12 px-6 lg:px-24 relative">
+  <section
+    id="Project"
+    class="min-h-screen py-12 px-6 lg:px-24 relative"
+  >
     <div class="container mx-auto max-w-6xl">
       <!-- Faded "Projects" Text in Background -->
-      <h1
-        class="text-[30px] md:text-[50px] lg:text-[60px] font-extrabold text-red-500 opacity-10 absolute top-5 md:top-10 left-1/2 transform -translate-x-1/2"
-      >
-        PROJECT
-      </h1>
+      <h1 class="text-[30px] md:text-[50px] lg:text-[60px] font-extrabold text-red-500 opacity-10 absolute top-5 md:top-10 left-1/2 transform -translate-x-1/2">PROJECT</h1>
 
       <!-- Main Title -->
-      <h2
-        class="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center lg:text-left mb-4 lg:mb-16 mt-4 lg:mt-24"
-      >
-        My Projects
-      </h2>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center lg:text-left mb-4 lg:mb-16 mt-4 lg:mt-24">My Projects</h2>
 
-      <p class="text-lg text-left text-gray-300 mb-12">
-        A collection of my latest work, showcasing creativity, development, and
-        design.
-      </p>
-
+      <p class="text-lg text-left text-gray-300 mb-12">A collection of my latest work, showcasing creativity, development, and design.</p>
+ 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div
           v-for="(project, index) in projects"
@@ -27,9 +19,8 @@
           class="bg-gray-800 border border-red-500 rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300"
         >
           <!-- Banner Image -->
-          <!-- Updated image paths -->
           <img
-            :src="`/Portfolio${project.image}`"
+            :src="project.image"
             :alt="project.title"
             class="w-full h-60 object-cover overflow-hidden"
           />
@@ -57,7 +48,8 @@
                 @click="openModal(project)"
                 class="text-lime-400 hover:underline"
                 v-text="`View Details`"
-              ></button>
+              >
+              </button>
               <a
                 v-if="project.github"
                 :href="project.github"
@@ -81,9 +73,8 @@
         <h3 class="text-3xl font-semibold text-red-400">
           {{ selectedProject.title }}
         </h3>
-        <!-- In the Modal -->
         <img
-          :src="`/Portfolio${selectedProject.image}`"
+          :src="selectedProject.image"
           :alt="selectedProject.title"
           class="w-full h-60 object-cover mt-4 rounded-lg"
         />
@@ -121,7 +112,7 @@ const projects = ref([
     description:
       "A full-featured e-commerce site with Laravel backend and Nuxt.js frontend.",
     technologies: ["JQuery", "Laravel", "Bootstrap", "MySQL"],
-    image: "/Project/Laptop_with_cart.jpg",
+    image: "/Project/e-commerce.jpg",
     github: "https://github.com/yourrepo/ecommerce",
   },
   {
@@ -129,7 +120,7 @@ const projects = ref([
     description:
       "A dynamic news website featuring real-time updates and category filtering.",
     technologies: ["Nuxt.js", "Laravel", "TailwindCSS", "MySQL"],
-    image: "/Project/Screenshot 2023-10-24 100551.png",
+    image: "/Project/aml.png",
     github: "https://github.com/yourrepo/news",
   },
   {
@@ -154,7 +145,7 @@ const openModal = (project) => {
 
 <style scoped>
 h2 {
-  background: linear-gradient(to right, #ffffff, #ef4444, #df9f9f);
+  background: linear-gradient(to right, #ffffff, #ef4444 , #df9f9f);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
