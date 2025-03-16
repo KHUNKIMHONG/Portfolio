@@ -5,6 +5,7 @@ export default defineNuxtConfig({
 
   //setup defual name and logo image for ower web display on header
   app: {
+    baseURL: "/Portfolio/", // ✅ Required for GitHub Pages
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
