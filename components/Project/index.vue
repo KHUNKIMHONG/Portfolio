@@ -112,7 +112,7 @@ const projects = ref([
     description:
       "A full-featured e-commerce site with Laravel backend and Nuxt.js frontend.",
     technologies: ["JQuery", "Laravel", "Bootstrap", "MySQL"],
-    image: "/Project/e-commerce.jpg",
+    image: "/Portfolio/Project/e-commerce.jpg",
     github: "https://github.com/yourrepo/ecommerce",
   },
   {
@@ -120,7 +120,7 @@ const projects = ref([
     description:
       "A dynamic news website featuring real-time updates and category filtering.",
     technologies: ["Nuxt.js", "Laravel", "TailwindCSS", "MySQL"],
-    image: "/Project/aml.png",
+    image: "/Portfolio/Project/aml.png",
     github: "https://github.com/yourrepo/news",
   },
   {
@@ -128,7 +128,7 @@ const projects = ref([
     description:
       "A note-taking application with real-time syncing, built using ASP.NET for the backend and Vue for the frontend, styled with Tailwind CSS.",
     technologies: ["ASP.NET", "Vue", "Tailwind CSS", "SQL Server"],
-    image: "/Project/noted-app.png",
+    image: "/Portfolio/Project/noted-app.png",
     github: "https://github.com/KHUNKIMHONG/Noted_App",
   },
 ]);
