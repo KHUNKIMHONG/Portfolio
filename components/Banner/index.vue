@@ -54,7 +54,7 @@
           >
             <!-- Downloard CV Button -->
             <a
-              href="/CV/KHUN KIMHONG_CV.pdf"
+              href="/Portfolio/CV/KHUN KIMHONG_CV.pdf"
               class="bg-red-600 text-white shadow-md py-3 px-8 rounded-lg hover:bg-yellow-600 hover:scale-105 transition duration-300 flex items-center gap-2"
             >
               <span>Download CV</span>
