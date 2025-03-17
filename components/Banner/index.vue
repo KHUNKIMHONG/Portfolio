@@ -126,7 +126,7 @@ interface SocialMediaItem {
 const socialMedia = ref<SocialMediaItem[]>([
   {
     name: "Facebook",
-    link: "https://facebook.com",
+    link: "https://www.facebook.com/maprox69/",
     svg: `<path d="M12 2.04c-5.5 0-10 4.5-10 10 0 4.98 3.66 9.1 8.44 9.9v-7h-2.54v-2.9h2.54v-2.2c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.24c-1.22 0-1.6.76-1.6 1.54v1.96h2.8l-.45 2.9h-2.35v7c4.78-.8 8.44-4.92 8.44-9.9 0-5.5-4.5-10-10-10z"/>`,
     hoverClass: "hover:bg-blue-600",
   },
@@ -138,7 +138,7 @@ const socialMedia = ref<SocialMediaItem[]>([
   },
   {
     name: "Telegram",
-    link: "https://telegram.org",
+    link: "https://t.me/khun_kimhong365",
     svg: `<path d="M22.447 2.728c-.255-.204-.594-.289-.926-.239l-20.412 4.064c-1.042.208-1.173 1.003-.205 1.393l5.005 1.92 9.633-5.846c.394-.237.789-.32 1.15-.217.36.103.627.369.73.73.103.361.02.757-.217 1.15l-5.846 9.633 1.92 5.005c.39.968 1.185.837 1.393-.205l4.064-20.412c.051-.332-.035-.671-.239-.926z"/>`,
     hoverClass: "hover:bg-blue-500",
   },
@@ -152,7 +152,7 @@ const socialMedia = ref<SocialMediaItem[]>([
   },
   {
     name: "LinkedIn",
-    link: "https://linkedin.com",
+    link: "https://www.linkedin.com/in/khun-kimhong365",
     svg: `<svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
         <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.496c0-1.28-.025-2.926-1.783-2.926-1.784 0-2.056 1.394-2.056 2.83v5.592h-3v-10h2.877v1.367h.041c.4-.759 1.378-1.559 2.838-1.559 3.036 0 3.583 2.001 3.583 4.605v5.587z"/>
       </svg>`,

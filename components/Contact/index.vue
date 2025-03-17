@@ -102,7 +102,7 @@
             class="flex justify-center lg:justify-start mt-2 space-x-4 items-center"
           >
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/khun-kimhong365"
               target="_blank"
               class="text-white p-2 rounded-full hover:bg-blue-600 transition duration-300"
             >
@@ -119,7 +119,7 @@
             </a>
 
             <a
-              href="https://github.com"
+              href="https://github.com/KHUNKIMHONG"
               target="_blank"
               class="text-white p-2 rounded-full hover:bg-gray-800 transition duration-300"
             >
@@ -136,7 +136,7 @@
             </a>
 
             <a
-              href="https://telegram.org"
+              href="https://t.me/khun_kimhong365"
               target="_blank"
               class="text-white p-2 rounded-full hover:bg-blue-500 transition duration-300"
             >
