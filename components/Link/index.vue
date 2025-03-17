@@ -5,7 +5,7 @@
         <ClientOnly>
           <div
             ref="scrollingLogos"
-            class="scrolling-logos flex whitespace-nowrap animate-scroll"
+            class="scrolling-logos flex whitespace-nowrap"
             @mouseover="pauseScroll"
             @mouseleave="resumeScroll"
             @touchstart="pauseScroll"
@@ -72,7 +72,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 
 // Define the links array
 const links = [
@@ -166,10 +166,19 @@ const links = [
 // Reactive state
 const workingLinks = ref([]);
 const scrollingLogos = ref(null);
+let animationFrameId = null;
 
 // Filter valid images on mount
 onMounted(async () => {
   await filterValidImages();
+  startInfiniteScroll();
+});
+
+// Cleanup on unmount
+onUnmounted(() => {
+  if (animationFrameId) {
+    cancelAnimationFrame(animationFrameId);
+  }
 });
 
 // Methods
@@ -187,15 +196,40 @@ const filterValidImages = async () => {
   workingLinks.value = results.filter((item) => item !== null);
 };
 
+const startInfiniteScroll = () => {
+  if (!scrollingLogos.value) return;
+
+  const container = scrollingLogos.value;
+  const originalWidth = container.scrollWidth / 2; // Half because of duplication
+
+  // Ensure the container is wide enough
+  container.style.width = `${originalWidth * 2}px`;
+
+  let position = 0;
+  const speed = 0.2; // Pixels per frame (adjust for speed)
+
+  const animate = () => {
+    position -= speed;
+    if (Math.abs(position) >= originalWidth) {
+      position = 0; // Reset to start of original content
+    }
+    container.style.transform = `translateX(${position}px)`;
+    animationFrameId = requestAnimationFrame(animate);
+  };
+
+  animationFrameId = requestAnimationFrame(animate);
+};
+
 const pauseScroll = () => {
-  if (scrollingLogos.value) {
-    scrollingLogos.value.style.animationPlayState = 'paused';
+  if (animationFrameId) {
+    cancelAnimationFrame(animationFrameId);
+    animationFrameId = null;
   }
 };
 
 const resumeScroll = () => {
-  if (scrollingLogos.value) {
-    scrollingLogos.value.style.animationPlayState = 'running';
+  if (!animationFrameId) {
+    startInfiniteScroll();
   }
 };
 </script>
@@ -210,17 +244,9 @@ const resumeScroll = () => {
   scrollbar-width: none; /* Firefox */
 }
 
-/* Animation for infinite scrolling */
-.animate-scroll {
-  animation: scroll 30s linear infinite;
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+/* Ensure smooth transitions */
+.scrolling-logos {
+  display: flex;
+  will-change: transform; /* Optimize for performance */
 }
 </style>
