@@ -211,7 +211,6 @@ h2 {
   background-clip: text;
   color: transparent;
 }
-
 /*CSS to hide scrollbar */
 .overflow-y-auto::-webkit-scrollbar {
     display: none;

@@ -5,7 +5,7 @@ export default defineNuxtConfig({
 
   // Set default name and logo image for web display on the header
   app: {
-    baseURL: '/Portfolio/', // Needed for GitHub Pages
+    baseURL:'/Portfolio/', // Base URL for the app
     buildAssetsDir: '/Portfolio/_nuxt/', // Ensure this is correct
 
     head: {
