@@ -9,8 +9,11 @@
     <Experience />
     <Education />
     <Project />
-    <Goals />
+    <WorkFlow />
+    <Blog />
     <Contact />
+    <Faq />
+    <Quote />
     <Footer />
   </div>
 </template>
@@ -26,8 +29,11 @@ import Skills from "~/components/Skill";
 import Education from "~/components/Education";
 import Experience from "~/components/Experience";
 import Contact from "~/components/Contact";
-import Goals from "~/components/Goals";
+import WorkFlow from "~/components/Workflow";
 import Project  from "~/components/Project";
+import Faq from "~/components/Faq";
+import Quote from "~/components/Quote";
+import Blog from "~/components/Blog";
 </script>
 
 <style scoped>

@@ -2,7 +2,7 @@
   <button
     v-on:click="goTop"
     v-if="showButton"
-    class="fixed bottom-4 right-4 bg-red-800 text-white p-3 rounded-full shadow-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 ease-in-out transform hover:scale-105"
+    class="fixed bottom-6 right-4 bg-gray-800 text-white p-3 z-30 rounded-full shadow hover:text-red-500 hover:bg-gray-700 transition-all duration-300 ease-in-out transform hover:scale-105"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"

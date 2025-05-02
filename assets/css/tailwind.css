@@ -2,29 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
-
-@layer base {
-  body {
-    @apply bg-gradient-to-b from-gray-900 to-gray-950 font-Libra_Baskerville;
-  }
-
-}
-html {
-  scroll-behavior: smooth;
-}
-
 /* Define Merienda font */
 @font-face {
-  font-family: "Libra_Baskerville";
-  src: url("@/assets/font/Libre_Baskerville/LibreBaskerville-Regular.ttf") 
+  font-family: "National_Park";
+  src: url("@/assets/font/National_Park/static/NationalPark-Regular.ttf") 
   format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
-/* Add custom styles to match the barbering image's vibe */
+@layer base {
+  /* Custom selection color */
+  ::selection {
+    background-color: theme("colors.red.500");
+    color: white;
+  }
+
+  ::-moz-selection {
+    background-color: theme("colors.red.500");
+    color: white;
+  }
+
+  body {
+    background-color: #0a0a0b; /* Equivalent to bg-zinc-950 */
+    font-family: "National_Park", sans-serif; /* Use the custom font */
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Components layer */
+@layer components {
+  .container {
+        @apply mx-auto; /* Tailwind utilities */
+  }
+}
+
 .container {
-  max-width: 1250px;
+      max-width: 1250px; /* Custom raw CSS */
 }
 
 .logo-3d-effect {

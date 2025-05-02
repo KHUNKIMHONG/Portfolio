@@ -1,37 +1,21 @@
 <template>
-  <section class="bg-gradient-to-r from-red-700 via-rose-900 to-red-700 overflow-hidden py-4 lg:px-24">
+  <section class="bg-gradient-to-r from-red-800 via-rose-900 to-red-800 overflow-hidden py-4 lg:px-24">
     <div class="container mx-auto px-4">
       <div class="relative overflow-auto hide-scrollbar">
         <ClientOnly>
-          <div
-            ref="scrollingLogos"
-            class="scrolling-logos flex whitespace-nowrap"
-            @mouseover="pauseScroll"
-            @mouseleave="resumeScroll"
-            @touchstart="pauseScroll"
-            @touchend="resumeScroll"
-          >
+          <!-- Canvas Background -->
+          <canvas ref="canvasRef" class="absolute inset-0 w-full h-full z-0"></canvas>
+          <div ref="scrollingLogos" class="scrolling-logos flex whitespace-nowrap" @mouseover="pauseScroll"
+            @mouseleave="resumeScroll" @touchstart="pauseScroll" @touchend="resumeScroll">
             <!-- Render logos twice for a seamless loop -->
-            <div
-              v-for="(linkItem, index) in workingLinks"
-              :key="'original-' + index"
-              class="p-2 sm:p-4 flex-shrink-0 transition-transform duration-300 hover:scale-105 relative group"
-            >
-              <a
-                :href="linkItem.link"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="cursor-pointer"
-              >
+            <div v-for="(linkItem, index) in workingLinks" :key="'original-' + index"
+              class="p-2 sm:p-4 flex-shrink-0 transition-transform duration-300 hover:scale-105 relative group">
+              <a :href="linkItem.link" target="_blank" rel="noopener noreferrer" class="cursor-pointer">
                 <div class="relative">
-                  <img
-                    :src="linkItem.imgSrc"
-                    :alt="`Logo of ${linkItem.name}`"
-                    class="w-20 sm:w-24 md:w-28 h-auto rounded-xl mx-4 sm:mx-8 opacity-80 transition-opacity duration-300 hover:opacity-100 dark:opacity-90"
-                  />
+                  <img :src="linkItem.imgSrc" :alt="`Logo of ${linkItem.name}`"
+                    class="w-20 sm:w-24 md:w-28 h-auto rounded-xl mx-4 sm:mx-8 opacity-80 transition-opacity duration-300 hover:opacity-100 dark:opacity-90" />
                   <div
-                    class="absolute inset-0 flex items-center justify-center text-white text-xs sm:text-sm font-semibold bg-gray-800 dark:bg-gray-700 bg-opacity-70 dark:bg-opacity-80 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  >
+                    class="absolute inset-0 flex items-center justify-center text-white text-xs sm:text-sm font-semibold bg-gray-800 dark:bg-gray-700 bg-opacity-70 dark:bg-opacity-80 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     {{ linkItem.name }}
                   </div>
                 </div>
@@ -39,26 +23,14 @@
             </div>
 
             <!-- Duplicate for seamless infinite scrolling -->
-            <div
-              v-for="(linkItem, index) in workingLinks"
-              :key="'duplicate-' + index"
-              class="p-2 sm:p-4 flex-shrink-0 transition-transform duration-300 hover:scale-105 relative group"
-            >
-              <a
-                :href="linkItem.link"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="cursor-pointer"
-              >
+            <div v-for="(linkItem, index) in workingLinks" :key="'duplicate-' + index"
+              class="p-2 sm:p-4 flex-shrink-0 transition-transform duration-300 hover:scale-105 relative group">
+              <a :href="linkItem.link" target="_blank" rel="noopener noreferrer" class="cursor-pointer">
                 <div class="relative">
-                  <img
-                    :src="linkItem.imgSrc"
-                    :alt="`Logo of ${linkItem.name}`"
-                    class="w-20 sm:w-24 md:w-28 h-auto rounded-xl mx-4 sm:mx-8 opacity-80 transition-opacity duration-300 hover:opacity-100 dark:opacity-90"
-                  />
+                  <img :src="linkItem.imgSrc" :alt="`Logo of ${linkItem.name}`"
+                    class="w-20 sm:w-24 md:w-28 h-auto rounded-xl mx-4 sm:mx-8 opacity-80 transition-opacity duration-300 hover:opacity-100 dark:opacity-90" />
                   <div
-                    class="absolute inset-0 flex items-center justify-center text-white text-xs sm:text-sm font-semibold bg-gray-800 dark:bg-gray-700 bg-opacity-70 dark:bg-opacity-80 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  >
+                    class="absolute inset-0 flex items-center justify-center text-white text-xs sm:text-sm font-semibold bg-gray-800 dark:bg-gray-700 bg-opacity-70 dark:bg-opacity-80 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     {{ linkItem.name }}
                   </div>
                 </div>
@@ -71,102 +43,135 @@
   </section>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue';
 
-// Define the links array
-const links = [
+// Interface for link items
+interface LinkItem {
+  name: string;
+  imgSrc: string;
+  link: string;
+}
+
+// Define the links array with type
+const links: LinkItem[] = [
   {
     name: "HTML",
-    imgSrc: "https://i.pinimg.com/736x/a2/7d/14/a27d14a27b5ef7d35c241d5cc9c1deb4.jpg",
-    link: "https://chatgpt.com/",
+    imgSrc: "/Portfolio/Link/html.png",
+    link: "https://developer.mozilla.org/en-US/docs/Web/HTML",
   },
   {
     name: "CSS",
-    imgSrc: "https://i.pinimg.com/736x/1d/a3/fd/1da3fd017f2d2676be0205c98f586f1e.jpg",
-    link: "https://www.canva.com/",
+    imgSrc: "/Portfolio/Link/css.png",
+    link: "https://developer.mozilla.org/en-US/docs/Web/CSS",
   },
   {
     name: "JAVA SCRIPT",
-    imgSrc: "https://i.pinimg.com/736x/21/37/c0/2137c067827e1c46717e2e7a95c2a1aa.jpg",
-    link: "https://character.ai/",
-  },
-  {
-    name: "REACT JS",
-    imgSrc: "https://i.pinimg.com/736x/0c/dd/18/0cdd182c784ae45b4cf436880162295f.jpg",
-    link: "https://poe.com/",
+    imgSrc: "/Portfolio/Link/Js.png",
+    link: "https://www.javascripttutorial.net/",
   },
   {
     name: "TYPE SCRIPT",
-    imgSrc: "https://i.pinimg.com/736x/a1/19/30/a11930255af225b93309ff793662e7c5.jpg",
-    link: "https://leonardo.ai/",
-  },
-  {
-    name: "LARAVEL",
-    imgSrc: "https://i.pinimg.com/736x/ed/94/e3/ed94e3e6fae5dd09cd8f7652f4a01c3d.jpg",
-    link: "https://tools.picsart.com/text/ai-writer",
+    imgSrc: "/Portfolio/Link/Ts.png",
+    link: "https://www.typescriptlang.org/",
   },
   {
     name: "VUE JS",
-    imgSrc: "https://i.pinimg.com/736x/29/01/2a/29012a5a6fbaee00c0f940cc2f30eba2.jpg",
-    link: "https://lumen5.com/",
-  },
-  {
-    name: "GIT HUB",
-    imgSrc: "https://i.pinimg.com/736x/d2/82/44/d28244f7cc49308a76c67a55e56f96de.jpg",
-    link: "https://clickup.com/",
-  },
-  {
-    name: "VS CODE",
-    imgSrc: "https://i.pinimg.com/736x/ad/4b/19/ad4b19d0f417dcadf03a35ca9a05b989.jpg",
-    link: "https://www.bing.com/chat",
-  },
-  {
-    name: "PHP",
-    imgSrc: "https://i.pinimg.com/736x/1a/57/a0/1a57a019bb9929b0303c17775ca74e92.jpg",
-    link: "https://www.bing.com/chat",
-  },
-  {
-    name: "MY SQL",
-    imgSrc: "https://ih1.redbubble.net/image.5536116430.2042/st,small,507x507-pad,600x600,f8f8f8.jpg",
-    link: "https://www.bing.com/chat",
-  },
-  {
-    name: "TAILWIND CSS",
-    imgSrc: "https://i.pinimg.com/736x/11/a7/b5/11a7b5fb70c24e5632f2baccce14603c.jpg",
-    link: "https://www.bing.com/chat",
-  },
-  {
-    name: "GIT LAB",
-    imgSrc: "https://i.pinimg.com/736x/fb/75/f4/fb75f43769d39bf3b8bdbbb0596a1a10.jpg",
-    link: "https://www.bing.com/chat",
+    imgSrc: "/Portfolio/Link/Vue.png",
+    link: "https://vuejs.org/",
   },
   {
     name: "Nuxt JS",
-    imgSrc: "https://i.pinimg.com/736x/35/e6/5e/35e65e6aa7710dfe3881e8dab18990f0.jpg",
-    link: "https://www.bing.com/chat",
+    imgSrc: "/Portfolio/Link/NuxtJs.png",
+    link: "https://nuxt.com/",
   },
   {
-    name: "Docker",
-    imgSrc: "https://i.pinimg.com/736x/2c/54/f6/2c54f65a03c35ac90f5c73b92da39779.jpg",
-    link: "https://www.bing.com/chat",
-  },
-  {
-    name: "MONGO DB",
-    imgSrc: "https://ih1.redbubble.net/image.352416469.2750/mo,small,flatlay,product_square,600x600.u7.jpg",
-    link: "https://www.bing.com/chat",
+    name: "REACT JS",
+    imgSrc: "/Portfolio/Link/React.png",
+    link: "https://react.dev/",
   },
   {
     name: "NODE JS",
-    imgSrc: "https://miro.medium.com/v2/resize:fit:800/1*bc9pmTiyKR0WNPka2w3e0Q.png",
+    imgSrc: "/Portfolio/Link/Node.png",
     link: "https://www.bing.com/chat",
+  },
+  {
+    name: "BOOT STRAP",
+    imgSrc: "/Portfolio/Link/Boostrap.png",
+    link: "https://getbootstrap.com/",
+  },
+  {
+    name: "TAILWIND CSS",
+    imgSrc: "/Portfolio/Link/Tailwind.png",
+    link: "https://tailwindcss.com/",
+  },
+  {
+    name: "LARAVEL",
+    imgSrc: "/Portfolio/Link/Laravel.png",
+    link: "https://laravel.com/",
+  },
+  {
+    name: "PHP",
+    imgSrc: "/Portfolio/Link/PHP.png",
+    link: "https://www.php.net/",
+  },
+  {
+    name: "GIT",
+    imgSrc: "/Portfolio/Link/Git.png",
+    link: "https://git-scm.com/",
+  },
+  {
+    name: "GIT HUB",
+    imgSrc: "/Portfolio/Link/GitHub.png",
+    link: "https://github.com/",
+  },
+  {
+    name: "GIT LAB",
+    imgSrc: "/Portfolio/Link/GitLab.png",
+    link: "https://about.gitlab.com/",
+  },
+  {
+    name: "MY SQL",
+    imgSrc: "/Portfolio/Link/MySQL.png",
+    link: "https://www.mysql.com/",
+  },
+  {
+    name: "SQL SERVER",
+    imgSrc: "/Portfolio/Link/SQLServer.png",
+    link: "https://www.microsoft.com/en-us/sql-server/sql-server-downloads",
+  },
+  {
+    name: "MONGO DB",
+    imgSrc: "/Portfolio/Link/MongooDB.png",
+    link: "https://www.mongodb.com/",
+  },
+  {
+    name: "VS CODE",
+    imgSrc: "/Portfolio/Link/VSCode.png",
+    link: "https://code.visualstudio.com/",
+  },
+  {
+    name: "FIGMA",
+    imgSrc: "/Portfolio/Link/Figma.png",
+    link: "https://www.figma.com/",
+  },
+  {
+    name: "DOCKER",
+    imgSrc: "/Portfolio/Link/Docker.png",
+    link: "https://www.docker.com/",
+  },
+  {
+    name: "POSTMAN",
+    imgSrc: "/Portfolio/Link/Postman.png",
+    link: "https://www.postman.com/",
   },
 ];
 
-// Reactive state
-const workingLinks = ref([]);
-const scrollingLogos = ref(null);
-let animationFrameId = null;
+// Reactive state with typed references
+const workingLinks: Ref<LinkItem[]> = ref([]);
+const scrollingLogos: Ref<HTMLElement | null> = ref(null);
+const canvasRef: Ref<HTMLCanvasElement | null> = ref(null);
+let animationFrameId: number | null = null;
 
 // Filter valid images on mount
 onMounted(async () => {
@@ -182,9 +187,9 @@ onUnmounted(() => {
 });
 
 // Methods
-const filterValidImages = async () => {
-  const imagePromises = links.map((linkItem) => {
-    return new Promise((resolve) => {
+const filterValidImages = async (): Promise<void> => {
+  const imagePromises = links.map((linkItem: LinkItem) => {
+    return new Promise<LinkItem | null>((resolve) => {
       const img = new Image();
       img.src = linkItem.imgSrc;
       img.onload = () => resolve(linkItem);
@@ -193,22 +198,22 @@ const filterValidImages = async () => {
   });
 
   const results = await Promise.all(imagePromises);
-  workingLinks.value = results.filter((item) => item !== null);
+  workingLinks.value = results.filter((item): item is LinkItem => item !== null);
 };
 
-const startInfiniteScroll = () => {
+const startInfiniteScroll = (): void => {
   if (!scrollingLogos.value) return;
 
-  const container = scrollingLogos.value;
-  const originalWidth = container.scrollWidth / 2; // Half because of duplication
+  const container: HTMLElement = scrollingLogos.value;
+  const originalWidth: number = container.scrollWidth / 2; // Half because of duplication
 
   // Ensure the container is wide enough
   container.style.width = `${originalWidth * 2}px`;
 
-  let position = 0;
-  const speed = 0.2; // Pixels per frame (adjust for speed)
+  let position: number = 0;
+  const speed: number = 0.2; // Pixels per frame (adjust for speed)
 
-  const animate = () => {
+  const animate = (): void => {
     position -= speed;
     if (Math.abs(position) >= originalWidth) {
       position = 0; // Reset to start of original content
@@ -220,14 +225,14 @@ const startInfiniteScroll = () => {
   animationFrameId = requestAnimationFrame(animate);
 };
 
-const pauseScroll = () => {
+const pauseScroll = (): void => {
   if (animationFrameId) {
     cancelAnimationFrame(animationFrameId);
     animationFrameId = null;
   }
 };
 
-const resumeScroll = () => {
+const resumeScroll = (): void => {
   if (!animationFrameId) {
     startInfiniteScroll();
   }
@@ -239,14 +244,18 @@ const resumeScroll = () => {
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
 .hide-scrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 /* Ensure smooth transitions */
 .scrolling-logos {
   display: flex;
-  will-change: transform; /* Optimize for performance */
+  will-change: transform;
+  /* Optimize for performance */
 }
 </style>

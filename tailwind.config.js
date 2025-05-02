@@ -9,7 +9,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        Libra_Baskerville: ['Libra_Baskerville', 'sans-serif'],
+        National_Park: ['National_Park', 'sans-serif'],
       },
     },
   },
