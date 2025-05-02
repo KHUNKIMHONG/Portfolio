@@ -53,6 +53,9 @@ export default defineNuxtConfig({
 
   nitro: {
     preset: 'github_pages', // Ensures correct static deployment for GitHub Pages
+    output: {
+      publicDir: 'docs', // Output to docs directory for GitHub Pages
+    },
   },
 
   devServer: {
