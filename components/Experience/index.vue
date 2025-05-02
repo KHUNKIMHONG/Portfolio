@@ -108,7 +108,7 @@ const expandedJob = ref(null);
 const experience = ref([
   {
     position: "Frontend Developer Intern",
-    logo: "/Experience/FinTech.png",
+    logo: "/Portfolio/Experience/FinTech.png",
     company: "FinTech Center",
     duration: "2023",
     shortDescription: "Developed a responsive bilingual website with Nuxt.js, integrated APIs, and collaborated with the team to enhance user experience.",
@@ -121,7 +121,7 @@ const experience = ref([
   },
   {
     position: "Full Stack Developer Intern",
-    logo: "/Experience/ITC.png",
+    logo: "/Portfolio/Experience/ITC.png",
     company: "ITC",
     duration: "2024",
     shortDescription: "Built a fully functional e-commerce platform using Laravel, Tailwind CSS, MySQL, and Docker, with CI/CD integration via GitLab pipelines.",
@@ -135,7 +135,7 @@ const experience = ref([
   },
   {
     position: "Web Developer",
-    logo: "/Experience/Freelancer.png",
+    logo: "/Portfolio/Experience/Freelancer.png",
     company: "Freelancer",
     duration: "Present",
     shortDescription: "Working on various freelance web development projects, building scalable and maintainable applications with modern technologies while collaborating directly with clients.",

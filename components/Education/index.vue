@@ -75,7 +75,7 @@ import { ref } from "vue";
 const education = ref([
   {
     degree: "Bachelor of Information and Communication Engineering",
-    logo: "/Education/ITC.png",
+    logo: "/Portfolio/Portfolio/Education/ITC.png",
     institution: "Institute of Technology of Cambodia (ITC)",
     year: "2019 - 2024",
     description:
@@ -83,7 +83,7 @@ const education = ref([
   },
   {
     degree: "High School Diploma",
-    logo: "/Education/HighSchool.png",
+    logo: "/Portfolio/Education/HighSchool.png",
     institution: "Hansen Thnout Choum High School",
     year: "2007 - 2019",
     description:
@@ -91,7 +91,7 @@ const education = ref([
   },
   {
     degree: "Primary School",
-    logo: "/Education/HighSchool.png",
+    logo: "/Portfolio/Education/HighSchool.png",
     institution: "Trang Pang Anderk Primary School",
     year: "2007 - 2012",
     description:
