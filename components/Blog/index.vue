@@ -12,7 +12,7 @@
             </h2>
 
             <!-- Introduction -->
-            <p class="text-base sm:text-lg text-gray-300 text-center lg:text-left mb-4 lg:mb-10" data-aos="fade-up"
+            <p class="text-base sm:text-lg text-gray-300 text-left mb-4 lg:mb-10" data-aos="fade-up"
                 data-aos-delay="300">
                 Dive into my insights on web development, featuring tutorials, tips, and deep dives into Vue, Nuxt,
                 Laravel, and more. Whether you're a beginner or a seasoned developer, my posts offer practical knowledge
