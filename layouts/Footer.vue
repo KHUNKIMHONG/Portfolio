@@ -128,9 +128,9 @@
 
     <!-- Modal -->
     <div v-if="showModal" @click.self="closeModal"
-      class="fixed inset-0 z-50 flex items-center justify-center bg-zinc-900/60 p-4 backdrop-blur-sm" role="dialog"
+      class="fixed inset-0 z-50 bg-zinc-900/60 p-4 backdrop-blur-sm overflow-y-auto" role="dialog"
       aria-labelledby="modal-title" data-aos="fade-in" data-aos-duration="500">
-      <div class="bg-zinc-900 p-6 rounded-xl max-w-2xl w-full relative shadow-2xl" data-aos="zoom-in"
+      <div class="bg-zinc-900 p-6 rounded-xl max-w-2xl w-full mx-auto shadow-2xl relative overflow-hidden" data-aos="zoom-in"
         data-aos-delay="200" data-aos-duration="600">
         <!-- Modal Header -->
         <h2 id="modal-title" class="text-2xl font-bold text-red-500 mb-6 text-center" data-aos="fade-up"
@@ -236,6 +236,19 @@ const closeModal = () => {
 </script>
 
 <style scoped>
+/* Hide scrollbar for category filters and modals */
+.hide-scrollbar::-webkit-scrollbar,
+.overflow-y-auto::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar,
+.overflow-y-auto {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Footer styles */
 a:hover svg {
   transform: translateY(-2px);
   transition: transform 0.3s ease;
