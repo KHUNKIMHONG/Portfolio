@@ -75,7 +75,7 @@ import { ref } from "vue";
 const education = ref([
   {
     degree: "Bachelor of Information and Communication Engineering",
-    logo: "/Portfolio/Portfolio/Education/ITC.png",
+    logo: "/Portfolio/Education/ITC.png",
     institution: "Institute of Technology of Cambodia (ITC)",
     year: "2019 - 2024",
     description:
