@@ -20,7 +20,7 @@
           <div class="flex justify-center lg:justify-start mt-4 space-x-4 items-center" data-aos="fade-up"
             data-aos-delay="400">
             <a v-for="social in socialMedia" :key="social.name" :href="social.link" target="_blank"
-              rel="noopener noreferrer" class="text-white p-2 rounded-md bg-gradient-to-r hover:from-red-700 hover:to-red-900 transition duration-300">
+              rel="noopener noreferrer" class="text-white text-sm p-2 rounded-md bg-gradient-to-r hover:from-red-700 hover:to-red-900 transition duration-300">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 sm:w-7 sm:h-7" fill="currentColor"
                 viewBox="0 0 24 24" v-html="social.svg"></svg>
             </a>

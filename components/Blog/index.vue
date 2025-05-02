@@ -20,23 +20,27 @@
             </p>
 
             <!-- Category Filters -->
-            <div class="flex flex-wrap justify-start gap-2 mb-8" data-aos="fade-up" data-aos-delay="400">
-                <button @click="selectedCategory = ''" :class="{
-                    'bg-zinc-800': selectedCategory !== '',
-                    'bg-red-600': selectedCategory === ''
-                }"
-                    class="text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-red-600 transition-all duration-300">
-                    All
-                </button>
-                <button v-for="(category, idx) in allCategories" :key="idx" @click="selectedCategory = category" :class="{
-                    'bg-zinc-800': selectedCategory !== category,
-                    'bg-red-600': selectedCategory === category
-                }"
-                    class="text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-red-600 transition-all duration-300">
-                    {{ category }}
-                </button>
+            <div class="mb-8" data-aos="fade-up" data-aos-delay="400">
+                <div class="flex overflow-x-auto space-x-2 pb-2 hide-scrollbar">
+                    <button @click="selectedCategory = ''" :class="{
+                        'bg-red-500 text-gray-200': selectedCategory === '',
+                        'bg-gray-800 text-white': selectedCategory !== '',
+                        'hover:bg-gray-300': selectedCategory !== ''
+                    }" class="px-4 py-1.5 rounded-md text-sm font-medium transition-all duration-200 whitespace-nowrap"
+                        :aria-selected="selectedCategory === ''" aria-label="Show all categories">
+                        All
+                    </button>
+                    <button v-for="(category, idx) in allCategories" :key="idx" @click="selectedCategory = category"
+                        :class="{
+                            'bg-red-500 text-gray-200': selectedCategory === category,
+                            'bg-gray-800 text-white': selectedCategory !== category,
+                            'hover:bg-gray-300': selectedCategory !== category
+                        }" class="px-4 py-1.5 rounded-md text-sm font-medium transition-all duration-200 whitespace-nowrap"
+                        :aria-selected="selectedCategory === category" :aria-label="`Show ${category} category`">
+                        {{ category }}
+                    </button>
+                </div>
             </div>
-
 
             <!-- Blog Posts Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -157,7 +161,7 @@
 
                         <!-- Close Button -->
                         <div class="flex justify-center mt-8" data-aos="fade-up" data-aos-delay="600">
-                            <button  @click="selectedPost = null"
+                            <button @click="selectedPost = null"
                                 class="group relative flex items-center bg-gradient-to-r from-red-600 to-red-800 hover:from-red-700 hover:to-red-900 text-white rounded-full shadow-lg transition-all duration-300 overflow-hidden w-14 h-14 hover:w-56 p-4 focus:outline-none focus:ring-2 focus:ring-red-500"
                                 aria-label="Close Modal">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -229,9 +233,16 @@ const openPost = (post: BlogPost) => {
 
 
 <style scoped>
-/* Optional Custom Styles */
-#BlogPosts .text-3d-effect {
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 0, 0, 0.2);
+/* Hide scrollbar for category filters and modals */
+.hide-scrollbar::-webkit-scrollbar,
+.overflow-y-auto::-webkit-scrollbar {
+    display: none;
+}
+
+.hide-scrollbar,
+.overflow-y-auto {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 h2 {
@@ -247,18 +258,5 @@ h2 {
     line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
-}
-
-/*CSS to hide scrollbar */
-.overflow-y-auto::-webkit-scrollbar {
-    display: none;
-    /* Hide scrollbar for webkit browsers */
-}
-
-.overflow-y-auto {
-    -ms-overflow-style: none;
-    /* Hide scrollbar for IE 10+ */
-    scrollbar-width: none;
-    /* Hide scrollbar for Firefox */
 }
 </style>
