@@ -56,7 +56,7 @@
         <!-- Right Image -->
         <div class="flex justify-center lg:justify-end lg:w-1/2" data-aos="fade-left" data-aos-delay="400">
           <img src="/ower/khun_kimhong.png" alt="KHUN KIMHONG"
-            class="w-full mt-10 max-w-[300px] max-h-[200px] lg:max-w-[500px] lg:max-h-[600px] rounded-full object-cover"
+            class="w-full mt-10 max-w-[200px] max-h-[200px] lg:max-w-[500px] lg:max-h-[600px] rounded-full object-cover"
             loading="lazy" />
         </div>
       </div>
