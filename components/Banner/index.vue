@@ -1,5 +1,5 @@
 <template>
-  <section id="top" class="bg-gradient-to-r from-red-800 via-rose-900 to-red-800 text-white py-12 lg:h-80vh">
+  <section id="top" class="bg-gradient-to-r from-red-800 via-rose-900 to-red-800 text-white py-8 lg:py-12 lg:h-[80vh]">
     <div class="container mx-auto px-4 mt-2 lg:mt-20">
       <div class="flex flex-col-reverse lg:flex-row items-center gap-8">
         <!-- Left Content -->

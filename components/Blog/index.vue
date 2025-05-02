@@ -20,7 +20,7 @@
             </p>
 
             <!-- Category Filters -->
-            <div class="flex flex-wrap justify-center lg:justify-start gap-2 mb-8" data-aos="fade-up" data-aos-delay="400">
+            <div class="flex flex-wrap justify-start gap-2 mb-8" data-aos="fade-up" data-aos-delay="400">
                 <button @click="selectedCategory = ''" :class="{
                     'bg-zinc-800': selectedCategory !== '',
                     'bg-red-600': selectedCategory === ''
