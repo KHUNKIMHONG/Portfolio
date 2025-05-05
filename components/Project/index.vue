@@ -14,10 +14,7 @@
 
       <!-- Introduction -->
       <p class="text-base sm:text-lg text-gray-300 text-center lg:text-left mb-4 lg:mb-10" data-aos="fade-up"
-        data-aos-delay="300">
-        Explore my recent projects that demonstrate my expertise in web development, from full-stack e-commerce
-        platforms to dynamic news sites and innovative applications. Each project reflects my commitment to crafting
-        user-focused, high-performance solutions.
+        data-aos-delay="300">Explore my recent projects that demonstrate my expertise in web development, from full-stack e-commerce platforms to dynamic news sites and innovative applications. Each project reflects my commitment to crafting user-focused, high-performance solutions.
       </p>
 
       <!-- Project Cards -->

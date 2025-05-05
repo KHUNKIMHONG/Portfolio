@@ -7,13 +7,13 @@
       <!-- SVG Loader -->
       <svg class="pl" width="240" height="240" viewBox="0 0 240 240" role="presentation">
         <circle :class="['pl__ring', 'pl__ring--a']" cx="120" cy="120" r="105" fill="none" :stroke="colorA"
-          stroke-width="20" stroke-dasharray="0 660" stroke-dashoffset="-330" stroke-linecap="round"></circle>
+          stroke-width="16" stroke-dasharray="0 660" stroke-dashoffset="-330" stroke-linecap="round"></circle>
         <circle :class="['pl__ring', 'pl__ring--b']" cx="120" cy="120" r="35" fill="none" :stroke="colorB"
-          stroke-width="20" stroke-dasharray="0 220" stroke-dashoffset="-110" stroke-linecap="round"></circle>
+          stroke-width="12" stroke-dasharray="0 220" stroke-dashoffset="-110" stroke-linecap="round"></circle>
         <circle :class="['pl__ring', 'pl__ring--c']" cx="85" cy="120" r="70" fill="none" :stroke="colorC"
-          stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>
+          stroke-width="14" stroke-dasharray="0 440" stroke-linecap="round"></circle>
         <circle :class="['pl__ring', 'pl__ring--d']" cx="155" cy="120" r="70" fill="none" :stroke="colorD"
-          stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>
+          stroke-width="14" stroke-dasharray="0 440" stroke-linecap="round"></circle>
       </svg>
       <!-- Loading Text -->
       <p class="mt-4 text-white text-lg font-semibold animate-pulse">{{ loadingText }}</p>
@@ -28,19 +28,19 @@ import { ref, onMounted, onBeforeUnmount } from "vue";
 const props = defineProps({
   colorA: {
     type: String,
-    default: '#f42f25', // Red
+    default: '#8b5cf6', // Purple
   },
   colorB: {
     type: String,
-    default: '#f49725', // Orange
+    default: '#ec4899', // Pink
   },
   colorC: {
     type: String,
-    default: '#255ff4', // Blue
+    default: '#10b981', // Green
   },
   colorD: {
     type: String,
-    default: '#f42582', // Pink
+    default: '#3b82f6', // Blue
   },
   logoSrc: {
     type: String,
@@ -75,7 +75,7 @@ onBeforeUnmount(() => {
 }
 
 .pl__ring {
-  animation: ringA 2s linear infinite;
+  animation: ringA 2.5s ease-in-out infinite;
 }
 
 .pl__ring--b {
@@ -92,154 +92,134 @@ onBeforeUnmount(() => {
 
 /* Animations */
 @keyframes ringA {
-  from, 4% {
+  0% {
     stroke-dasharray: 0 660;
-    stroke-width: 20;
     stroke-dashoffset: -330;
+    stroke-width: 16;
+    opacity: 0.3;
   }
-  12% {
-    stroke-dasharray: 60 600;
-    stroke-width: 30;
-    stroke-dashoffset: -335;
-  }
-  32% {
-    stroke-dasharray: 60 600;
-    stroke-width: 30;
-    stroke-dashoffset: -595;
-  }
-  40%, 54% {
-    stroke-dasharray: 0 660;
+  25% {
+    stroke-dasharray: 80 580;
+    stroke-dashoffset: -400;
     stroke-width: 20;
-    stroke-dashoffset: -660;
+    opacity: 1;
   }
-  62% {
-    stroke-dasharray: 60 600;
-    stroke-width: 30;
-    stroke-dashoffset: -665;
-  }
-  82% {
-    stroke-dasharray: 60 600;
-    stroke-width: 30;
-    stroke-dashoffset: -925;
-  }
-  90%, to {
-    stroke-dasharray: 0 660;
+  50% {
+    stroke-dasharray: 80 580;
+    stroke-dashoffset: -600;
     stroke-width: 20;
+    opacity: 1;
+  }
+  75% {
+    stroke-dasharray: 0 660;
+    stroke-dashoffset: -800;
+    stroke-width: 16;
+    opacity: 0.3;
+  }
+  100% {
+    stroke-dasharray: 0 660;
     stroke-dashoffset: -990;
+    stroke-width: 16;
+    opacity: 0.3;
   }
 }
 
 @keyframes ringB {
-  from, 12% {
+  0% {
     stroke-dasharray: 0 220;
-    stroke-width: 20;
     stroke-dashoffset: -110;
+    stroke-width: 12;
+    opacity: 0.3;
   }
-  20% {
-    stroke-dasharray: 20 200;
-    stroke-width: 30;
-    stroke-dashoffset: -115;
+  25% {
+    stroke-dasharray: 30 190;
+    stroke-dashoffset: -130;
+    stroke-width: 16;
+    opacity: 1;
   }
-  40% {
-    stroke-dasharray: 20 200;
-    stroke-width: 30;
-    stroke-dashoffset: -195;
+  50% {
+    stroke-dasharray: 30 190;
+    stroke-dashoffset: -200;
+    stroke-width: 16;
+    opacity: 1;
   }
-  48%, 62% {
+  75% {
     stroke-dasharray: 0 220;
-    stroke-width: 20;
-    stroke-dashoffset: -220;
+    stroke-dashoffset: -270;
+    stroke-width: 12;
+    opacity: 0.3;
   }
-  70% {
-    stroke-dasharray: 20 200;
-    stroke-width: 30;
-    stroke-dashoffset: -225;
-  }
-  90% {
-    stroke-dasharray: 20 200;
-    stroke-width: 30;
-    stroke-dashoffset: -305;
-  }
-  98%, to {
+  100% {
     stroke-dasharray: 0 220;
-    stroke-width: 20;
     stroke-dashoffset: -330;
+    stroke-width: 12;
+    opacity: 0.3;
   }
 }
 
 @keyframes ringC {
-  from {
+  0% {
     stroke-dasharray: 0 440;
-    stroke-width: 20;
     stroke-dashoffset: 0;
+    stroke-width: 14;
+    opacity: 0.3;
   }
-  8% {
-    stroke-dasharray: 40 400;
-    stroke-width: 30;
-    stroke-dashoffset: -5;
+  25% {
+    stroke-dasharray: 50 390;
+    stroke-dashoffset: -50;
+    stroke-width: 18;
+    opacity: 1;
   }
-  28% {
-    stroke-dasharray: 40 400;
-    stroke-width: 30;
-    stroke-dashoffset: -175;
+  50% {
+    stroke-dasharray: 50 390;
+    stroke-dashoffset: -200;
+    stroke-width: 18;
+    opacity: 1;
   }
-  36%, 58% {
+  75% {
     stroke-dasharray: 0 440;
-    stroke-width: 20;
-    stroke-dashoffset: -220;
+    stroke-dashoffset: -350;
+    stroke-width: 14;
+    opacity: 0.3;
   }
-  66% {
-    stroke-dasharray: 40 400;
-    stroke-width: 30;
-    stroke-dashoffset: -225;
-  }
-  86% {
-    stroke-dasharray: 40 400;
-    stroke-width: 30;
-    stroke-dashoffset: -395;
-  }
-  94%, to {
+  100% {
     stroke-dasharray: 0 440;
-    stroke-width: 20;
     stroke-dashoffset: -440;
+    stroke-width: 14;
+    opacity: 0.3;
   }
 }
 
 @keyframes ringD {
-  from, 8% {
+  0% {
     stroke-dasharray: 0 440;
-    stroke-width: 20;
     stroke-dashoffset: 0;
+    stroke-width: 14;
+    opacity: 0.3;
   }
-  16% {
-    stroke-dasharray: 40 400;
-    stroke-width: 30;
-    stroke-dashoffset: -5;
+  25% {
+    stroke-dasharray: 50 390;
+    stroke-dashoffset: -50;
+    stroke-width: 18;
+    opacity: 1;
   }
-  36% {
-    stroke-dasharray: 40 400;
-    stroke-width: 30;
-    stroke-dashoffset: -175;
+  50% {
+    stroke-dasharray: 50 390;
+    stroke-dashoffset: -200;
+    stroke-width: 18;
+    opacity: 1;
   }
-  44%, 50% {
+  75% {
     stroke-dasharray: 0 440;
-    stroke-width: 20;
-    stroke-dashoffset: -220;
+    stroke-dashoffset: -350;
+    stroke-width: 14;
+    opacity: 0.3;
   }
-  58% {
-    stroke-dasharray: 40 400;
-    stroke-width: 30;
-    stroke-dashoffset: -225;
-  }
-  78% {
-    stroke-dasharray: 40 400;
-    stroke-width: 30;
-    stroke-dashoffset: -395;
-  }
-  86%, to {
+  100% {
     stroke-dasharray: 0 440;
-    stroke-width: 20;
     stroke-dashoffset: -440;
+    stroke-width: 14;
+    opacity: 0.3;
   }
 }
 

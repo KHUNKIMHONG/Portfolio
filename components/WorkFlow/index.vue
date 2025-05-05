@@ -22,9 +22,7 @@
                     <!-- Intro Text -->
                     <p class="text-base sm:text-lg text-gray-300 mb-4 leading-relaxed" data-aos="fade-up"
                         data-aos-delay="300">
-                        My workflow is a clear, client-centric process designed to turn ideas into high-quality web
-                        solutions.
-                        Every step ensures precision, collaboration, and results tailored to your vision.
+                        My workflow is a clear, client-centric process designed to turn ideas into high-quality web solutions. Every step ensures precision, collaboration, and results tailored to your vision.
                     </p>
 
                     <!-- Why Workflow -->

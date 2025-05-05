@@ -6,7 +6,7 @@
   >
     <div
       class="container relative z-10 max-w-4xl mx-auto p-8 rounded-lg shadow-lg bg-gray-900 bg-opacity-70 backdrop-blur-md"
-      style="background-image: url('/Quote/image.png');"
+      style="background-image: url('/Portfolio/Quote/image.png');"
     >
       <!-- Content Container -->
       <h2
