@@ -1,6 +1,6 @@
 <template>
   <section id="skill" class="min-h-screen flex items-center justify-center px-6 lg:px-24 py-12 relative">
-    <div class="container mx-auto max-w-5xl">
+    <div class="container mx-auto max-w-6xl">
       <!-- Faded "SKILLS" Text in Background -->
       <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-red-600 text-center opacity-20 tracking-wider mb-2 lg:mb-8"
           data-aos="fade-down" data-aos-delay="100"

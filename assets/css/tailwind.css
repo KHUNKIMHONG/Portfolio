@@ -2,17 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Define Merienda font */
+/* Define National_Park font */
 @font-face {
   font-family: "National_Park";
-  src: url("@/assets/font/National_Park/static/NationalPark-Regular.ttf") 
-  format("truetype");
+  src: url("@/assets/font/National_Park/static/NationalPark-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @layer base {
-  /* Custom selection color */
   ::selection {
     background-color: theme("colors.red.500");
     color: white;
@@ -24,48 +22,54 @@
   }
 
   body {
-    background-color: #0a0a0b; /* Equivalent to bg-zinc-950 */
-    font-family: "National_Park", sans-serif; /* Use the custom font */
+    background-color: #0a0a0b;
+    font-family: "National_Park", sans-serif;
+    font-size: 16px;
+    @media (max-width: 640px) {
+      font-size: 14px;
+    }
   }
 }
 
-html {
+html,
+body {
+  overflow-x: hidden; /* Prevent right scroll */
+  overflow-y: auto;
   scroll-behavior: smooth;
 }
 
 /* Components layer */
-@layer components {
-  .container {
-        @apply mx-auto; /* Tailwind utilities */
-  }
-}
-
-.container {
-      max-width: 1250px; /* Custom raw CSS */
-}
 
 .logo-3d-effect {
   transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
-  transform: perspective(1000px) translateZ(10px) rotateY(10deg);
-  box-shadow: 
-    0 5px 10px rgba(0, 0, 0, 0.3),
-    0 10px 20px rgba(0, 0, 0, 0.2),
-    0 15px 30px rgba(0, 0, 0, 0.1),
-    0 6px 5px rgba(85, 1, 1, 0.5);
+  transform: perspective(1000px) translateZ(5px) rotateY(5deg); /* Reduced for mobile */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
   filter: brightness(1.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  @media (min-width: 641px) {
+    transform: perspective(1000px) translateZ(10px) rotateY(10deg);
+    box-shadow: 
+      0 5px 10px rgba(0, 0, 0, 0.3),
+      0 10px 20px rgba(0, 0, 0, 0.2),
+      0 15px 30px rgba(0, 0, 0, 0.1),
+      0 6px 5px rgba(85, 1, 1, 0.5);
+  }
 }
 
-/* Add 3D effect to text */
 .text-3d-effect {
-  text-shadow: 
-    1px 1px 0 #000,
-    2px 2px 0 #000,
-    3px 3px 0 #000,
-    4px 4px 0 #000,
-    5px 5px 0 #000,
-    6px 6px 5px rgba(155, 132, 5, 0.5);
-  transform: perspective(500px) translateZ(0);
+  text-shadow: 1px 1px 0 #000, 2px 2px 0 #000, 3px 3px 0 #000;
+  transform: perspective(300px) translateZ(0); /* Reduced for mobile */
   position: relative;
   display: inline-block;
+  @media (min-width: 641px) {
+    text-shadow: 
+      1px 1px 0 #000,
+      2px 2px 0 #000,
+      3px 3px 0 #000,
+      4px 4px 0 #000,
+      5px 5px 0 #000,
+      6px 6px 5px rgba(155, 132, 5, 0.5);
+    transform: perspective(500px) translateZ(0);
+  }
 }

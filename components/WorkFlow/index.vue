@@ -1,6 +1,6 @@
 <template>
-    <section id="workflow" class="min-h-screen py-20 px-6 sm:px-8 lg:px-16 relative overflow-hidden">
-        <div class="container mx-auto max-w-7xl">
+    <section id="workflow" class="w-full py-20 px-6 sm:px-8 lg:px-16 relative overflow-hidden">
+        <div class="container mx-auto max-w-6xl">
 
             <!-- Background "WORKFLOW" Text -->
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-red-600 text-center opacity-10 tracking-widest mb-2 lg:mb-8"

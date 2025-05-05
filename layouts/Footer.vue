@@ -1,6 +1,6 @@
 <template>
   <footer class="py-12 px-4 sm:px-6 lg:px-12 bg-gray-950/50 relative">
-    <div class="container mx-auto max-w-7xl">
+    <div class="container mx-auto max-w-6xl">
       <!-- Main Footer Content -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
         <!-- Branding / Name -->

@@ -1,11 +1,12 @@
 <template>
   <section
-    class="py-20 px-6 text-center relative overflow-hidden"
+    class="py-20 px-6 text-center relative overflow-hidden bg-cover bg-center bg-no-repeat"
     data-aos="fade-up"
     data-aos-duration="1000"
   >
     <div
-      class="container relative z-10 max-w-4xl mx-auto bg-gradient-to-r from-red-700/70 to-rose-700/70 backdrop-blur-md p-10 rounded-xl shadow-2xl border border-red-500/20"
+      class="container relative z-10 max-w-4xl mx-auto p-8 rounded-lg shadow-lg bg-gray-900 bg-opacity-70 backdrop-blur-md"
+      style="background-image: url('/Quote/image.png');"
     >
       <!-- Content Container -->
       <h2
@@ -14,8 +15,7 @@
         data-aos-delay="200"
         data-aos-duration="800"
         v-text="'Quote for inspiration'"
-      >
-      </h2>
+      ></h2>
 
       <div class="relative flex items-start justify-center">
         <!-- Quote Text -->
@@ -25,8 +25,7 @@
           data-aos-delay="400"
           data-aos-duration="800"
           v-text="`'If you want something done right, do it yourself.'`"
-        >
-        </p>
+        ></p>
       </div>
 
       <p
@@ -35,9 +34,9 @@
         data-aos-delay="600"
         data-aos-duration="800"
         v-text="`– Charles-Guillaume Étienne`"
-      >
-      </p>
+      ></p>
     </div>
   </section>
 </template>
+
 

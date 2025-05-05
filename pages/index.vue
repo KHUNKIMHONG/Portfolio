@@ -35,12 +35,3 @@ import Faq from "~/components/Faq";
 import Quote from "~/components/Quote";
 import Blog from "~/components/Blog";
 </script>
-
-<style scoped>
-/* Optional: Add custom styles for the page if needed */
-main {
-  min-height: calc(
-    100vh - 2.5rem
-  ); /* Ensure main takes up remaining height, adjusted for pt-10 */
-}
-</style>

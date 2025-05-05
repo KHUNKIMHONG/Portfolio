@@ -1,46 +1,35 @@
 <template>
   <header :class="{ 'bg-gradient-to-r from-red-800 via-rose-900 to-red-800 backdrop-blur-md': isScrolled }"
-    class="text-white fixed top-0 py-2 w-full z-40">
-    <nav ref="menuRef" 
-      class="container mx-auto flex justify-between items-center px-4">
-      <!-- Logo / Title with Close Button -->
-      <div class="flex items-center justify-between w-full lg:w-auto space-x-2">
-
-        <div class="flex items-center space-x-2">
-          <!-- Profile Image -->
-          <img src="/ower/ownPhoto.jpg" alt="Logo"
-            class="h-10 w-10 mr-2 rounded-full border-2 border-rose-600 shadow-2xl shadow-black transition-all duration-300 logo-3d-effect" />
-          <!-- Name and Available for Work Section in a Row -->
-          <div class="flex flex-col ml-2">
-            <!-- Name -->
-            <h1 class="text-2xl font-bold text-red-500 text-3d-effect hover:text-red-600">
-              KHUN KIMHONG
-            </h1>
-            <!-- Available for Work Section -->
-            <div class="flex items-center space-x-2 text-gray-300 text-sm">
-              <!-- Green Dot -->
-              <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-              <!-- Text -->
-              <span>Available for Work</span>
-            </div>
+    class="text-white fixed top-0 p-2 w-full z-40">
+    <nav ref="menuRef" class="container mx-auto max-w-6xl flex items-center justify-between">
+      <!-- Logo and Text Section -->
+      <div class="flex items-center space-x-2">
+        <img src="/ower/ownPhoto.jpg" alt="Logo"
+          class="h-8 w-8 sm:h-10 sm:w-10 rounded-full border-2 border-rose-600 logo-3d-effect" />
+        <div class="flex flex-col">
+          <h1 class="text-xl sm:text-2xl font-bold text-red-500 text-3d-effect">
+            KHUN KIMHONG
+          </h1>
+          <div class="flex items-center space-x-2 text-gray-300 text-xs sm:text-sm">
+            <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+            <span>Available for Work</span>
           </div>
         </div>
-
-        <button @click="toggleMenu" class="lg:hidden text-2xl text-white">
-          <span v-if="!isMenuOpen">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-            </svg>
-          </span>
-          <span v-else>
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </span>
-        </button>
       </div>
+
+      <!-- Toggle Button (Always Visible on Small Screens) -->
+      <button @click="toggleMenu" class="lg:hidden text-2xl text-white flex-shrink-0 z-50 p-2">
+        <span v-if="!isMenuOpen">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </span>
+        <span v-else>
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </span>
+      </button>
 
       <!-- Desktop Menu -->
       <ul class="hidden lg:flex lg:space-x-6 lg:items-center lg:text-md lg:font-medium transition-colors duration-300"
@@ -52,10 +41,10 @@
         </li>
       </ul>
 
-      <!-- Navigation mobile Menu -->
+      <!-- Mobile Menu -->
       <transition name="slide">
         <div v-if="isMenuOpen" @click="toggleMenu"
-          class="absolute top-16 right-0 w-full h-screen bg-zinc-900 text-lg text-white px-16 py-10 rounded-md shadow-lg lg:hidden overflow-y-auto">
+          class="absolute top-16 left-0 w-full h-screen bg-zinc-900 text-lg text-white px-4 py-4 lg:hidden z-40">
           <ul class="flex flex-col space-y-2">
             <li v-for="(section, index) in sections" :key="index">
               <a :href="'#' + section" @click="updateActiveSection(section)"

@@ -1,5 +1,5 @@
 <template>
-  <section id="experience" class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-12 py-16 relative">
+  <section id="experience" class="flex items-center justify-center px-4 sm:px-6 lg:px-12 py-16 relative">
     <div class="container mx-auto max-w-6xl">
       <!-- Faded "EXPERIENCE" Text in Background -->
       <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-red-600 text-center opacity-20 tracking-wider mb-2 lg:mb-8"

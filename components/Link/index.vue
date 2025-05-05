@@ -1,6 +1,6 @@
 <template>
   <section class="bg-gradient-to-r from-red-800 via-rose-900 to-red-800 overflow-hidden py-4 lg:px-24">
-    <div class="container mx-auto px-4">
+    <div class="container mx-auto max-w-6xl">
       <div class="relative overflow-auto hide-scrollbar">
         <ClientOnly>
           <!-- Canvas Background -->

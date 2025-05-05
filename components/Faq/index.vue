@@ -1,6 +1,6 @@
 <template>
   <section id="faq" class="py-16 px-6 lg:px-24">
-    <div class="container mx-auto max-w-5xl">
+    <div class="container mx-auto max-w-6xl">
       <!-- Section Header -->
       <h2
         class="text-4xl sm:text-5xl lg:text-6xl text-center font-extrabold text-red-600  mb-8 tracking-widest opacity-10" 

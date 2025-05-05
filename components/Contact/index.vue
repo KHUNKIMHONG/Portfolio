@@ -1,6 +1,6 @@
 <template>
   <section id="contact" class="min-h-screen flex items-center justify-center px-6 sm:px-8 lg:px-16 py-16">
-    <div class="container mx-auto max-w-7xl">
+    <div class="container mx-auto max-w-6xl">
       <!-- Background Title -->
       <h1
         class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-red-600 text-center opacity-10 tracking-widest mb-2 lg:mb-8"

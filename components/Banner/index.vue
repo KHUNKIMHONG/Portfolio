@@ -1,10 +1,10 @@
 <template>
-  <section id="top" class="bg-gradient-to-r from-red-800 via-rose-900 to-red-800 text-white py-8 lg:py-12 lg:h-[80vh]">
-    <div class="container mx-auto px-4 mt-2 lg:mt-20">
-      <div class="flex flex-col-reverse lg:flex-row items-center gap-8">
+  <section id="top" class="bg-gradient-to-r from-red-800 via-rose-900 to-red-800 lg:h-[80vh] overflow-hidden">
+    <div class="container mx-auto w-full max-w-none sm:max-w-6xl px-0 sm:px-4 h-full">
+      <div class="flex flex-col-reverse lg:flex-row items-center gap-8 mt-12 lg:mt-40">
         <!-- Left Content -->
-        <div class="flex flex-col text-center lg:text-left lg:w-1/2">
-          <h1 class="text-[30px] md:text-[50px] lg:text-[60px] font-normal text-3d-effect text-white"
+        <div class="flex flex-col text-center lg:text-left lg:w-1/2 space-y-2 lg:space-y-4">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-normal text-3d-effect text-white"
             v-text="'KHUN KIMHONG'" data-aos="fade-down" data-aos-delay="100"></h1>
 
           <!-- Only show currentTitle after the component has mounted -->
@@ -56,7 +56,7 @@
         <!-- Right Image -->
         <div class="flex justify-center lg:justify-end lg:w-1/2" data-aos="fade-left" data-aos-delay="400">
           <img src="/ower/khun_kimhong.png" alt="KHUN KIMHONG"
-            class="w-full mt-10 max-w-[200px] max-h-[200px] lg:max-w-[500px] lg:max-h-[600px] rounded-full object-cover"
+            class="w-full max-w-[200px] max-h-[200px] sm:max-w-[250px] sm:max-h-[250px] lg:max-w-[500px] lg:max-h-[600px] rounded-full object-cover"
             loading="lazy" />
         </div>
       </div>
