@@ -8,7 +8,6 @@ This is a personal portfolio project built using [Nuxt 3](https://nuxt.com/), st
 - Responsive design with Tailwind CSS
 - Smooth animations using AOS
 - Interactive modals/alerts with SweetAlert2
-- Icon support using Material Icons
 - TypeScript support
 - Modular and modern code structure
 
@@ -18,12 +17,8 @@ This is a personal portfolio project built using [Nuxt 3](https://nuxt.com/), st
 - **Tailwind CSS** — Utility-first CSS
 - **AOS** — Animate on scroll
 - **SweetAlert2** — Custom alert dialogs
-- **Material Icons** — Icon font
 - **TypeScript** — Type safety
 - **Vue Router** — Routing system (via Nuxt)
-
-## 📦 Installation
-
 ## ✅ Requirements
 
 Before running this project, ensure you have the following installed:
@@ -38,6 +33,8 @@ You can check your installed versions with:
 node -v
 npm -v
 git --version
+
+## 📦 Installation
 
 # Clone the repo
 git clone https://github.com/your-username/nuxt-portfolio.git
