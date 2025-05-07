@@ -37,7 +37,7 @@ git --version
 ## 📦 Installation
 
 # Clone the repo
-git clone https://github.com/khunkimhong/portfolio.git
+git clone https://github.com/KHUNKIMHONG/Portfolio.git
 cd nuxt-portfolio
 
 # Install dependencies
