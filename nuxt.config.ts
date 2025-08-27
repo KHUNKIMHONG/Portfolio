@@ -10,7 +10,6 @@ export default defineNuxtConfig({
   // App configuration
   app: {
     baseURL: '/Portfolio/', // Required for GitHub Pages
-    buildAssetsDir: '/Portfolio/_nuxt/',
 
     head: {
       charset: 'utf-8',
@@ -29,11 +28,14 @@ export default defineNuxtConfig({
         {
           rel: 'icon',
           type: 'image/x-icon',
-          href: '/Portfolio/ower/ownPhoto.jpg',
+          href: '/ower/ownPhoto.jpg', // Updated path
         },
       ],
     },
   },
+
+  // The 'vite' block is now correctly configured without the redundant line
+  vite: {},
 
   vue: {
     compilerOptions: {
@@ -44,7 +46,7 @@ export default defineNuxtConfig({
   // Modules array
   modules: [
     'nuxt-aos',
-    '@nuxtjs/sitemap', // The sitemap module itself no longer needs the URL here
+    '@nuxtjs/sitemap',
   ],
 
   css: [
@@ -64,8 +66,8 @@ export default defineNuxtConfig({
       publicDir: 'docs',
     },
     routeRules: {
-      '/.well-known/**': { cache: { maxAge: 0 } },
-      '/**': { cache: { maxAge: 0 } }, // fallback error handler
+      '/sitemap.xml': { prerender: true }, // Ensure sitemap is prerendered
+      '/**': { static: true }, // Serve all routes as static files
     },
   },
 
@@ -98,6 +100,5 @@ export default defineNuxtConfig({
     },
   },
 })
-
 
 

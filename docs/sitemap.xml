@@ -1,70 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="/Portfolio/__sitemap__/style.xsl"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>/Portfolio</loc>
+        <loc>https://khunkimhong.github.io/Portfolio/Portfolio</loc>
         <image:image>
-            <image:loc>/Portfolio/ower/ownPhoto.jpg</image:loc>
+            <image:loc>https://khunkimhong.github.io/Portfolio/ower/ownPhoto.jpg</image:loc>
         </image:image>
         <image:image>
-            <image:loc>/Portfolio/ower/khun_kimhong.png</image:loc>
+            <image:loc>https://khunkimhong.github.io/Portfolio/ower/khun_kimhong.png</image:loc>
         </image:image>
         <image:image>
-            <image:loc>/Portfolio/Experience/FinTech.png</image:loc>
+            <image:loc>https://khunkimhong.github.io/Portfolio/Experience/FinTech.png</image:loc>
         </image:image>
         <image:image>
-            <image:loc>/Portfolio/Experience/ITC.png</image:loc>
+            <image:loc>https://khunkimhong.github.io/Portfolio/Experience/ITC.png</image:loc>
         </image:image>
         <image:image>
-            <image:loc>/Portfolio/Experience/Freelancer.png</image:loc>
+            <image:loc>https://khunkimhong.github.io/Portfolio/Experience/Freelancer.png</image:loc>
         </image:image>
         <image:image>
-            <image:loc>/Portfolio/Education/ITC.png</image:loc>
+            <image:loc>https://khunkimhong.github.io/Portfolio/Education/ITC.png</image:loc>
         </image:image>
         <image:image>
-            <image:loc>/Portfolio/Education/HighSchool.png</image:loc>
+            <image:loc>https://khunkimhong.github.io/Portfolio/Education/HighSchool.png</image:loc>
         </image:image>
         <image:image>
-            <image:loc>/Portfolio/Project/e-commerce-web.png</image:loc>
+            <image:loc>https://khunkimhong.github.io/Portfolio/Project/e-commerce-web.png</image:loc>
         </image:image>
         <image:image>
-            <image:loc>/Portfolio/Project/AML_Web.png</image:loc>
+            <image:loc>https://khunkimhong.github.io/Portfolio/Project/AML_Web.png</image:loc>
         </image:image>
         <image:image>
-            <image:loc>/Portfolio/Project/noted_app.png</image:loc>
+            <image:loc>https://khunkimhong.github.io/Portfolio/Project/noted_app.png</image:loc>
         </image:image>
         <image:image>
-            <image:loc>/Portfolio/Project/tonla_post.png</image:loc>
+            <image:loc>https://khunkimhong.github.io/Portfolio/Project/tonla_post.png</image:loc>
         </image:image>
         <image:image>
-            <image:loc>/Portfolio/Project/recycle-1.png</image:loc>
+            <image:loc>https://khunkimhong.github.io/Portfolio/Project/recycle-1.png</image:loc>
         </image:image>
         <image:image>
-            <image:loc>/Portfolio/Project/GIC-Coffee.png</image:loc>
+            <image:loc>https://khunkimhong.github.io/Portfolio/Project/GIC-Coffee.png</image:loc>
         </image:image>
         <image:image>
-            <image:loc>/Portfolio/Blog/vue.png</image:loc>
+            <image:loc>https://khunkimhong.github.io/Portfolio/Blog/vue.png</image:loc>
         </image:image>
         <image:image>
-            <image:loc>/Portfolio/Blog/mySQL.png</image:loc>
+            <image:loc>https://khunkimhong.github.io/Portfolio/Blog/mySQL.png</image:loc>
         </image:image>
         <image:image>
-            <image:loc>/Portfolio/Blog/nodeJs.png</image:loc>
+            <image:loc>https://khunkimhong.github.io/Portfolio/Blog/nodeJs.png</image:loc>
         </image:image>
         <image:image>
-            <image:loc>/Portfolio/Blog/nuxtJs.png</image:loc>
+            <image:loc>https://khunkimhong.github.io/Portfolio/Blog/nuxtJs.png</image:loc>
         </image:image>
         <image:image>
-            <image:loc>/Portfolio/Blog/laravel.png</image:loc>
+            <image:loc>https://khunkimhong.github.io/Portfolio/Blog/laravel.png</image:loc>
         </image:image>
         <image:image>
-            <image:loc>/Portfolio/Blog/tailwind.png</image:loc>
+            <image:loc>https://khunkimhong.github.io/Portfolio/Blog/tailwind.png</image:loc>
         </image:image>
         <image:image>
-            <image:loc>/Portfolio/Contact/computer-rmb.png</image:loc>
+            <image:loc>https://khunkimhong.github.io/Portfolio/Contact/computer-rmb.png</image:loc>
         </image:image>
         <image:image>
-            <image:loc>/Portfolio/Flower/DaisyFlower.png</image:loc>
+            <image:loc>https://khunkimhong.github.io/Portfolio/Flower/DaisyFlower.png</image:loc>
         </image:image>
     </url>
 </urlset>
-<!-- XML Sitemap generated by @nuxtjs/sitemap v7.4.3 at 2025-08-27T09:36:22.694Z -->
+<!-- XML Sitemap generated by @nuxtjs/sitemap v7.4.3 at 2025-08-27T10:13:16.380Z -->
