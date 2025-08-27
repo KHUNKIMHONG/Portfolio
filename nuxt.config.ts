@@ -2,6 +2,11 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
 
+  // Add the top-level 'site' property here
+  site: {
+    url: 'https://khunkimhong.github.io/Portfolio',
+  },
+
   // App configuration
   app: {
     baseURL: '/Portfolio/', // Required for GitHub Pages
@@ -36,8 +41,10 @@ export default defineNuxtConfig({
     },
   },
 
+  // Modules array
   modules: [
-    'nuxt-aos', // AOS animation support
+    'nuxt-aos',
+    '@nuxtjs/sitemap', // The sitemap module itself no longer needs the URL here
   ],
 
   css: [
@@ -60,7 +67,6 @@ export default defineNuxtConfig({
       '/.well-known/**': { cache: { maxAge: 0 } },
       '/**': { cache: { maxAge: 0 } }, // fallback error handler
     },
-       
   },
 
   devServer: {

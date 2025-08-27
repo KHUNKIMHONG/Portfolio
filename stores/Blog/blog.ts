@@ -20,7 +20,7 @@ export const blogPosts = ref<BlogPost[]>([
     content: 
       "Vue.js is a progressive JavaScript framework designed to build high-performance user interfaces and single-page applications. This guide dives deep into its features, advantages, challenges, and practical strategies for getting started.",
     categories: ["Frameworks", "Frontend Development"],
-    image: "/Portfolio/Blog/vueJs.png",
+    image: "/Portfolio/Blog/vue.png",
     description: [
       {
         title: "1. What is Vue.js?",
