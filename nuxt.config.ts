@@ -14,8 +14,8 @@ export default defineNuxtConfig({
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
-      title: 'Portfolio KHUN KIMHONG',
-      titleTemplate: '%s - Portfolio KHUN KIMHONG',
+      title: 'KHUN KIMHONG',
+      titleTemplate: '%s - KHUN KIMHONG',
       htmlAttrs: { lang: 'en' },
       meta: [
         {
@@ -28,7 +28,7 @@ export default defineNuxtConfig({
         {
           rel: 'icon',
           type: 'image/x-icon',
-          href: '/ower/ownPhoto.jpg', // Updated path
+          href: '/Portfolio/ower/ownPhoto.jpg', // Updated path
         },
       ],
     },
