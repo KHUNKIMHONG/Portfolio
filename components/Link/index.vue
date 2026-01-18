@@ -1,199 +1,296 @@
 <template>
-  <section class="bg-gradient-to-r from-red-800 via-rose-900 to-red-800 overflow-hidden py-4 lg:px-24">
-    <div class="container mx-auto max-w-6xl">
-      <div class="relative overflow-auto hide-scrollbar">
+  <section class="relative overflow-hidden py-8">
+    <div class="container mx-auto max-w-7xl px-4 relative z-10">
+      
+      <!-- Section Title (Optional) -->
+      <div class="text-center mb-8">
+        <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">
+          Technologies & Tools
+        </h3>
+        <div class="w-24 h-1 bg-gradient-to-r from-red-500 to-rose-500 mx-auto rounded-full"></div>
+      </div>
+
+      <!-- Carousel Container -->
+      <div class="relative overflow-hidden">
         <ClientOnly>
-          <!-- Canvas Background -->
-          <canvas ref="canvasRef" class="absolute inset-0 w-full h-full z-0"></canvas>
-          <div ref="scrollingLogos" class="scrolling-logos flex whitespace-nowrap" @mouseover="pauseScroll"
-            @mouseleave="resumeScroll" @touchstart="pauseScroll" @touchend="resumeScroll">
-            <!-- Render logos twice for a seamless loop -->
-            <div v-for="(linkItem, index) in workingLinks" :key="'original-' + index"
-              class="p-2 sm:p-4 flex-shrink-0 transition-transform duration-300 hover:scale-105 relative group">
-              <a :href="linkItem.link" target="_blank" rel="noopener noreferrer" class="cursor-pointer">
-                <div class="relative">
-                  <img :src="linkItem.imgSrc" :alt="`Logo of ${linkItem.name}`"
-                    class="w-20 sm:w-24 md:w-28 h-auto rounded-xl mx-4 sm:mx-8 opacity-80 transition-opacity duration-300 hover:opacity-100 dark:opacity-90" />
+          <!-- Fade edges for better visual -->
+          <div class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-slate-900 to-transparent z-10 pointer-events-none"></div>
+          <div class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-slate-900 to-transparent z-10 pointer-events-none"></div>
+
+          <div 
+            ref="scrollingLogos" 
+            class="flex whitespace-nowrap scrolling-logos" 
+            @mouseenter="pauseScroll"
+            @mouseleave="resumeScroll" 
+            @touchstart="pauseScroll" 
+            @touchend="resumeScroll"
+          >
+            <!-- Original logos -->
+            <div 
+              v-for="(linkItem, index) in workingLinks" 
+              :key="`original-${index}`"
+              class="inline-flex flex-shrink-0 px-3 md:px-4"
+            >
+              <a 
+                :href="linkItem.link" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="group relative block"
+                @click="handleClick($event, index, linkItem.link)"
+              >
+                <div 
+                  class="relative p-4 md:p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10
+                         transition-all duration-300 hover:bg-white/10 hover:border-red-400/50
+                         hover:scale-110 hover:shadow-2xl hover:shadow-red-500/20 overflow-hidden
+                         min-w-[120px] md:min-w-[140px]"
+                >
+                  <!-- Tech Logo Image -->
+                  <img 
+                    :src="linkItem.imgSrc" 
+                    :alt="`${linkItem.name} logo`" 
+                    class="w-16 h-16 md:w-20 md:h-20 object-contain filter brightness-90 rounded-lg
+                           group-hover:brightness-110 transition-all duration-300 relative mx-auto" 
+                    loading="lazy"
+                  />
+
+                  <!-- Click-to-show name overlay (Mobile) -->
+                  <Transition name="fade">
+                    <div 
+                      v-if="activeIndex === index" 
+                      class="absolute inset-0 flex items-center justify-center
+                             bg-gray-900/95 backdrop-blur-sm text-white text-sm md:text-base font-semibold
+                             rounded-2xl border border-red-400/50 z-30 px-3 text-center shadow-lg shadow-red-500/30"
+                    >
+                      {{ linkItem.name }}
+                    </div>
+                  </Transition>
+
+                  <!-- Hover-to-show name overlay (Desktop) -->
                   <div
-                    class="absolute inset-0 flex items-center justify-center text-white text-xs sm:text-sm font-semibold bg-gray-800 dark:bg-gray-700 bg-opacity-70 dark:bg-opacity-80 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    class="absolute inset-0 flex items-center justify-center
+                           bg-gray-900/95 backdrop-blur-sm text-white text-sm md:text-base font-semibold
+                           rounded-2xl border border-white/30 z-20 opacity-0 group-hover:opacity-100 
+                           transition-opacity duration-300 px-3 text-center"
+                    :class="{ '!opacity-0': activeIndex === index }"
+                  >
                     {{ linkItem.name }}
                   </div>
                 </div>
               </a>
             </div>
 
-            <!-- Duplicate for seamless infinite scrolling -->
-            <div v-for="(linkItem, index) in workingLinks" :key="'duplicate-' + index"
-              class="p-2 sm:p-4 flex-shrink-0 transition-transform duration-300 hover:scale-105 relative group">
-              <a :href="linkItem.link" target="_blank" rel="noopener noreferrer" class="cursor-pointer">
-                <div class="relative">
-                  <img :src="linkItem.imgSrc" :alt="`Logo of ${linkItem.name}`"
-                    class="w-20 sm:w-24 md:w-28 h-auto rounded-xl mx-4 sm:mx-8 opacity-80 transition-opacity duration-300 hover:opacity-100 dark:opacity-90" />
+            <!-- Duplicate logos for seamless loop -->
+            <div 
+              v-for="(linkItem, index) in workingLinks" 
+              :key="`duplicate-${index}`"
+              class="inline-flex flex-shrink-0 px-3 md:px-4"
+              aria-hidden="true"
+            >
+              <a 
+                :href="linkItem.link" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="group relative block"
+                @click="handleClick($event, index, linkItem.link)"
+              >
+                <div 
+                  class="relative p-4 md:p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10
+                         transition-all duration-300 hover:bg-white/10 hover:border-red-400/50
+                         hover:scale-110 hover:shadow-2xl hover:shadow-red-500/20 overflow-hidden
+                         min-w-[120px] md:min-w-[140px]"
+                >
+                  <img 
+                    :src="linkItem.imgSrc" 
+                    :alt="`${linkItem.name} logo`" 
+                    class="w-16 h-16 md:w-20 md:h-20 object-contain filter brightness-90 rounded-lg
+                           group-hover:brightness-110 transition-all duration-300 relative mx-auto" 
+                    loading="lazy"
+                  />
+
+                  <Transition name="fade">
+                    <div 
+                      v-if="activeIndex === index" 
+                      class="absolute inset-0 flex items-center justify-center
+                             bg-gray-900/95 backdrop-blur-sm text-white text-sm md:text-base font-semibold
+                             rounded-2xl border border-red-400/50 z-30 px-3 text-center shadow-lg shadow-red-500/30"
+                    >
+                      {{ linkItem.name }}
+                    </div>
+                  </Transition>
+
                   <div
-                    class="absolute inset-0 flex items-center justify-center text-white text-xs sm:text-sm font-semibold bg-gray-800 dark:bg-gray-700 bg-opacity-70 dark:bg-opacity-80 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    class="absolute inset-0 flex items-center justify-center
+                           bg-gray-900/95 backdrop-blur-sm text-white text-sm md:text-base font-semibold
+                           rounded-2xl border border-white/30 z-20 opacity-0 group-hover:opacity-100 
+                           transition-opacity duration-300 px-3 text-center"
+                    :class="{ '!opacity-0': activeIndex === index }"
+                  >
                     {{ linkItem.name }}
                   </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Third set for extra smooth scrolling on large screens -->
+            <div 
+              v-for="(linkItem, index) in workingLinks" 
+              :key="`triple-${index}`"
+              class="inline-flex flex-shrink-0 px-3 md:px-4 xl:inline-flex"
+              aria-hidden="true"
+            >
+              <a 
+                :href="linkItem.link" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="group relative block"
+                @click="handleClick($event, index, linkItem.link)"
+              >
+                <div 
+                  class="relative p-4 md:p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10
+                         transition-all duration-300 hover:bg-white/10 hover:border-red-400/50
+                         hover:scale-110 hover:shadow-2xl hover:shadow-red-500/20 overflow-hidden
+                         min-w-[120px] md:min-w-[140px]"
+                >
+                  <img 
+                    :src="linkItem.imgSrc" 
+                    :alt="`${linkItem.name} logo`" 
+                    class="w-16 h-16 md:w-20 md:h-20 object-contain filter brightness-90 rounded-lg
+                           group-hover:brightness-110 transition-all duration-300 relative mx-auto" 
+                    loading="lazy"
+                  />
                 </div>
               </a>
             </div>
           </div>
         </ClientOnly>
       </div>
+
+      <!-- Helper Text -->
+      <div class="text-center mt-6">
+        <p class="text-gray-400 text-sm">
+          <span class="hidden md:inline">Hover to view • </span>
+          <span class="md:hidden">Tap to view • </span>
+          Click to visit official site
+        </p>
+      </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onBeforeUnmount } from 'vue';
 
-// Interface for link items
 interface LinkItem {
   name: string;
   imgSrc: string;
   link: string;
 }
 
-// Define the links array with type
 const links: LinkItem[] = [
-  {
-    name: "HTML",
-    imgSrc: "/Portfolio/Link/html.png",
-    link: "https://developer.mozilla.org/en-US/docs/Web/HTML",
-  },
-  {
-    name: "CSS",
-    imgSrc: "/Portfolio/Link/css.png",
-    link: "https://developer.mozilla.org/en-US/docs/Web/CSS",
-  },
-  {
-    name: "JAVA SCRIPT",
-    imgSrc: "/Portfolio/Link/Js.png",
-    link: "https://www.javascripttutorial.net/",
-  },
-  {
-    name: "TYPE SCRIPT",
-    imgSrc: "/Portfolio/Link/Ts.png",
-    link: "https://www.typescriptlang.org/",
-  },
-  {
-    name: "VUE JS",
-    imgSrc: "/Portfolio/Link/Vue.png",
-    link: "https://vuejs.org/",
-  },
-  {
-    name: "Nuxt JS",
-    imgSrc: "/Portfolio/Link/NuxtJs.png",
-    link: "https://nuxt.com/",
-  },
-  {
-    name: "REACT JS",
-    imgSrc: "/Portfolio/Link/React.png",
-    link: "https://react.dev/",
-  },
-  {
-    name: "NODE JS",
-    imgSrc: "/Portfolio/Link/Node.png",
-    link: "https://www.bing.com/chat",
-  },
-  {
-    name: "BOOT STRAP",
-    imgSrc: "/Portfolio/Link/Boostrap.png",
-    link: "https://getbootstrap.com/",
-  },
-  {
-    name: "TAILWIND CSS",
-    imgSrc: "/Portfolio/Link/Tailwind.png",
-    link: "https://tailwindcss.com/",
-  },
-  {
-    name: "LARAVEL",
-    imgSrc: "/Portfolio/Link/Laravel.png",
-    link: "https://laravel.com/",
-  },
-  {
-    name: "PHP",
-    imgSrc: "/Portfolio/Link/PHP.png",
-    link: "https://www.php.net/",
-  },
-  {
-    name: "GIT",
-    imgSrc: "/Portfolio/Link/Git.png",
-    link: "https://git-scm.com/",
-  },
-  {
-    name: "GIT HUB",
-    imgSrc: "/Portfolio/Link/GitHub.png",
-    link: "https://github.com/",
-  },
-  {
-    name: "GIT LAB",
-    imgSrc: "/Portfolio/Link/GitLab.png",
-    link: "https://about.gitlab.com/",
-  },
-  {
-    name: "MY SQL",
-    imgSrc: "/Portfolio/Link/MySQL.png",
-    link: "https://www.mysql.com/",
-  },
-  {
-    name: "SQL SERVER",
-    imgSrc: "/Portfolio/Link/SQLServer.png",
-    link: "https://www.microsoft.com/en-us/sql-server/sql-server-downloads",
-  },
-  {
-    name: "MONGO DB",
-    imgSrc: "/Portfolio/Link/MongooDB.png",
-    link: "https://www.mongodb.com/",
-  },
-  {
-    name: "VS CODE",
-    imgSrc: "/Portfolio/Link/VSCode.png",
-    link: "https://code.visualstudio.com/",
-  },
-  {
-    name: "FIGMA",
-    imgSrc: "/Portfolio/Link/Figma.png",
-    link: "https://www.figma.com/",
-  },
-  {
-    name: "DOCKER",
-    imgSrc: "/Portfolio/Link/Docker.png",
-    link: "https://www.docker.com/",
-  },
-  {
-    name: "POSTMAN",
-    imgSrc: "/Portfolio/Link/Postman.png",
-    link: "https://www.postman.com/",
-  },
+  { name: "HTML", imgSrc: "/Portfolio/Link/html.png", link: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
+  { name: "CSS", imgSrc: "/Portfolio/Link/css.png", link: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+  { name: "JavaScript", imgSrc: "/Portfolio/Link/Js.png", link: "https://www.javascripttutorial.net/" },
+  { name: "TypeScript", imgSrc: "/Portfolio/Link/Ts.png", link: "https://www.typescriptlang.org/" },
+  { name: "Vue.js", imgSrc: "/Portfolio/Link/Vue.png", link: "https://vuejs.org/" },
+  { name: "Nuxt.js", imgSrc: "/Portfolio/Link/NuxtJs.png", link: "https://nuxt.com/" },
+  { name: "React", imgSrc: "/Portfolio/Link/React.png", link: "https://react.dev/" },
+  { name: "Next.js", imgSrc: "/Portfolio/Link/NextJs.png", link: "https://nextjs.org/" },
+  { name: "Node.js", imgSrc: "/Portfolio/Link/Node.png", link: "https://nodejs.org/" },
+  { name: "Bootstrap", imgSrc: "/Portfolio/Link/Boostrap.png", link: "https://getbootstrap.com/" },
+  { name: "Tailwind CSS", imgSrc: "/Portfolio/Link/Tailwind.png", link: "https://tailwindcss.com/" },
+  { name: "Elixir", imgSrc: "/Portfolio/Link/Elixir.png", link: "https://elixir-lang.org/" },
+  { name: "Laravel", imgSrc: "/Portfolio/Link/Laravel.png", link: "https://laravel.com/" },
+  { name: "PHP", imgSrc: "/Portfolio/Link/PHP.png", link: "https://www.php.net/" },
+  { name: "Git", imgSrc: "/Portfolio/Link/Git.png", link: "https://git-scm.com/" },
+  { name: "GitHub", imgSrc: "/Portfolio/Link/GitHub.png", link: "https://github.com/" },
+  { name: "GitLab", imgSrc: "/Portfolio/Link/GitLab.png", link: "https://about.gitlab.com/" },
+  { name: "MySQL", imgSrc: "/Portfolio/Link/MySQL.png", link: "https://www.mysql.com/" },
+  { name: "SQL Server", imgSrc: "/Portfolio/Link/SQLServer.png", link: "https://www.microsoft.com/en-us/sql-server" },
+  { name: "MongoDB", imgSrc: "/Portfolio/Link/MongooDB.png", link: "https://www.mongodb.com/" },
+  { name: "VS Code", imgSrc: "/Portfolio/Link/VSCode.png", link: "https://code.visualstudio.com/" },
+  { name: "Figma", imgSrc: "/Portfolio/Link/Figma.png", link: "https://www.figma.com/" },
+  { name: "Docker", imgSrc: "/Portfolio/Link/Docker.png", link: "https://www.docker.com/" },
+  { name: "Postman", imgSrc: "/Portfolio/Link/Postman.png", link: "https://www.postman.com/" },
+  { name: "Insomnia", imgSrc: "/Portfolio/Link/Insomnia.png", link: "https://insomnia.rest/" },
+  { name: "Linux", imgSrc: "/Portfolio/Link/Linux.png", link: "https://www.linux.org/" },
+  { name: "Ubuntu", imgSrc: "/Portfolio/Link/Ubuntu.png", link: "https://ubuntu.com/" },
 ];
 
-// Reactive state with typed references
-const workingLinks: Ref<LinkItem[]> = ref([]);
-const scrollingLogos: Ref<HTMLElement | null> = ref(null);
-const canvasRef: Ref<HTMLCanvasElement | null> = ref(null);
+// Component state
+const workingLinks = ref<LinkItem[]>([]);
+const scrollingLogos = ref<HTMLElement | null>(null);
+const activeIndex = ref<number | null>(null);
+const isPaused = ref(false);
+
 let animationFrameId: number | null = null;
+let position = 0;
+let hideTimeout: NodeJS.Timeout | null = null;
 
-// Filter valid images on mount
-onMounted(async () => {
-  await filterValidImages();
-  startInfiniteScroll();
-});
+// Constants
+const SCROLL_SPEED = 0.4; // Slightly faster for better visibility
+const TOOLTIP_DURATION = 2500;
 
-// Cleanup on unmount
-onUnmounted(() => {
-  if (animationFrameId) {
-    cancelAnimationFrame(animationFrameId);
+/**
+ * Handles click on technology logo
+ */
+const handleClick = (event: MouseEvent, index: number, link: string): void => {
+  // On mobile, show name first before navigating
+  if (window.innerWidth < 768) {
+    event.preventDefault();
+    toggleName(index);
+    
+    // Navigate after showing the name
+    setTimeout(() => {
+      window.open(link, '_blank');
+    }, 1000);
   }
-});
+  // On desktop, let the link work normally
+};
 
-// Methods
+/**
+ * Toggles the visibility of technology name
+ */
+const toggleName = (index: number): void => {
+  if (hideTimeout) {
+    clearTimeout(hideTimeout);
+    hideTimeout = null;
+  }
+
+  if (activeIndex.value === index) {
+    activeIndex.value = null;
+  } else {
+    activeIndex.value = index;
+    
+    hideTimeout = setTimeout(() => {
+      if (activeIndex.value === index) {
+        activeIndex.value = null;
+      }
+    }, TOOLTIP_DURATION);
+  }
+};
+
+/**
+ * Validates images and filters out broken ones
+ */
 const filterValidImages = async (): Promise<void> => {
-  const imagePromises = links.map((linkItem: LinkItem) => {
+  const imagePromises = links.map((linkItem) => {
     return new Promise<LinkItem | null>((resolve) => {
       const img = new Image();
       img.src = linkItem.imgSrc;
-      img.onload = () => resolve(linkItem);
-      img.onerror = () => resolve(null); // Skip invalid images
+      
+      const timeout = setTimeout(() => {
+        resolve(null);
+      }, 5000);
+      
+      img.onload = () => {
+        clearTimeout(timeout);
+        resolve(linkItem);
+      };
+      
+      img.onerror = () => {
+        clearTimeout(timeout);
+        resolve(null);
+      };
     });
   });
 
@@ -201,61 +298,96 @@ const filterValidImages = async (): Promise<void> => {
   workingLinks.value = results.filter((item): item is LinkItem => item !== null);
 };
 
+/**
+ * Starts the infinite scroll animation
+ */
 const startInfiniteScroll = (): void => {
-  if (!scrollingLogos.value) return;
+  if (!scrollingLogos.value || isPaused.value) return;
 
-  const container: HTMLElement = scrollingLogos.value;
-  const originalWidth: number = container.scrollWidth / 2; // Half because of duplication
-
-  // Ensure the container is wide enough
-  container.style.width = `${originalWidth * 2}px`;
-
-  let position: number = 0;
-  const speed: number = 0.2; // Pixels per frame (adjust for speed)
+  const container = scrollingLogos.value;
+  const originalWidth = container.scrollWidth / 2;
 
   const animate = (): void => {
-    position -= speed;
+    if (isPaused.value) return;
+    
+    position -= SCROLL_SPEED;
+    
     if (Math.abs(position) >= originalWidth) {
-      position = 0; // Reset to start of original content
+      position = 0;
     }
+    
     container.style.transform = `translateX(${position}px)`;
     animationFrameId = requestAnimationFrame(animate);
   };
 
-  animationFrameId = requestAnimationFrame(animate);
+  animate();
 };
 
+/**
+ * Pauses the scroll animation
+ */
 const pauseScroll = (): void => {
-  if (animationFrameId) {
+  isPaused.value = true;
+  if (animationFrameId !== null) {
     cancelAnimationFrame(animationFrameId);
     animationFrameId = null;
   }
 };
 
+/**
+ * Resumes the scroll animation
+ */
 const resumeScroll = (): void => {
-  if (!animationFrameId) {
+  isPaused.value = false;
+  if (animationFrameId === null) {
     startInfiniteScroll();
   }
 };
+
+// Lifecycle hooks
+onMounted(async () => {
+  await filterValidImages();
+  startInfiniteScroll();
+});
+
+onBeforeUnmount(() => {
+  if (animationFrameId !== null) {
+    cancelAnimationFrame(animationFrameId);
+  }
+  if (hideTimeout) {
+    clearTimeout(hideTimeout);
+  }
+});
 </script>
 
 <style scoped>
-/* Hide scrollbar */
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-.hide-scrollbar {
-  -ms-overflow-style: none;
-  /* IE and Edge */
-  scrollbar-width: none;
-  /* Firefox */
-}
-
-/* Ensure smooth transitions */
 .scrolling-logos {
-  display: flex;
+  display: inline-flex;
   will-change: transform;
-  /* Optimize for performance */
+}
+
+/* Smooth fade transition */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* Prevent text selection */
+.scrolling-logos {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
+/* Smooth scrolling on touch devices */
+@media (hover: none) {
+  .scrolling-logos {
+    -webkit-overflow-scrolling: touch;
+  }
 }
 </style>

@@ -2,9 +2,10 @@
   <div>
     <Header />
     <Banner />
-    <Link />
+    <!-- <Link /> -->
     <Service />
     <About />
+    <!-- <Interest /> -->
     <Skills /> 
     <Experience />
     <Education />
@@ -24,9 +25,10 @@ import { useHead } from '#imports';
 import Header from "~/layouts/Header.vue";
 import Footer from "~/layouts/Footer.vue";
 import Banner from "~/components/Banner";
-import Link from "~/components/Link";
+// import Link from "~/components/Link";
 import Service from "~/components/Service";
 import About from "~/components/About";
+// import Interest from "~/components/Interest";
 import Skills from "~/components/Skill"; 
 import Education from "~/components/Education";
 import Experience from "~/components/Experience";

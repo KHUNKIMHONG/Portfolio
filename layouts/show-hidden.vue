@@ -1,105 +1,284 @@
 <template>
-    <div v-if="showButton" class="fixed bottom-20 right-4 z-30 flex flex-col items-end space-y-2">
-        <!-- Social Links (always styled the same) -->
-        <transition name="fade">
-            <div v-if="isOpen" class="flex flex-col items-end space-y-2">
+    <div v-if="showButton" class="fixed bottom-20 right-2 z-30 flex flex-col items-end">
+        <!-- Social Links Container -->
+        <transition name="social-menu">
+            <div v-if="isOpen" class="mb-4 flex flex-col items-end space-y-3">
                 <!-- Facebook -->
-                <a href="https://www.facebook.com/maprox69/" target="_blank"
-                    class="bg-blue-600 text-white p-3 rounded-full shadow hover:bg-blue-700 transition">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                    </svg>
+                <a href="https://www.facebook.com/maprox69/" target="_blank" class="social-link group"
+                    data-aos="fade-left" data-aos-delay="100">
+                    <span class="social-label">Facebook</span>
+                    <div
+                        class="social-icon bg-gradient-to-br from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                        </svg>
+                    </div>
                 </a>
 
                 <!-- Telegram -->
-                <a href="https://t.me/khun_kimhong365" target="_blank"
-                    class="bg-blue-400 text-white p-3 rounded-full shadow hover:bg-blue-500 transition">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M21.945 2.765a1.552 1.552 0 0 0-1.572-.244L2.456 9.754a1.543 1.543 0 0 0 .078 2.884L6.4 13.98l2.095 6.926c.004.014.017.023.023.036a.486.486 0 0 0 .093.15a.49.49 0 0 0 .226.143c.01.004.017.013.027.015h.006l.003.001a.448.448 0 0 0 .233-.012c.008-.002.016-.002.025-.005a.495.495 0 0 0 .191-.122c.006-.007.016-.008.022-.014l3.013-3.326l4.397 3.405c.267.209.596.322.935.322c.734 0 1.367-.514 1.518-1.231L22.469 4.25a1.533 1.533 0 0 0-.524-1.486zM9.588 15.295l-.707 3.437l-1.475-4.878l7.315-3.81l-4.997 4.998a.498.498 0 0 0-.136.253zm8.639 4.772a.54.54 0 0 1-.347.399a.525.525 0 0 1-.514-.078l-4.763-3.689a.5.5 0 0 0-.676.06L9.83 19.07l.706-3.427l7.189-7.19a.5.5 0 0 0-.584-.797L6.778 13.054l-3.917-1.362A.526.526 0 0 1 2.5 11.2a.532.532 0 0 1 .334-.518l17.914-7.233a.536.536 0 0 1 .558.086a.523.523 0 0 1 .182.518l-3.261 16.015z"/>
-                    </svg>
+                <a href="https://t.me/khun_kimhong365" target="_blank" class="social-link group" data-aos="fade-left"
+                    data-aos-delay="150">
+                    <span class="social-label">Telegram</span>
+                    <div
+                        class="social-icon bg-gradient-to-br from-blue-400 to-blue-500 hover:from-blue-500 hover:to-blue-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M21.945 2.765a1.552 1.552 0 0 0-1.572-.244L2.456 9.754a1.543 1.543 0 0 0 .078 2.884L6.4 13.98l2.095 6.926c.004.014.017.023.023.036a.486.486 0 0 0 .093.15a.49.49 0 0 0 .226.143c.01.004.017.013.027.015h.006l.003.001a.448.448 0 0 0 .233-.012c.008-.002.016-.002.025-.005a.495.495 0 0 0 .191-.122c.006-.007.016-.008.022-.014l3.013-3.326l4.397 3.405c.267.209.596.322.935.322c.734 0 1.367-.514 1.518-1.231L22.469 4.25a1.533 1.533 0 0 0-.524-1.486zM9.588 15.295l-.707 3.437l-1.475-4.878l7.315-3.81l-4.997 4.998a.498.498 0 0 0-.136.253zm8.639 4.772a.54.54 0 0 1-.347.399a.525.525 0 0 1-.514-.078l-4.763-3.689a.5.5 0 0 0-.676.06L9.83 19.07l.706-3.427l7.189-7.19a.5.5 0 0 0-.584-.797L6.778 13.054l-3.917-1.362A.526.526 0 0 1 2.5 11.2a.532.532 0 0 1 .334-.518l17.914-7.233a.536.536 0 0 1 .558.086a.523.523 0 0 1 .182.518l-3.261 16.015z" />
+                        </svg>
+                    </div>
                 </a>
 
                 <!-- TikTok -->
-                <a href="https://www.tiktok.com/@khunkimhong" target="_blank"
-                    class="bg-gray-900 text-white p-3 rounded-full shadow hover:bg-gray-800 transition">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 293768 333327" class="h-6 w-6"
-                        shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
-                        image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd">
-                        <path
-                            d="M204958 0c5369 45832 32829 78170 77253 81022v43471l-287 27V87593c-44424-2850-69965-30183-75333-76015l-47060-1v192819c6791 86790-60835 89368-86703 56462 30342 18977 79608 6642 73766-68039V0h58365zM78515 319644c-26591-5471-50770-21358-64969-44588-34496-56437-3401-148418 96651-157884v54345l-164 27v-40773C17274 145544 7961 245185 33650 286633c9906 15984 26169 27227 44864 33011z"
-                            fill="#26f4ee" />
-                        <path
-                            d="M218434 11587c3505 29920 15609 55386 35948 70259-27522-10602-43651-34934-47791-70262l11843 3zm63489 82463c3786 804 7734 1348 11844 1611v51530c-25770 2537-48321-5946-74600-21749l4034 88251c0 28460 106 41467-15166 67648-34260 58734-95927 63376-137628 35401 54529 22502 137077-4810 136916-103049v-96320c26279 15803 48830 24286 74600 21748V94050zm-171890 37247c5390-1122 11048-1985 16998-2548v54345c-21666 3569-35427 10222-41862 22528-20267 38754 5827 69491 35017 74111-33931 5638-73721-28750-49999-74111 6434-12304 18180-18959 39846-22528v-51797zm64479-119719h1808-1808z"
-                            fill="#fb2c53" />
-                        <path
-                            d="M206590 11578c5369 45832 30910 73164 75333 76015v51528c-25770 2539-48321-5945-74600-21748v96320c206 125717-135035 135283-173673 72939-25688-41449-16376-141089 76383-155862v52323c-21666 3569-33412 10224-39846 22528-39762 76035 98926 121273 89342-1225V11577l47060 1z"
-                            fill="#000000" />
-                    </svg>
+                <a href="https://www.tiktok.com/@khunkimhong" target="_blank" class="social-link group"
+                    data-aos="fade-left" data-aos-delay="200">
+                    <span class="social-label">TikTok</span>
+                    <div
+                        class="social-icon bg-gradient-to-br from-gray-900 to-black hover:from-black hover:to-gray-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 293768 333327" class="h-5 w-5"
+                            fill="currentColor" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+                            image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd">
+                            <path
+                                d="M206590 11578c5369 45832 30910 73164 75333 76015v51528c-25770 2539-48321-5945-74600-21748v96320c206 125717-135035 135283-173673 72939-25688-41449-16376-141089 76383-155862v52323c-21666 3569-33412 10224-39846 22528-39762 76035 98926 121273 89342-1225V11577l47060 1z"
+                                fill="#ffffff" />
+                        </svg>
+                    </div>
                 </a>
 
                 <!-- Email -->
-                <a href="mailto:khunkimhong039@gmail.com"
-                    class="bg-red-600 text-white p-3 rounded-full shadow hover:bg-red-700 transition">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 32 32">
-                        <g fill="none">
-                            <rect width="30" height="22" x="1" y="5" fill="#B4ACBC" rx="1.5"/>
-                            <rect width="28" height="18" x="2" y="7" fill="#CDC4D6" rx="1"/>
-                            <path fill="#E1D8EC" d="m30 23.4l-12.971-7.782a2 2 0 0 0-2.058 0L2 23.4V25a1 1 0 0 0 1 1h26a1 1 0 0 0 1-1v-1.6Z"/>
-                            <path fill="#998EA4" d="M2 9.766V8h28v1.766L17.544 17.24a3 3 0 0 1-3.088 0L2 9.766Z"/>
-                            <path fill="#F3EEF8" d="M2 8.6V7a1 1 0 0 1 1-1h26a1 1 0 0 1 1 1v1.6l-12.971 7.783a2 2 0 0 1-2.058 0L2 8.6Z"/>
-                            <path fill="#00A6ED" d="M16 23a7 7 0 1 0 0-14a7 7 0 0 0 0 14Z"/>
-                            <path fill="#F4F4F4" d="M16 11.5c-1.21-.02-2.36.44-3.22 1.3c-.87.85-1.34 1.99-1.34 3.2c0 2.48 2.02 4.5 4.5 4.5a.47.47 0 1 0 0-.94c-1.96 0-3.56-1.6-3.56-3.56c0-.96.38-1.86 1.06-2.53c.68-.67 1.59-1.03 2.55-1.03c1.93.03 3.51 1.65 3.51 3.62v.81a.67.67 0 0 1-1.34 0v-3.08a.47.47 0 0 0-.47-.47c-.26 0-.49.21-.49.47v.09c-.44-.35-.99-.57-1.6-.57c-1.4 0-2.54 1.14-2.54 2.54c0 1.4 1.14 2.54 2.54 2.54c.7 0 1.34-.29 1.8-.75c.28.5.81.84 1.42.84c.89 0 1.62-.73 1.62-1.62v-.81c0-2.47-1.99-4.52-4.44-4.55Zm-.39 5.96c-.88 0-1.6-.72-1.6-1.6c0-.88.72-1.6 1.6-1.6c.88 0 1.6.72 1.6 1.6c0 .88-.72 1.6-1.6 1.6Z"/>
-                        </g>
-                    </svg>
+                <a href="mailto:khunkimhong039@gmail.com" class="social-link group" data-aos="fade-left"
+                    data-aos-delay="250">
+                    <span class="social-label">Email</span>
+                    <div
+                        class="social-icon bg-gradient-to-br from-red-600 to-red-700 hover:from-red-700 hover:to-red-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                        </svg>
+                    </div>
+                </a>
+
+                <!-- GitHub -->
+                <a href="https://github.com/khunkimhong" target="_blank" class="social-link group" data-aos="fade-left"
+                    data-aos-delay="300">
+                    <span class="social-label">GitHub</span>
+                    <div
+                        class="social-icon bg-gradient-to-br from-gray-800 to-gray-900 hover:from-gray-900 hover:to-black">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                    </div>
                 </a>
             </div>
         </transition>
 
-        <!-- Toggle Button -->
-        <button @click="isOpen = !isOpen"
-            class="bg-gray-800 text-white p-3 rounded-full shadow hover:bg-gray-700 hover:scale-105 transition">
-            <!-- Show icon depending on isOpen state -->
-            <svg v-if="!isOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24"
-                fill="currentColor">
-                <path
-                    d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10S2 17.514 2 12 6.486 2 12 2zm0 4c-.552 0-1 .448-1 1v4H7c-.552 0-1 .448-1 1s.448 1 1 1h4v4c0 .552.448 1 1 1s1-.448 1-1v-4h4c.552 0 1-.448 1-1s-.448-1-1-1h-4V7c0-.552-.448-1-1-1z" />
-            </svg>
-            <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                    d="M18.3 5.71a1 1 0 00-1.41 0L12 10.59 7.11 5.7a1 1 0 00-1.41 1.42L10.59 12l-4.89 4.89a1 1 0 101.41 1.42L12 13.41l4.89 4.89a1 1 0 001.41-1.42L13.41 12l4.89-4.89a1 1 0 000-1.4z" />
-            </svg>
+        <!-- Main Toggle Button -->
+        <button @click="toggleMenu" class="main-toggle-button group" :class="{ 'active': isOpen }">
+
+            <div
+                class="relative bg-gradient-to-br from-red-600 to-red-700 rounded-full p-4 shadow-2xl shadow-red-500/50 group-hover:shadow-red-500/70 transition-all duration-300 group-hover:scale-110">
+
+                <svg v-if="!isOpen" xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 text-white transition-transform duration-300" viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path
+                        d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10S2 17.514 2 12 6.486 2 12 2zm0 4c-.552 0-1 .448-1 1v4H7c-.552 0-1 .448-1 1s.448 1 1 1h4v4c0 .552.448 1 1 1s1-.448 1-1v-4h4c.552 0 1-.448 1-1s-.448-1-1-1h-4V7c0-.552-.448-1-1-1z" />
+                </svg>
+
+                <svg v-else xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 text-white transition-transform duration-300" viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path
+                        d="M18.3 5.71a1 1 0 00-1.41 0L12 10.59 7.11 5.7a1 1 0 00-1.41 1.42L10.59 12l-4.89 4.89a1 1 0 101.41 1.42L12 13.41l4.89 4.89a1 1 0 001.41-1.42L13.41 12l4.89-4.89a1 1 0 000-1.4z" />
+                </svg>
+            </div>
+
+            <!-- Notification Badge (optional - shows number of social links) -->
+            <div v-if="!isOpen"
+                class="absolute -top-1 -right-1 bg-white text-red-600 text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center shadow-lg border-2 border-red-600">
+                5
+            </div>
         </button>
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue';
 
-const isOpen = ref(false);
-const showButton = ref(false);
+/**
+ * Floating Social Media Menu Component
+ * 
+ * A modern, animated floating action button (FAB) that reveals social media links.
+ * 
+ * Features:
+ * - Appears after scrolling 200px
+ * - Smooth animations for opening/closing
+ * - Hover effects on all social links
+ * - Labels that appear on hover
+ * - Gradient backgrounds matching the red theme
+ * - Staggered animations using AOS
+ * 
+ * @component
+ */
 
-// Only show toggle when user scrolls
-const handleScroll = () => {
-    showButton.value = window.scrollY > 200;
+/**
+ * Controls the open/close state of the social menu
+ */
+const isOpen = ref < boolean > (false);
+
+/**
+ * Controls visibility based on scroll position
+ * Only shows button after user scrolls past 200px
+ */
+const showButton = ref < boolean > (false);
+
+/**
+ * Toggle the social menu open/closed state
+ */
+const toggleMenu = (): void => {
+    isOpen.value = !isOpen.value;
 };
 
+/**
+ * Handle scroll event to show/hide the button
+ * Shows button when user scrolls down 200px or more
+ */
+const handleScroll = (): void => {
+    showButton.value = window.scrollY > 200;
+
+    // Auto-close menu when scrolling
+    if (isOpen.value && window.scrollY > 300) {
+        // Optional: uncomment to auto-close on scroll
+        isOpen.value = false;
+    }
+};
+
+/**
+ * Lifecycle Hooks
+ */
 onMounted(() => {
     window.addEventListener('scroll', handleScroll);
 });
+
 onUnmounted(() => {
     window.removeEventListener('scroll', handleScroll);
 });
 </script>
 
 <style scoped>
-.fade-enter-active,
-.fade-leave-active {
-    transition: opacity 0.3s ease;
+/**
+ * Social Link Container
+ * Base styling for each social media link
+ */
+.social-link {
+    @apply flex items-center gap-3 transition-all duration-300;
 }
 
-.fade-enter-from,
-.fade-leave-to {
+/**
+ * Social Icon Button
+ * Circular button with icon for each social platform
+ */
+.social-icon {
+    @apply w-14 h-14 rounded-full shadow-lg flex items-center justify-center text-white transition-all duration-300 transform hover:scale-110 hover:shadow-2xl border-2 border-white/20;
+}
+
+/**
+ * Social Label
+ * Text label that appears on hover
+ * Hidden by default, slides in from right
+ */
+.social-label {
+    @apply bg-gradient-to-r from-zinc-900 to-zinc-800 text-white px-4 py-2 rounded-lg shadow-lg font-semibold text-sm whitespace-nowrap border border-zinc-700 opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 pointer-events-none;
+}
+
+/**
+ * Main Toggle Button
+ * The primary FAB button that opens/closes the menu
+ */
+.main-toggle-button {
+    @apply relative cursor-pointer transition-all duration-300 transform hover:scale-105 active:scale-95;
+}
+
+/**
+ * Active state for toggle button
+ * Rotates the button when menu is open
+ */
+.main-toggle-button.active {
+    @apply rotate-45;
+}
+
+/**
+ * Social Menu Animation
+ * Slide and fade in effect for the social links container
+ */
+.social-menu-enter-active,
+.social-menu-leave-active {
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.social-menu-enter-from {
     opacity: 0;
+    transform: translateY(20px) scale(0.8);
+}
+
+.social-menu-leave-to {
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+}
+
+/**
+ * Individual social link animation
+ * Each link slides in with a stagger effect
+ */
+.social-link {
+    animation: slideInRight 0.3s ease-out backwards;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/**
+ * Pulse animation for notification badge
+ */
+.main-toggle-button .absolute.bg-white {
+    animation: pulse-badge 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-badge {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}
+
+/**
+ * Glow effect for social icons on hover
+ */
+.social-icon:hover {
+    box-shadow: 0 0 20px currentColor;
+}
+
+/**
+ * Smooth transition for all elements
+ */
+* {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 </style>
