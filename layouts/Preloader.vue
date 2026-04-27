@@ -13,20 +13,20 @@
       aria-label="Loading content"
     >
       <!-- Animated gradient background -->
-      <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-rose-950 to-slate-950"></div>
+      <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-primary-950 to-slate-950"></div>
       
       <!-- Animated orbs -->
       <div class="absolute inset-0 overflow-hidden">
-        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-red-600/20 rounded-full blur-3xl animate-float"></div>
-        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-rose-600/20 rounded-full blur-3xl animate-float-delayed"></div>
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-red-500/15 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-600/20 rounded-full blur-3xl animate-float"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary-600/20 rounded-full blur-3xl animate-float-delayed"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-primary-500/15 rounded-full blur-3xl animate-pulse-slow"></div>
       </div>
 
       <!-- Content container -->
       <div class="relative z-10 flex flex-col items-center justify-center px-4">
         <!-- Logo with glow effect -->
         <div class="relative mb-8 animate-scale-in">
-          <div class="absolute inset-0 bg-gradient-to-br from-red-500 to-rose-500 rounded-full blur-xl opacity-50 animate-pulse-glow"></div>
+          <div class="absolute inset-0 bg-gradient-to-br from-primary-500 to-primary-500 rounded-full blur-xl opacity-50 animate-pulse-glow"></div>
           <img 
             :src="logoSrc" 
             :alt="logoAlt" 
@@ -103,7 +103,7 @@
 
           <!-- Center glow -->
           <div class="absolute inset-0 flex items-center justify-center">
-            <div class="w-16 h-16 bg-gradient-to-br from-red-500/30 to-rose-500/30 rounded-full blur-xl animate-pulse-slow"></div>
+            <div class="w-16 h-16 bg-gradient-to-br from-primary-500/30 to-primary-500/30 rounded-full blur-xl animate-pulse-slow"></div>
           </div>
         </div>
 
@@ -116,7 +116,7 @@
             <span 
               v-for="dot in 3" 
               :key="dot"
-              class="w-2 h-2 bg-gradient-to-r from-red-500 to-rose-500 rounded-full animate-bounce"
+              class="w-2 h-2 bg-gradient-to-r from-primary-500 to-primary-500 rounded-full animate-bounce"
               :style="{ animationDelay: `${dot * 150}ms` }"
             ></span>
           </div> -->
@@ -125,7 +125,7 @@
           <!-- <div v-if="showProgress" class="mt-6 w-64 max-w-full">
             <div class="h-1 bg-white/10 rounded-full overflow-hidden backdrop-blur-sm">
               <div 
-                class="h-full bg-gradient-to-r from-red-500 via-rose-500 to-red-500 rounded-full animate-progress"
+                class="h-full bg-gradient-to-r from-primary-500 via-primary-500 to-primary-500 rounded-full animate-progress"
               ></div>
             </div>
           </div> -->
@@ -164,10 +164,10 @@ interface LoadingScreenProps {
 
 // Props with defaults
 const props = withDefaults(defineProps<LoadingScreenProps>(), {
-  colorA: '#8b5cf6', // Purple
-  colorB: '#f43f5e', // Rose
-  colorC: '#3b82f6', // blue
-  colorD: '#10b981', // green
+  colorA: '#ee6b50', // primary-500
+  colorB: '#f48b77', // primary-400
+  colorC: '#da4f34', // primary-600
+  colorD: '#10b981', // green accent
   logoSrc: '/Portfolio/ower/ownPhoto.jpg',
   logoAlt: 'Application Logo',
   loadingText: 'Loading Portfolio',

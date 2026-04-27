@@ -7,7 +7,7 @@
         <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">
           Technologies & Tools
         </h3>
-        <div class="w-24 h-1 bg-gradient-to-r from-red-500 to-rose-500 mx-auto rounded-full"></div>
+        <div class="w-24 h-1 bg-gradient-to-r from-primary-500 to-primary-500 mx-auto rounded-full"></div>
       </div>
 
       <!-- Carousel Container -->
@@ -40,8 +40,8 @@
               >
                 <div 
                   class="relative p-4 md:p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10
-                         transition-all duration-300 hover:bg-white/10 hover:border-red-400/50
-                         hover:scale-110 hover:shadow-2xl hover:shadow-red-500/20 overflow-hidden
+                         transition-all duration-300 hover:bg-white/10 hover:border-primary-400/50
+                         hover:scale-110 hover:shadow-2xl hover:shadow-primary-500/20 overflow-hidden
                          min-w-[120px] md:min-w-[140px]"
                 >
                   <!-- Tech Logo Image -->
@@ -59,7 +59,7 @@
                       v-if="activeIndex === index" 
                       class="absolute inset-0 flex items-center justify-center
                              bg-gray-900/95 backdrop-blur-sm text-white text-sm md:text-base font-semibold
-                             rounded-2xl border border-red-400/50 z-30 px-3 text-center shadow-lg shadow-red-500/30"
+                             rounded-2xl border border-primary-400/50 z-30 px-3 text-center shadow-lg shadow-primary-500/30"
                     >
                       {{ linkItem.name }}
                     </div>
@@ -95,8 +95,8 @@
               >
                 <div 
                   class="relative p-4 md:p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10
-                         transition-all duration-300 hover:bg-white/10 hover:border-red-400/50
-                         hover:scale-110 hover:shadow-2xl hover:shadow-red-500/20 overflow-hidden
+                         transition-all duration-300 hover:bg-white/10 hover:border-primary-400/50
+                         hover:scale-110 hover:shadow-2xl hover:shadow-primary-500/20 overflow-hidden
                          min-w-[120px] md:min-w-[140px]"
                 >
                   <img 
@@ -112,7 +112,7 @@
                       v-if="activeIndex === index" 
                       class="absolute inset-0 flex items-center justify-center
                              bg-gray-900/95 backdrop-blur-sm text-white text-sm md:text-base font-semibold
-                             rounded-2xl border border-red-400/50 z-30 px-3 text-center shadow-lg shadow-red-500/30"
+                             rounded-2xl border border-primary-400/50 z-30 px-3 text-center shadow-lg shadow-primary-500/30"
                     >
                       {{ linkItem.name }}
                     </div>
@@ -147,8 +147,8 @@
               >
                 <div 
                   class="relative p-4 md:p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10
-                         transition-all duration-300 hover:bg-white/10 hover:border-red-400/50
-                         hover:scale-110 hover:shadow-2xl hover:shadow-red-500/20 overflow-hidden
+                         transition-all duration-300 hover:bg-white/10 hover:border-primary-400/50
+                         hover:scale-110 hover:shadow-2xl hover:shadow-primary-500/20 overflow-hidden
                          min-w-[120px] md:min-w-[140px]"
                 >
                   <img 

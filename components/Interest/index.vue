@@ -8,7 +8,7 @@
       <div class="text-center mb-16">
         <!-- Background Title -->
         <div 
-          class="text-6xl sm:text-7xl lg:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-red-400/20 to-rose-400/20 mb-4 tracking-widest select-none"
+          class="text-6xl sm:text-7xl lg:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary-400/20 to-primary-400/20 mb-4 tracking-widest select-none"
           data-aos="fade-down" 
           data-aos-delay="100"
           aria-hidden="true">
@@ -17,7 +17,7 @@
         
         <!-- Main Title -->
         <h2 
-          class="text-4xl sm:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-red-200 to-rose-200 mb-6"
+          class="text-4xl sm:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-primary-200 to-primary-200 mb-6"
           data-aos="fade-up" 
           data-aos-delay="200">
           Literary & Creative Pursuits
@@ -25,7 +25,7 @@
         
         <!-- Decorative Line -->
         <div 
-          class="w-24 h-1 bg-gradient-to-r from-red-500 to-rose-500 mx-auto rounded-full" 
+          class="w-24 h-1 bg-gradient-to-r from-primary-500 to-primary-500 mx-auto rounded-full" 
           data-aos="zoom-in" 
           data-aos-delay="300"
           aria-hidden="true">
@@ -45,12 +45,12 @@
         
         <!-- Reading Tech Blogs Card -->
         <article 
-          class="group bg-gradient-to-br from-zinc-800 to-zinc-900 rounded-xl p-6 shadow-lg hover:shadow-red-500/40 transition-all duration-300 hover:scale-105 hover:-translate-y-2 border border-gray-700/50 hover:border-red-500/50" 
+          class="group bg-gradient-to-br from-zinc-800 to-zinc-900 rounded-xl p-6 shadow-lg hover:shadow-primary-500/40 transition-all duration-300 hover:scale-105 hover:-translate-y-2 border border-gray-700/50 hover:border-primary-500/50" 
           data-aos="fade-up" 
           data-aos-delay="400">
           <!-- Icon Container -->
           <div 
-            class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-red-600 to-red-700 rounded-full mb-5 mx-auto shadow-lg group-hover:shadow-red-500/50 group-hover:scale-110 transition-all duration-300">
+            class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary-600 to-primary-700 rounded-full mb-5 mx-auto shadow-lg group-hover:shadow-primary-500/50 group-hover:scale-110 transition-all duration-300">
             <svg 
               class="w-8 h-8 text-white" 
               fill="none" 
@@ -65,7 +65,7 @@
             </svg>
           </div>
           <!-- Card Title -->
-          <h3 class="text-xl font-semibold text-white text-center mb-3 group-hover:text-red-400 transition-colors duration-300">
+          <h3 class="text-xl font-semibold text-white text-center mb-3 group-hover:text-primary-400 transition-colors duration-300">
             Reading Tech Blogs
           </h3>
           <!-- Card Description -->
@@ -76,12 +76,12 @@
 
         <!-- Watching Tutorials Card -->
         <article 
-          class="group bg-gradient-to-br from-zinc-800 to-zinc-900 rounded-xl p-6 shadow-lg hover:shadow-red-500/40 transition-all duration-300 hover:scale-105 hover:-translate-y-2 border border-gray-700/50 hover:border-red-500/50" 
+          class="group bg-gradient-to-br from-zinc-800 to-zinc-900 rounded-xl p-6 shadow-lg hover:shadow-primary-500/40 transition-all duration-300 hover:scale-105 hover:-translate-y-2 border border-gray-700/50 hover:border-primary-500/50" 
           data-aos="fade-up" 
           data-aos-delay="500">
           <!-- Icon Container -->
           <div 
-            class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-red-600 to-red-700 rounded-full mb-5 mx-auto shadow-lg group-hover:shadow-red-500/50 group-hover:scale-110 transition-all duration-300">
+            class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary-600 to-primary-700 rounded-full mb-5 mx-auto shadow-lg group-hover:shadow-primary-500/50 group-hover:scale-110 transition-all duration-300">
             <svg 
               class="w-8 h-8 text-white" 
               fill="none" 
@@ -101,7 +101,7 @@
             </svg>
           </div>
           <!-- Card Title -->
-          <h3 class="text-xl font-semibold text-white text-center mb-3 group-hover:text-red-400 transition-colors duration-300">
+          <h3 class="text-xl font-semibold text-white text-center mb-3 group-hover:text-primary-400 transition-colors duration-300">
             Watching Tutorials
           </h3>
           <!-- Card Description -->
@@ -112,12 +112,12 @@
 
         <!-- Side Projects Card -->
         <article 
-          class="group bg-gradient-to-br from-zinc-800 to-zinc-900 rounded-xl p-6 shadow-lg hover:shadow-red-500/40 transition-all duration-300 hover:scale-105 hover:-translate-y-2 border border-gray-700/50 hover:border-red-500/50" 
+          class="group bg-gradient-to-br from-zinc-800 to-zinc-900 rounded-xl p-6 shadow-lg hover:shadow-primary-500/40 transition-all duration-300 hover:scale-105 hover:-translate-y-2 border border-gray-700/50 hover:border-primary-500/50" 
           data-aos="fade-up" 
           data-aos-delay="600">
           <!-- Icon Container -->
           <div 
-            class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-red-600 to-red-700 rounded-full mb-5 mx-auto shadow-lg group-hover:shadow-red-500/50 group-hover:scale-110 transition-all duration-300">
+            class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary-600 to-primary-700 rounded-full mb-5 mx-auto shadow-lg group-hover:shadow-primary-500/50 group-hover:scale-110 transition-all duration-300">
             <svg 
               class="w-8 h-8 text-white" 
               fill="none" 
@@ -132,7 +132,7 @@
             </svg>
           </div>
           <!-- Card Title -->
-          <h3 class="text-xl font-semibold text-white text-center mb-3 group-hover:text-red-400 transition-colors duration-300">
+          <h3 class="text-xl font-semibold text-white text-center mb-3 group-hover:text-primary-400 transition-colors duration-300">
             Side Projects
           </h3>
           <!-- Card Description -->
@@ -143,12 +143,12 @@
 
         <!-- Community Engagement Card -->
         <article 
-          class="group bg-gradient-to-br from-zinc-800 to-zinc-900 rounded-xl p-6 shadow-lg hover:shadow-red-500/40 transition-all duration-300 hover:scale-105 hover:-translate-y-2 border border-gray-700/50 hover:border-red-500/50" 
+          class="group bg-gradient-to-br from-zinc-800 to-zinc-900 rounded-xl p-6 shadow-lg hover:shadow-primary-500/40 transition-all duration-300 hover:scale-105 hover:-translate-y-2 border border-gray-700/50 hover:border-primary-500/50" 
           data-aos="fade-up" 
           data-aos-delay="700">
           <!-- Icon Container -->
           <div 
-            class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-red-600 to-red-700 rounded-full mb-5 mx-auto shadow-lg group-hover:shadow-red-500/50 group-hover:scale-110 transition-all duration-300">
+            class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary-600 to-primary-700 rounded-full mb-5 mx-auto shadow-lg group-hover:shadow-primary-500/50 group-hover:scale-110 transition-all duration-300">
             <svg 
               class="w-8 h-8 text-white" 
               fill="none" 
@@ -163,7 +163,7 @@
             </svg>
           </div>
           <!-- Card Title -->
-          <h3 class="text-xl font-semibold text-white text-center mb-3 group-hover:text-red-400 transition-colors duration-300">
+          <h3 class="text-xl font-semibold text-white text-center mb-3 group-hover:text-primary-400 transition-colors duration-300">
             Community Engagement
           </h3>
           <!-- Card Description -->
@@ -174,12 +174,12 @@
 
         <!-- UI/UX Design Card -->
         <article 
-          class="group bg-gradient-to-br from-zinc-800 to-zinc-900 rounded-xl p-6 shadow-lg hover:shadow-red-500/40 transition-all duration-300 hover:scale-105 hover:-translate-y-2 border border-gray-700/50 hover:border-red-500/50" 
+          class="group bg-gradient-to-br from-zinc-800 to-zinc-900 rounded-xl p-6 shadow-lg hover:shadow-primary-500/40 transition-all duration-300 hover:scale-105 hover:-translate-y-2 border border-gray-700/50 hover:border-primary-500/50" 
           data-aos="fade-up" 
           data-aos-delay="800">
           <!-- Icon Container -->
           <div 
-            class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-red-600 to-red-700 rounded-full mb-5 mx-auto shadow-lg group-hover:shadow-red-500/50 group-hover:scale-110 transition-all duration-300">
+            class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary-600 to-primary-700 rounded-full mb-5 mx-auto shadow-lg group-hover:shadow-primary-500/50 group-hover:scale-110 transition-all duration-300">
             <svg 
               class="w-8 h-8 text-white" 
               fill="none" 
@@ -194,7 +194,7 @@
             </svg>
           </div>
           <!-- Card Title -->
-          <h3 class="text-xl font-semibold text-white text-center mb-3 group-hover:text-red-400 transition-colors duration-300">
+          <h3 class="text-xl font-semibold text-white text-center mb-3 group-hover:text-primary-400 transition-colors duration-300">
             UI/UX Design
           </h3>
           <!-- Card Description -->
@@ -205,12 +205,12 @@
 
         <!-- Exploring Cambodia Card -->
         <article 
-          class="group bg-gradient-to-br from-zinc-800 to-zinc-900 rounded-xl p-6 shadow-lg hover:shadow-red-500/40 transition-all duration-300 hover:scale-105 hover:-translate-y-2 border border-gray-700/50 hover:border-red-500/50" 
+          class="group bg-gradient-to-br from-zinc-800 to-zinc-900 rounded-xl p-6 shadow-lg hover:shadow-primary-500/40 transition-all duration-300 hover:scale-105 hover:-translate-y-2 border border-gray-700/50 hover:border-primary-500/50" 
           data-aos="fade-up" 
           data-aos-delay="900">
           <!-- Icon Container -->
           <div 
-            class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-red-600 to-red-700 rounded-full mb-5 mx-auto shadow-lg group-hover:shadow-red-500/50 group-hover:scale-110 transition-all duration-300">
+            class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary-600 to-primary-700 rounded-full mb-5 mx-auto shadow-lg group-hover:shadow-primary-500/50 group-hover:scale-110 transition-all duration-300">
             <svg 
               class="w-8 h-8 text-white" 
               fill="none" 
@@ -225,7 +225,7 @@
             </svg>
           </div>
           <!-- Card Title -->
-          <h3 class="text-xl font-semibold text-white text-center mb-3 group-hover:text-red-400 transition-colors duration-300">
+          <h3 class="text-xl font-semibold text-white text-center mb-3 group-hover:text-primary-400 transition-colors duration-300">
             Exploring Cambodia 🇰🇭
           </h3>
           <!-- Card Description -->
@@ -239,15 +239,15 @@
 
     <!-- Decorative Background Elements -->
     <div 
-      class="absolute top-10 left-10 w-72 h-72 bg-red-500/5 rounded-full blur-3xl -z-0" 
+      class="absolute top-10 left-10 w-72 h-72 bg-primary-500/5 rounded-full blur-3xl -z-0" 
       aria-hidden="true">
     </div>
     <div 
-      class="absolute bottom-10 right-10 w-96 h-96 bg-rose-500/5 rounded-full blur-3xl -z-0" 
+      class="absolute bottom-10 right-10 w-96 h-96 bg-primary-500/5 rounded-full blur-3xl -z-0" 
       aria-hidden="true">
     </div>
     <div 
-      class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-red-500/3 rounded-full blur-3xl -z-0" 
+      class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-500/3 rounded-full blur-3xl -z-0" 
       aria-hidden="true">
     </div>
   </section>

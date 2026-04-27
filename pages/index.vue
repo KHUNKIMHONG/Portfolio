@@ -1,11 +1,12 @@
 <template>
   <div>
-    <Header />
+    <a href="#top" class="skip-link">
+      Skip to content
+    </a>
+    <AppHeader />
     <Banner />
-    <!-- <Link /> -->
     <Service />
     <About />
-    <!-- <Interest /> -->
     <Skills /> 
     <Experience />
     <Education />
@@ -15,25 +16,21 @@
     <Contact />
     <Faq />
     <Quote />
-    <Footer />
+    <AppFooter />
   </div>
 </template>
 
 <script setup>
 import { useHead } from '#imports';
 
-import Header from "~/layouts/Header.vue";
-import Footer from "~/layouts/Footer.vue";
 import Banner from "~/components/Banner";
-// import Link from "~/components/Link";
 import Service from "~/components/Service";
 import About from "~/components/About";
-// import Interest from "~/components/Interest";
 import Skills from "~/components/Skill"; 
 import Education from "~/components/Education";
 import Experience from "~/components/Experience";
 import Contact from "~/components/Contact";
-import WorkFlow from "~/components/Workflow";
+import WorkFlow from "~/components/WorkFlow";
 import Project from "~/components/Project";
 import Faq from "~/components/Faq";
 import Quote from "~/components/Quote";
@@ -43,8 +40,8 @@ import Blog from "~/components/Blog";
 useHead({
   title: 'KHUN KIMHONG - Portfolio',
   meta: [
-    { name: 'description', content: 'Explore the professional portfolio of KHUN KIMHONG, a web developer and designer showcasing expertise in creative projects, and innovative solutions.' },
-    { name: 'keywords', content: 'Khun Kimhong, portfolio, web developer, designer, JavaScript, Vue.js, Nuxt, CSS, HTML, projects' },
+    { name: 'description', content: 'KHUN KIMHONG - Full Stack Developer at Bongloy Payments PLC. Portfolio showcasing Vue.js, Nuxt, Elixir, and modern web projects.' },
+    { name: 'keywords', content: 'Khun Kimhong, portfolio, full stack developer, Vue.js, Nuxt, Elixir, Bongloy, JavaScript, web development, projects' },
     { property: 'og:title', content: 'KHUN KIMHONG - Portfolio' },
     { property: 'og:description', content: 'Explore the professional portfolio of KHUN KIMHONG, a web developer and designer showcasing expertise in creative projects, and innovative solutions.' },
     { property: 'og:image', content: 'https://khunkimhong.github.io/Portfolio/ower/ownPhoto.jpg' },

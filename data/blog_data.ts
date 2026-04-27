@@ -1,7 +1,7 @@
 // blog_data.ts
 import type { BlogPost } from "@/interface/blog_interface";
 
-export const BLOGPOTS: BlogPost[] = ([
+export const BLOGPOSTS: BlogPost[] = ([
   {
     title: "Elixir and Phoenix: Building Scalable Real-Time Applications",
     summary:
@@ -3552,5 +3552,190 @@ export const BLOGPOTS: BlogPost[] = ([
     ],
     date: "2025-03-01",
     conclusion: "Tailwind CSS offers a streamlined, efficient, and flexible approach to styling modern web applications. Whether you're building a quick prototype or a large-scale product, mastering Tailwind can dramatically enhance your development workflow and design consistency."
+  },
+  {
+    title: "Understanding and Using Insomnia for API Testing",
+    summary:
+      "Insomnia is a powerful, open-source API client that simplifies the process of designing, debugging, and testing REST, GraphQL, and gRPC APIs. With its clean interface and rich feature set, it has become a go-to tool for developers who work with APIs daily.",
+    content:
+      "Insomnia makes API development faster and more reliable by providing a dedicated workspace for crafting requests, inspecting responses, and organizing collections — all without writing a single line of code.",
+    categories: ["Tools", "Backend"],
+    image: "/Blog/insomnia.png",
+    description: [
+      {
+        title: "1. What is Insomnia?",
+        points: [
+          "Insomnia is a free, open-source API client used to send HTTP requests and inspect responses during development and testing.",
+          "It supports REST, GraphQL, gRPC, and WebSocket protocols, making it versatile across different backend technologies.",
+          "Built by Kong Inc., Insomnia is available on Windows, macOS, and Linux with a clean, distraction-free UI.",
+          "It replaces manual curl commands with a visual interface that's accessible to both beginners and experienced developers.",
+          "Insomnia is widely used alongside tools like Postman but is preferred by many for its lightweight feel and plugin ecosystem.",
+        ],
+      },
+      {
+        title: "2. Key Features of Insomnia",
+        points: [
+          "Request Builder: Easily construct GET, POST, PUT, PATCH, DELETE and other HTTP requests with headers, query params, and body.",
+          "Environment Variables: Define reusable variables (like base URLs and tokens) across environments — dev, staging, production.",
+          "Collections & Workspaces: Organize requests into folders and workspaces for better project structure and team sharing.",
+          "Authentication Support: Built-in support for Bearer Token, Basic Auth, OAuth 1/2, API Key, and more.",
+          "GraphQL Explorer: Write and execute GraphQL queries with auto-complete powered by your schema.",
+          "Response Inspection: View response body, headers, cookies, and timing details in a readable format.",
+          "Code Generation: Automatically generate code snippets in multiple languages (JavaScript, Python, cURL, etc.) from any request.",
+          "Plugins: Extend functionality with community or custom plugins for encryption, theming, and request transformation.",
+        ],
+      },
+      {
+        title: "3. Setting Up Insomnia",
+        points: [
+          "Download Insomnia from the official site at insomnia.rest and install it on your operating system.",
+          "Create a new workspace and give it a meaningful name (e.g., your project or API name).",
+          "Add a new request by clicking the '+' button and selecting the HTTP method and endpoint URL.",
+          "Configure request headers such as Content-Type: application/json and Authorization for secured endpoints.",
+          "Use the Body tab to send JSON, form data, or binary payloads depending on the API specification.",
+          "Hit Send and observe the response status code, body, and headers in the right panel.",
+        ],
+      },
+      {
+        title: "4. Working with Environments",
+        points: [
+          "Environments let you store variables like base URLs, API keys, and tokens, avoiding repetition across requests.",
+          "Create a 'Base Environment' with shared variables and override them in sub-environments (dev, staging, prod).",
+          "Reference environment variables using the {{ variable_name }} syntax directly in URLs, headers, and bodies.",
+          "Switch between environments instantly from the top toolbar to test against different servers without editing requests.",
+          "Store sensitive data like API secrets in private environments that are excluded from version control or team sync.",
+        ],
+      },
+      {
+        title: "5. Testing REST APIs with Insomnia",
+        points: [
+          "Start by listing all API endpoints for a resource (e.g., /users) and test the GET request to fetch data.",
+          "Test POST requests by providing a valid JSON body and verifying the response returns a 201 Created status.",
+          "Use PUT or PATCH to update records — check that the response reflects the changes correctly.",
+          "Test DELETE endpoints and confirm 200 OK or 204 No Content responses are returned.",
+          "Inspect error responses (4xx, 5xx) deliberately by sending invalid inputs to validate your API's error handling.",
+          "Use the Timeline tab to review the full request/response cycle including DNS lookups and TLS handshakes.",
+        ],
+      },
+      {
+        title: "6. Testing GraphQL APIs",
+        points: [
+          "Create a new GraphQL request in Insomnia and paste your API's GraphQL endpoint URL.",
+          "Insomnia will automatically fetch and introspect the schema, offering field auto-complete in the editor.",
+          "Write queries and mutations directly in the editor with syntax highlighting and inline error hints.",
+          "Pass query variables in the dedicated Variables panel as a JSON object.",
+          "Use fragments and aliases to test complex nested queries that mirror real frontend data requirements.",
+          "Inspect the response and validate the shape of returned data against your expected schema.",
+        ],
+      },
+      {
+        title: "7. Tips and Best Practices",
+        points: [
+          "Use descriptive names for requests and organize them into folders per resource or feature area.",
+          "Always define a base URL in your environment instead of hardcoding it in every request.",
+          "Version your Insomnia workspace by exporting it as JSON and committing it alongside your project code.",
+          "Use the Insomnia Git Sync feature to collaborate with team members on shared API collections.",
+          "Write pre-request scripts to automate token refresh or dynamic header generation before sending requests.",
+          "Use the Insomnia CLI (Inso) for running API tests in CI/CD pipelines to catch regressions early.",
+          "Regularly review and clean up stale requests to keep workspaces organized and maintainable.",
+        ],
+      },
+    ],
+    date: "2025-04-10",
+    conclusion: "Insomnia is an essential tool for any developer who builds or consumes APIs. Its intuitive interface, powerful environment management, and broad protocol support make it a strong companion throughout the full development lifecycle — from first request to production monitoring. Whether you're debugging a REST endpoint or exploring a GraphQL schema, Insomnia helps you move faster with confidence.",
+  },
+  {
+    title: "DBeaver: The Ultimate Database Management Tool",
+    summary:
+      "DBeaver is a free, open-source universal database tool that supports over 80 databases including PostgreSQL, MySQL, SQL Server, SQLite, and more. With its powerful SQL editor, visual schema designer, and rich data browsing features, DBeaver is the go-to tool for developers and database administrators alike.",
+    content:
+      "DBeaver brings all your database workflows into one place — connecting to multiple databases, writing and optimizing SQL queries, visualizing schemas, and managing data — all through a clean and extensible desktop application.",
+    categories: ["Tools", "Database"],
+    image: "/Blog/dbeaver.png",
+    description: [
+      {
+        title: "1. What is DBeaver?",
+        points: [
+          "DBeaver is a free, cross-platform database management tool available on Windows, macOS, and Linux.",
+          "It supports 80+ databases: PostgreSQL, MySQL, MariaDB, SQLite, SQL Server, Oracle, MongoDB, Redis, and many more.",
+          "DBeaver Community Edition is fully open-source; DBeaver Pro offers additional enterprise features like NoSQL support and data masking.",
+          "It is built on the Eclipse platform and is extensible via plugins for custom database drivers and integrations.",
+          "DBeaver is widely used by developers, DBAs, data analysts, and DevOps engineers as a daily database client.",
+        ],
+      },
+      {
+        title: "2. Key Features of DBeaver",
+        points: [
+          "Universal Database Connectivity: Connect to any JDBC-compatible database or popular NoSQL stores with a single tool.",
+          "SQL Editor: Full-featured SQL editor with syntax highlighting, auto-complete, code folding, and query history.",
+          "Data Browser: Browse, filter, sort, and edit table data in a spreadsheet-like grid view.",
+          "Entity Relationship Diagrams (ERD): Automatically generate visual ER diagrams from your database schema.",
+          "Data Transfer & Export: Import/export data to CSV, JSON, XML, SQL, Excel, and more.",
+          "Schema Compare: Compare database schemas between two connections to detect structural differences.",
+          "Query Execution Plan: Visualize and analyze query execution plans to identify performance bottlenecks.",
+          "SSH & SSL Tunneling: Securely connect to remote databases through SSH tunnels or SSL certificates.",
+        ],
+      },
+      {
+        title: "3. Connecting to a Database",
+        points: [
+          "Open DBeaver and click 'New Database Connection' from the toolbar or Database menu.",
+          "Choose your database type (e.g., PostgreSQL, MySQL, SQLite) from the connection wizard.",
+          "Fill in the host, port, database name, username, and password fields for your target database.",
+          "Download the required JDBC driver directly from DBeaver when prompted — no manual setup needed.",
+          "Test the connection using the 'Test Connection' button before saving to verify credentials are correct.",
+          "For remote databases, configure SSH tunneling under the SSH tab to connect through a bastion host securely.",
+          "Save the connection and it will appear in the Database Navigator panel on the left sidebar.",
+        ],
+      },
+      {
+        title: "4. Writing and Running SQL Queries",
+        points: [
+          "Open the SQL Editor by right-clicking a connection and selecting 'Open SQL Console' or pressing Ctrl+].",
+          "Write queries with full auto-complete for table names, column names, functions, and SQL keywords.",
+          "Run a single query with Ctrl+Enter or execute the entire script with Alt+X.",
+          "Use the Results tab to inspect query output in a paginated, sortable grid.",
+          "Edit result rows directly in the grid and commit changes back to the database with Ctrl+S.",
+          "Access query history from the History tab to re-run or review past statements.",
+          "Use multiple SQL editors simultaneously by opening tabs for different connections or queries.",
+        ],
+      },
+      {
+        title: "5. Visual Schema and ERD",
+        points: [
+          "Right-click any table or schema and select 'View Diagram' to generate an automatic ER diagram.",
+          "ERDs display tables, columns, primary keys, foreign keys, and relationships visually.",
+          "Drag tables onto the canvas to create custom diagrams focused on a specific domain or module.",
+          "Export ERDs as PNG, SVG, or PDF for documentation and team sharing.",
+          "Use the diagram to understand complex schemas quickly without reading raw DDL scripts.",
+          "DBeaver Pro offers a full schema modeler to design and generate DDL from visual diagrams.",
+        ],
+      },
+      {
+        title: "6. Data Import and Export",
+        points: [
+          "Right-click any table and select 'Export Data' to export table contents to CSV, JSON, XML, or SQL.",
+          "Use 'Import Data' to load CSV or Excel files directly into a table with column mapping support.",
+          "The Data Transfer wizard supports transferring data between two different database connections.",
+          "Schedule regular exports using DBeaver's task scheduler for automated reporting or backups.",
+          "Export query results directly from the SQL Editor to a file without creating a full table export.",
+          "Configure encoding, delimiter, and null value handling for precise control over export formats.",
+        ],
+      },
+      {
+        title: "7. Tips and Best Practices",
+        points: [
+          "Use connection groups in the Database Navigator to organize multiple projects or environments cleanly.",
+          "Enable dark theme from Window > Preferences > Appearance for a more comfortable coding experience.",
+          "Use bookmarks to save frequently used SQL snippets for quick access across sessions.",
+          "Leverage the Explain Plan viewer to optimize slow queries before they hit production.",
+          "Keep DBeaver updated regularly — new database drivers and UI improvements ship frequently.",
+          "Use the Mock Data generator (Pro) or custom scripts to populate development databases with realistic test data.",
+          "Configure auto-save for SQL editors to avoid losing work during unexpected crashes.",
+        ],
+      },
+    ],
+    date: "2025-04-18",
+    conclusion: "DBeaver is an indispensable tool for anyone who works with databases regularly. Its support for nearly every database engine, combined with a rich SQL editor, ERD visualization, and flexible data export options, makes it a complete solution for database development and administration. Whether you're a backend developer querying PostgreSQL or a DBA managing SQL Server schemas, DBeaver streamlines your workflow and keeps everything in one place.",
   },
 ]);

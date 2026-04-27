@@ -10,7 +10,7 @@
 <script>
 import Preloader from "./Preloader.vue";
 import GoTop from "./GoTop.vue";
-import ShowHidden from "./show-hidden.vue";
+import ShowHidden from "./ShowHidden.vue";
 
 export default {
   components: {
@@ -24,10 +24,21 @@ export default {
     };
   },
   mounted() {
-    // Remove the data-fetching logic since no data needs to be fetched
-    setTimeout(() => {
-      this.isLoading = false; // Simulate a delay (optional)
-    }); // Simulate a delay (optional) // no time laording
+    // Client-only: hide preloader after brief delay
+    if (import.meta.client) {
+      const hidePreloader = () => {
+        this.isLoading = false;
+      };
+      // Use requestAnimationFrame to ensure we're past initial paint
+      requestAnimationFrame(() => {
+        this._preloaderTimer = setTimeout(hidePreloader, 400);
+      });
+    }
+  },
+  beforeUnmount() {
+    if (this._preloaderTimer) {
+      clearTimeout(this._preloaderTimer);
+    }
   },
 };
 </script>

@@ -2,7 +2,237 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Define National_Park font */
+/* ===== Theme: Professional Indigo-Violet (2025 Developer Portfolio) ===== */
+:root {
+  --color-primary-50: #eef2ff;
+  --color-primary-100: #e0e7ff;
+  --color-primary-200: #c7d2fe;
+  --color-primary-300: #a5b4fc;
+  --color-primary-400: #818cf8;
+  --color-primary-500: #6366f1;
+  --color-primary-600: #4f46e5;
+  --color-primary-700: #4338ca;
+  --color-primary-800: #3730a3;
+  --color-primary-900: #312e81;
+  --color-primary-950: #1e1b4b;
+}
+
+/* ===== Base ===== */
+@layer base {
+  ::selection {
+    background-color: var(--color-primary-600);
+    color: #ffffff;
+  }
+  ::-moz-selection {
+    background-color: var(--color-primary-600);
+    color: #ffffff;
+  }
+
+  body {
+    background-color: #0b0d17;
+    color: #e2e8f0;
+    font-family: "National_Park", sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    @media (max-width: 640px) {
+      font-size: 15px;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+  }
+}
+
+html, body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+/* ===== Global scrollbar ===== */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+.overflow-y-auto::-webkit-scrollbar {
+  width: 5px;
+}
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track,
+.overflow-y-auto::-webkit-scrollbar-track {
+  background: #0b0d17;
+}
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb,
+.overflow-y-auto::-webkit-scrollbar-thumb {
+  background: var(--color-primary-700);
+  border-radius: 4px;
+}
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover,
+.overflow-y-auto::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-500);
+}
+
+/* ===== Skip link ===== */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  background: var(--color-primary-600);
+  color: white;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: left 0.2s;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+/* ===== Global animations ===== */
+@keyframes float {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  33% { transform: translateY(-20px) translateX(12px); }
+  66% { transform: translateY(10px) translateX(-10px); }
+}
+@keyframes float-delayed {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  33% { transform: translateY(15px) translateX(-15px); }
+  66% { transform: translateY(-10px) translateX(10px); }
+}
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.15; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(1.04); }
+}
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.animate-float        { animation: float 12s ease-in-out infinite; }
+.animate-float-delayed { animation: float-delayed 14s ease-in-out infinite; animation-delay: 2s; }
+.animate-pulse-slow   { animation: pulse-slow 9s ease-in-out infinite; }
+
+/* ===== Shared section layout ===== */
+.section-container {
+  width: 100%;
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+@media (min-width: 640px) {
+  .section-container { padding-left: 1.5rem; padding-right: 1.5rem; }
+}
+@media (min-width: 1024px) {
+  .section-container { padding-left: 3rem; padding-right: 3rem; }
+}
+
+/* ===== Section header helpers ===== */
+.section-eyebrow {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-primary-400);
+  margin-bottom: 0.75rem;
+}
+.section-title {
+  font-size: clamp(1.875rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.section-subtitle {
+  color: #9ca3af;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+/* ===== Card ===== */
+.card {
+  border-radius: 1rem;
+  border: 1px solid rgba(255,255,255,0.07);
+  background-color: rgba(255,255,255,0.03);
+  padding: 1.5rem;
+}
+.card-hover {
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+.card-hover:hover {
+  border-color: rgba(99,102,241,0.3);
+  background-color: rgba(255,255,255,0.05);
+}
+
+/* ===== Buttons ===== */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  background-color: var(--color-primary-600);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-primary:hover {
+  background-color: var(--color-primary-500);
+}
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #d1d5db;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+  text-decoration: none;
+}
+.btn-outline:hover {
+  border-color: rgba(99,102,241,0.5);
+  color: #ffffff;
+  background-color: rgba(99,102,241,0.06);
+}
+
+/* ===== Tag / badge ===== */
+.tag {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.375rem;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #9ca3af;
+  background-color: rgba(255,255,255,0.04);
+}
+
+/* ===== Decorative divider line ===== */
+.section-line {
+  width: 3rem;
+  height: 2px;
+  background-color: var(--color-primary-500);
+  border-radius: 999px;
+  margin-bottom: 1.5rem;
+}
+
+/* ===== National Park font ===== */
 @font-face {
   font-family: "National_Park";
   src: url("@/assets/font/National_Park/static/NationalPark-Regular.ttf") format("truetype");
@@ -10,66 +240,23 @@
   font-style: normal;
 }
 
-@layer base {
-  ::selection {
-    background-color: theme("colors.red.500");
-    color: white;
-  }
-
-  ::-moz-selection {
-    background-color: theme("colors.red.500");
-    color: white;
-  }
-
-  body {
-    background-color: #0a0a0b;
-    font-family: "National_Park", sans-serif;
-    font-size: 16px;
-    @media (max-width: 640px) {
-      font-size: 14px;
-    }
-  }
-}
-
-html,
-body {
-  overflow-x: hidden; /* Prevent right scroll */
-  overflow-y: auto;
-  scroll-behavior: smooth;
-}
-
-/* Components layer */
-
+/* ===== 3D logo / text effect (kept for reuse) ===== */
 .logo-3d-effect {
-  transform-style: preserve-3d;
-  -webkit-transform-style: preserve-3d;
-  transform: perspective(1000px) translateZ(5px) rotateY(5deg); /* Reduced for mobile */
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  transform: perspective(1000px) translateZ(5px) rotateY(5deg);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
   filter: brightness(1.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   @media (min-width: 641px) {
     transform: perspective(1000px) translateZ(10px) rotateY(10deg);
-    box-shadow: 
-      0 5px 10px rgba(0, 0, 0, 0.3),
-      0 10px 20px rgba(0, 0, 0, 0.2),
-      0 15px 30px rgba(0, 0, 0, 0.1),
-      0 6px 5px rgba(85, 1, 1, 0.5);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3), 0 10px 20px rgba(0,0,0,0.2);
   }
 }
 
-.text-3d-effect {
-  text-shadow: 1px 1px 0 #000, 2px 2px 0 #000, 3px 3px 0 #000;
-  transform: perspective(300px) translateZ(0); /* Reduced for mobile */
-  position: relative;
-  display: inline-block;
-  @media (min-width: 641px) {
-    text-shadow: 
-      1px 1px 0 #000,
-      2px 2px 0 #000,
-      3px 3px 0 #000,
-      4px 4px 0 #000,
-      5px 5px 0 #000,
-      6px 6px 5px rgba(155, 132, 5, 0.5);
-    transform: perspective(500px) translateZ(0);
+/* ===== Reduced motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

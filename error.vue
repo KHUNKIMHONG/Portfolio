@@ -17,7 +17,7 @@
 
             <!-- Back Button -->
             <button
-                class="mt-4 px-6 py-3 text-white rounded-lg transition-colors duration-300 shadow-lg hover:bg-red-700 hover:shadow-red-500/50 bg-gradient-to-r from-red-500 to-red-600"
+                class="mt-4 px-6 py-3 text-white rounded-lg transition-colors duration-300 shadow-lg hover:bg-primary-700 hover:shadow-primary-500/50 bg-gradient-to-r from-primary-500 to-primary-600"
                 @click="$router.back()">
                 Return Back
             </button>

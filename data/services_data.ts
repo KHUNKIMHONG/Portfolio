@@ -6,25 +6,25 @@ export const servicesData: ServicesData = {
   subtitle: "We provide a wide range of development solutions",
   services: [
     {
-      title: "Frontend Development",
-      description: "Crafting responsive, user-friendly interfaces with modern frameworks. Creating pixel-perfect designs that work seamlessly across all devices.",
-      tagline: "Beautiful & Responsive",
-      technologies: ["Vue.js", "Nuxt.js", "Tailwind CSS"],
-      icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>`
+      title: "Full Stack Development",
+      description: "Building complete web products from UI to server — responsive interfaces, robust APIs, and solid database architecture, all in one end-to-end solution.",
+      tagline: "End-to-End",
+      technologies: ["Vue.js", "Nuxt.js", "Next.js", "Elixir", "Laravel"],
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="3.5" width="19" height="8" rx="2"/><rect x="2.5" y="14" width="9" height="6.5" rx="2"/><rect x="14" y="14" width="7.5" height="6.5" rx="2"/><path d="M7 7.5h1.5M7 11h5"/></svg>`
     },
     {
-      title: "Backend Development",
-      description: "Building robust APIs and efficient database systems. Developing scalable server-side solutions that power modern applications.",
-      tagline: "Powerful & Scalable",
-      technologies: ["Laravel", "Node.js", "MySQL"],
-      icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>`
-    },
-    {
-      title: "API Integration",
-      description: "Connecting third-party services and APIs seamlessly. Building custom integrations for payment gateways, social media, and more.",
+      title: "API & Integration",
+      description: "Connecting services, payment gateways, and third-party APIs. Designing clean RESTful interfaces and automating data flows between systems.",
       tagline: "Connected Systems",
-      technologies: ["REST API", "GraphQL", "Webhooks"],
-      icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 1v6m0 6v6m5.2-13.2l-4.2 4.2m0 6l4.2 4.2M1 12h6m6 0h6M4.8 4.8l4.2 4.2m0 6l-4.2 4.2"></path></svg>`
+      technologies: ["REST API", "GraphQL", "Axios", "Webhooks"],
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="2.25"/><circle cx="18" cy="6" r="2.25"/><circle cx="18" cy="18" r="2.25"/><path d="M8.1 11.2 15.9 6.8"/><path d="M8.1 12.8 15.9 17.2"/></svg>`
+    },
+    {
+      title: "Database Design",
+      description: "Designing structured, efficient database schemas for web applications. Optimizing queries and managing relational data for performance and reliability.",
+      tagline: "Structured & Efficient",
+      technologies: ["PostgreSQL", "MySQL", "SQL Server"],
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="2.5"/><path d="M4 5v5c0 1.38 3.58 2.5 8 2.5s8-1.12 8-2.5V5"/><path d="M4 10v5c0 1.38 3.58 2.5 8 2.5s8-1.12 8-2.5v-5"/><path d="M4 15v4c0 1.38 3.58 2.5 8 2.5s8-1.12 8-2.5v-4"/></svg>`
     },
   ]
 };

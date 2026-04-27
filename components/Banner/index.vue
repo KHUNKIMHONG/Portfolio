@@ -1,198 +1,254 @@
 <template>
-  <section id="top" class="relative min-h-screen overflow-hidden bg-gradient-to-br from-red-800 via-zinc-900 to-red-800 text-white">
-    
-    <!-- Animated Background Elements -->
-    <div class="absolute inset-0 overflow-hidden pointer-events-none">
-      <div class="absolute top-1/4 -left-32 w-[500px] h-[500px] bg-red-600/10 rounded-full blur-3xl animate-float"></div>
-      <div class="absolute bottom-1/4 -right-32 w-[600px] h-[600px] bg-rose-600/10 rounded-full blur-3xl animate-float-delayed"></div>
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-purple-600/5 rounded-full blur-3xl animate-pulse-slow"></div>
+  <section id="top" class="relative min-h-screen flex items-center overflow-hidden bg-[#0b0d17]">
+
+    <!-- Background -->
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <!-- Dot grid -->
+      <div class="absolute inset-0"
+        style="background-image: radial-gradient(rgba(99,102,241,0.18) 1px, transparent 1px); background-size: 32px 32px; opacity: 0.35;">
+      </div>
+      <!-- Blobs -->
+      <div class="absolute top-1/3 -left-48 w-[600px] h-[600px] bg-primary-600/10 rounded-full blur-3xl animate-float"></div>
+      <div class="absolute bottom-1/4 -right-48 w-[500px] h-[500px] bg-violet-600/10 rounded-full blur-3xl animate-float-delayed"></div>
+      <!-- Accent lines -->
+      <div class="absolute top-0 right-0 w-px h-[45%] bg-gradient-to-b from-transparent via-primary-500/25 to-transparent"></div>
+      <div class="absolute bottom-0 left-0 w-[40%] h-px bg-gradient-to-r from-transparent via-primary-500/20 to-transparent"></div>
+
+      <!-- Floating code snippet -->
+      <div class="absolute bottom-28 right-10 hidden xl:block opacity-[0.07] select-none font-mono text-xs text-primary-300 leading-6 text-left rotate-3">
+        <div>const dev = {</div>
+        <div>&nbsp;&nbsp;name: "Khun Kimhong",</div>
+        <div>&nbsp;&nbsp;stack: ["Next.js", "Elixir"],</div>
+        <div>&nbsp;&nbsp;available: true,</div>
+        <div>}</div>
+      </div>
     </div>
 
-    <div class="container relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 min-h-screen flex flex-col justify-center">
-      <div class="flex flex-col-reverse lg:flex-row items-center justify-between gap-12 py-20 lg:py-0">
+    <div class="section-container relative z-10 w-full py-28 lg:py-0 min-h-screen flex items-center">
+      <div class="flex flex-col-reverse lg:flex-row items-center justify-between gap-16 w-full">
 
-        <!-- Left Content -->
-        <div class="flex flex-col text-center lg:text-left lg:w-1/2 space-y-4">
+        <!-- ── Left ── -->
+        <div class="flex flex-col text-center lg:text-left lg:w-[54%] gap-5">
 
-          <!-- Main Heading with Enhanced Gradient -->
-          <h1 class="relative" data-aos="fade-down" data-aos-delay="100">
-            <span class="block text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black">
-              <span class="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-red-500/30 to-rose-500/30 blur-sm">
-                KHUN KIMHONG
-              </span>
-              <span class="relative text-transparent bg-clip-text bg-gradient-to-r from-white via-red-100 to-white">
-                KHUN KIMHONG
-              </span>
-            </span>
-          </h1>
-
-          <!-- Dynamic Typing Title -->
-          <div class="h-16 flex items-center justify-center lg:justify-start" data-aos="fade-up" data-aos-delay="200">
-            <div class="p-2">
-              <h2 v-if="isClient" class="text-2xl md:text-3xl lg:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-rose-400 transition-all duration-300" :class="{ 'opacity-0 scale-95': isFading, 'opacity-100 scale-100': !isFading }">
-                {{ currentTitle }}
-                <span class="animate-pulse text-red-500">|</span>
-              </h2>
-            </div>
+          <!-- Greeting -->
+          <div data-aos="fade-up" data-aos-delay="0" class="flex justify-center lg:justify-start">
+            <span class="text-xs font-semibold uppercase tracking-[0.2em] text-primary-400">Hello, I'm</span>
           </div>
 
-          <!-- Description -->
-          <div class="p-2" data-aos="fade-up" data-aos-delay="300">
-            <p class="text-base lg:text-lg text-gray-300 leading-relaxed">
-              Hello, I'm a passionate web developer crafting dynamic, user-focused websites with
-              <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-rose-400 font-bold">Next.js</span>,
-              <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-rose-400 font-bold">Nuxt.js</span>, and
-              <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-rose-400 font-bold">Elixir</span>.
-              Ready to create something extraordinary together?
+          <!-- Name -->
+          <div data-aos="fade-up" data-aos-delay="60">
+            <h1 class="text-5xl sm:text-6xl lg:text-7xl xl:text-[5.8rem] font-black tracking-tight leading-none">
+              <span class="text-white">Khun</span><br/>
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-violet-400">Kimhong</span>
+            </h1>
+          </div>
+
+          <!-- Typewriter role -->
+          <div class="min-h-[2.25rem] flex items-center justify-center lg:justify-start gap-2" data-aos="fade-up" data-aos-delay="120">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse flex-shrink-0"></span>
+            <p v-if="isClient" class="text-lg md:text-xl font-semibold text-gray-200 transition-opacity duration-300" :class="isFading ? 'opacity-0' : 'opacity-100'">
+              {{ currentTitle }}<span class="text-primary-500 animate-pulse ml-0.5">|</span>
             </p>
           </div>
 
-          <!-- Social Media Links -->
-          <div class="flex justify-center lg:justify-start gap-4" data-aos="fade-up" data-aos-delay="400">
-            <div class="bg-gradient-to-br from-zinc-900/80 to-zinc-900/40 backdrop-blur-xl rounded-2xl p-4 border border-zinc-800/50 shadow-xl">
-              <div class="flex gap-3">
-                <a v-for="social in socialMedia" :key="social.name" :href="social.link" target="_blank" rel="noopener noreferrer" :aria-label="`Visit my ${social.name} profile`" class="group relative p-3 rounded-xl bg-zinc-800/50 backdrop-blur-sm border border-zinc-700/50 hover:border-red-500/50 hover:bg-gradient-to-br hover:from-red-600 hover:to-rose-600 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-red-500/50">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-300 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24" v-html="social.svg"></svg>
-                </a>
-              </div>
-            </div>
+          <!-- Bio -->
+          <p class="text-gray-400 text-base leading-relaxed max-w-lg mx-auto lg:mx-0" data-aos="fade-up" data-aos-delay="160">
+            Full Stack Developer at
+            <span class="text-white font-semibold">Bongloy Payments PLC</span>,
+            building fast and reliable web products with
+            <span class="text-primary-300">Next.js</span>,
+            <span class="text-primary-300">Nuxt.js</span>, and
+            <span class="text-primary-300">Elixir</span>.
+          </p>
+
+          <!-- Tech stack pills -->
+          <div class="flex flex-wrap justify-center lg:justify-start gap-2" data-aos="fade-up" data-aos-delay="200">
+            <span v-for="tech in techStack" :key="tech"
+              class="text-[11px] px-3 py-1 rounded-full border border-white/[0.08] bg-white/[0.03] text-gray-500 font-medium hover:border-primary-500/30 hover:text-primary-300 transition-colors duration-200 cursor-default">
+              {{ tech }}
+            </span>
           </div>
 
-          <!-- Quick Stats -->
-          <div class="grid grid-cols-3 gap-4 pt-4" data-aos="fade-up" data-aos-delay="600">
-            <div class="bg-gradient-to-br from-zinc-900/80 to-zinc-900/40 backdrop-blur-xl rounded-xl p-4 border border-zinc-800/50 text-center hover:border-red-500/30 transition-all duration-300 group">
-              <p class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-rose-500 group-hover:scale-110 transition-transform duration-300">5+</p>
-              <p class="text-xs text-gray-400 mt-1">Projects</p>
+          <!-- CTA buttons -->
+          <div class="flex flex-wrap justify-center lg:justify-start gap-3" data-aos="fade-up" data-aos-delay="240">
+            <a href="#contact" class="btn-primary">
+              Get in touch
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+              </svg>
+            </a>
+            <a href="#project" class="btn-outline">View my work</a>
+          </div>
+
+          <!-- Divider -->
+          <div class="w-full h-px bg-white/[0.05] max-w-lg mx-auto lg:mx-0" data-aos="fade-up" data-aos-delay="280"></div>
+
+          <!-- Social + stats row -->
+          <div class="flex flex-col sm:flex-row items-center lg:items-start gap-6" data-aos="fade-up" data-aos-delay="300">
+            <!-- Social -->
+            <div class="flex items-center gap-2">
+              <div v-for="social in socialMedia" :key="social.name" class="relative group">
+                <a
+                  :href="social.link" target="_blank" rel="noopener noreferrer"
+                  :aria-label="`${social.name} profile`"
+                  class="w-9 h-9 rounded-xl border border-white/10 flex items-center justify-center text-gray-500 hover:text-primary-400 hover:border-primary-500/40 transition-all duration-200">
+                  <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24" v-html="social.svg" aria-hidden="true"></svg>
+                </a>
+                <!-- Tooltip -->
+                <span class="absolute -top-9 left-1/2 -translate-x-1/2 px-2.5 py-1 bg-[#0f1123] border border-white/10 text-white text-[10px] font-medium rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 pointer-events-none transition-all duration-200 translate-y-1 group-hover:translate-y-0 shadow-lg z-20">
+                  {{ social.name }}
+                  <span class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-[#0f1123] border-r border-b border-white/10 rotate-45"></span>
+                </span>
+              </div>
             </div>
-            <div class="bg-gradient-to-br from-zinc-900/80 to-zinc-900/40 backdrop-blur-xl rounded-xl p-4 border border-zinc-800/50 text-center hover:border-red-500/30 transition-all duration-300 group">
-              <p class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-rose-500 group-hover:scale-110 transition-transform duration-300">01+</p>
-              <p class="text-xs text-gray-400 mt-1">Experience</p>
-            </div>
-            <div class="bg-gradient-to-br from-zinc-900/80 to-zinc-900/40 backdrop-blur-xl rounded-xl p-4 border border-zinc-800/50 text-center hover:border-red-500/30 transition-all duration-300 group">
-              <p class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-rose-500 group-hover:scale-110 transition-transform duration-300">5+</p>
-              <p class="text-xs text-gray-400 mt-1">Technologies</p>
+
+            <div class="hidden sm:block w-px h-8 bg-white/[0.07]"></div>
+
+            <!-- Animated stat counters -->
+            <div class="flex items-center gap-5">
+              <div v-for="stat in stats" :key="stat.label" class="text-center">
+                <p class="text-xl font-black text-white tabular-nums">
+                  <span>{{ stat.displayed }}</span><span class="text-primary-500">+</span>
+                </p>
+                <p class="text-[10px] text-gray-600 mt-0.5 uppercase tracking-wider">{{ stat.label }}</p>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Right Image -->
-        <div class="flex justify-center items-center lg:w-1/2" data-aos="fade-left" data-aos-delay="400">
-          <div class="relative group">
-            <!-- Glowing ring effect with multiple layers -->
-            <div class="absolute inset-0 rounded-full bg-gradient-to-r from-red-500 via-rose-500 to-red-500 blur-3xl opacity-40 group-hover:opacity-60 transition-opacity duration-500 animate-pulse"></div>
-            <div class="absolute inset-4 rounded-full bg-gradient-to-r from-rose-500 via-red-500 to-rose-500 blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500 animate-pulse" style="animation-delay: 0.5s;"></div>
+        <!-- ── Right — avatar ── -->
+        <div class="flex justify-center lg:justify-end lg:w-[44%]" data-aos="fade-left" data-aos-delay="80">
+          <div class="relative">
 
-            <!-- Image container with glassmorphism border -->
-            <div class="relative rounded-full overflow-hidden border-4 border-zinc-800/50 shadow-2xl shadow-red-500/30 group-hover:shadow-red-500/50 transition-all duration-500 bg-gradient-to-br from-zinc-900/50 to-zinc-900/30 backdrop-blur-sm">
-              <div class="absolute inset-0 rounded-full bg-gradient-to-br from-red-600/10 to-rose-600/10 group-hover:from-red-600/20 group-hover:to-rose-600/20 transition-all duration-500"></div>
-              <img src="/ower/khun_kimhong.png" alt="KHUN KIMHONG - Web Developer" class="relative z-10 w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 object-cover transform group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+            <!-- Spinning ring -->
+            <div class="absolute -inset-6 rounded-full border border-dashed border-primary-500/20" style="animation: spin 32s linear infinite;"></div>
+            <!-- Second ring counter-spin -->
+            <div class="absolute -inset-12 rounded-full border border-dotted border-violet-500/10" style="animation: spin 55s linear infinite reverse;"></div>
+
+            <!-- Glow -->
+            <div class="absolute inset-4 rounded-full bg-gradient-to-br from-primary-600/20 to-violet-600/15 blur-3xl"></div>
+
+            <!-- Corner brackets -->
+            <div class="absolute -top-2 -left-2 w-5 h-5 border-t-2 border-l-2 border-primary-500/50 rounded-tl-sm"></div>
+            <div class="absolute -top-2 -right-2 w-5 h-5 border-t-2 border-r-2 border-primary-500/50 rounded-tr-sm"></div>
+            <div class="absolute -bottom-2 -left-2 w-5 h-5 border-b-2 border-l-2 border-primary-500/50 rounded-bl-sm"></div>
+            <div class="absolute -bottom-2 -right-2 w-5 h-5 border-b-2 border-r-2 border-primary-500/50 rounded-br-sm"></div>
+
+            <!-- Photo -->
+            <img
+              src="/ower/khun_kimhong.png"
+              alt="Khun Kimhong — Full Stack Developer"
+              class="relative w-60 h-60 sm:w-72 sm:h-72 lg:w-[340px] lg:h-[340px] rounded-full object-cover border-2 border-primary-500/30"
+              loading="eager"
+            />
+
+            <!-- Name card -->
+            <div class="absolute -bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-2.5 bg-[#0f1123]/95 border border-white/10 text-white text-xs font-semibold px-5 py-2.5 rounded-xl whitespace-nowrap shadow-xl backdrop-blur-sm">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              Full Stack Developer
+              <span class="text-gray-600">·</span>
+              <span class="text-gray-400 font-normal">Phnom Penh</span>
             </div>
 
-            <!-- Decorative elements -->
-            <div class="absolute -top-4 -right-4 w-20 h-20 rounded-full bg-gradient-to-br from-red-600/20 to-rose-600/20 border border-red-500/30 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <svg class="w-10 h-10 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-              </svg>
+            <!-- Floating: currently building -->
+            <div class="absolute -right-20 -top-4 hidden lg:flex flex-col gap-1 bg-[#0f1123]/95 border border-white/10 rounded-xl px-4 py-3 shadow-xl backdrop-blur-sm animate-float-delayed min-w-[160px]">
+              <p class="text-[9px] uppercase tracking-wider text-gray-600">Currently building</p>
+              <p class="text-xs font-semibold text-white">Bongloy Payments</p>
+              <p class="text-[10px] text-primary-400">Fintech · Full Stack</p>
             </div>
-            <div class="absolute -bottom-4 -left-4 w-20 h-20 rounded-full bg-gradient-to-br from-red-600/20 to-rose-600/20 border border-red-500/30 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <svg class="w-10 h-10 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
+
+            <!-- Floating skill chips -->
+            <div class="absolute -left-20 top-12 px-3 py-2 bg-[#0f1123]/90 border border-primary-500/25 rounded-xl text-xs font-semibold text-primary-300 shadow-lg backdrop-blur-sm hidden lg:flex items-center gap-2 animate-float">
+              <span class="w-1.5 h-1.5 rounded-full bg-primary-400"></span> Next
+            </div>
+            <div class="absolute -left-16 bottom-20 px-3 py-2 bg-[#0f1123]/90 border border-violet-500/25 rounded-xl text-xs font-semibold text-violet-300 shadow-lg backdrop-blur-sm hidden lg:flex items-center gap-2 animate-float-delayed">
+              <span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span> Elixir
+            </div>
+            <div class="absolute -right-16 bottom-24 px-3 py-2 bg-[#0f1123]/90 border border-emerald-500/20 rounded-xl text-xs font-semibold text-emerald-300 shadow-lg backdrop-blur-sm hidden lg:flex items-center gap-2 animate-float">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Nuxt
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Scroll Indicator -->
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden lg:block" data-aos="fade-up" data-aos-delay="800">
-      <div class="flex flex-col items-center gap-2 animate-bounce">
-        <span class="text-xs text-gray-400 font-medium uppercase tracking-wider">Scroll Down</span>
-        <div class="w-6 h-10 rounded-full border-2 border-red-500/50 flex justify-center p-2">
-          <div class="w-1.5 h-3 bg-red-500 rounded-full animate-scroll"></div>
-        </div>
-      </div>
+    <!-- Scroll hint -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2">
+      <span class="text-[10px] uppercase tracking-widest text-gray-700">Scroll</span>
+      <div class="w-px h-10 bg-gradient-to-b from-gray-600 to-transparent"></div>
     </div>
   </section>
 </template>
 
 <script lang="ts" setup>
-/**
- * Enhanced Hero Section Component
- * 
- * Premium hero section with modern glassmorphism design,
- * typewriter effect, and enhanced visual elements.
- * 
- * @component
- * @example
- * <HeroSection />
- * 
- * Features:
- * - Glassmorphism design throughout
- * - Typewriter effect for job titles
- * - Available for hire badge
- * - Enhanced profile image with decorative elements
- * - Social media links in glassmorphism container
- * - Quick stats cards
- * - Action buttons with hover effects
- * - Scroll indicator
- * - Fully responsive layout
- * - AOS animation integration
- * - Floating background elements
- * 
- * @author Khun Kimhong
- */
-
 import { ref, computed, onMounted } from "vue";
 import { socialMedia } from "~/stores/SocialMedia/socialMedia";
 
 const titles = ref<string[]>([
-  "Web Developer",
-  "Front-End Developer",
-  "Back-End Developer",
-  "Software Engineer",
+  "Full Stack Developer",
+  "Frontend Developer",
+  "Backend Developer"
 ]);
 
-const currentIndex = ref<number>(0);
-const displayedText = ref<string>("");
-const isDeleting = ref<boolean>(false);
-const typingSpeed = ref<number>(100);
-const isClient = ref<boolean>(false);
-const isFading = ref<boolean>(false);
+const techStack = ["Nuxt.js", "Next.js", "Elixir", "Laravel", "TypeScript", "Tailwind CSS"];
+
+// ── Animated stat counters ──
+const stats = ref([
+  { target: 5,  displayed: 0, label: "Projects"     },
+  { target: 2,  displayed: 0, label: "Years exp"     },
+  { target: 10, displayed: 0, label: "Technologies"  },
+]);
+
+function animateCounters() {
+  stats.value.forEach((stat) => {
+    const duration = 1200;
+    const steps    = 40;
+    const increment = stat.target / steps;
+    let current    = 0;
+    const interval = setInterval(() => {
+      current += increment;
+      stat.displayed = Math.min(Math.round(current), stat.target);
+      if (stat.displayed >= stat.target) clearInterval(interval);
+    }, duration / steps);
+  });
+}
+
+// ── Typewriter ──
+const currentIndex  = ref(0);
+const displayedText = ref("");
+const isDeleting    = ref(false);
+const typingSpeed   = ref(100);
+const isClient      = ref(false);
+const isFading      = ref(false);
 
 const currentTitle = computed(() => displayedText.value);
 
 onMounted(() => {
   isClient.value = true;
   typeEffect();
+  setTimeout(animateCounters, 600);
 });
 
 function typeEffect(): void {
-  const fullText = titles.value[currentIndex.value] || "";
+  const fullText = titles.value[currentIndex.value] ?? "";
 
-  if (isDeleting.value && displayedText.value === fullText) {
-    isFading.value = true;
-  } else if (!isDeleting.value && displayedText.value === "") {
-    isFading.value = false;
-  }
+  if (isDeleting.value && displayedText.value === fullText) isFading.value = true;
+  else if (!isDeleting.value && displayedText.value === "") isFading.value = false;
 
-  if (!isDeleting.value) {
-    displayedText.value = fullText.substring(0, displayedText.value.length + 1);
-  } else {
-    displayedText.value = fullText.substring(0, displayedText.value.length - 1);
-  }
+  displayedText.value = isDeleting.value
+    ? fullText.substring(0, displayedText.value.length - 1)
+    : fullText.substring(0, displayedText.value.length + 1);
 
   let speed = typingSpeed.value;
-
   if (!isDeleting.value && displayedText.value === fullText) {
-    speed = 2000;
+    speed = 2200;
     isDeleting.value = true;
   } else if (isDeleting.value && displayedText.value === "") {
     isDeleting.value = false;
     currentIndex.value = (currentIndex.value + 1) % titles.value.length;
     speed = 500;
   } else if (isDeleting.value) {
-    speed = 50;
+    speed = 45;
   }
 
   setTimeout(typeEffect, speed);
@@ -200,116 +256,11 @@ function typeEffect(): void {
 </script>
 
 <style scoped>
-/**
- * Floating Animation for Background Elements
- */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0) translateX(0);
-  }
-  33% {
-    transform: translateY(-30px) translateX(20px);
-  }
-  66% {
-    transform: translateY(15px) translateX(-15px);
-  }
-}
-
-@keyframes float-delayed {
-  0%, 100% {
-    transform: translateY(0) translateX(0);
-  }
-  33% {
-    transform: translateY(20px) translateX(-20px);
-  }
-  66% {
-    transform: translateY(-15px) translateX(15px);
-  }
-}
-
-.animate-float {
-  animation: float 10s ease-in-out infinite;
-}
-
-.animate-float-delayed {
-  animation: float-delayed 12s ease-in-out infinite;
-  animation-delay: 1.5s;
-}
-
-/**
- * Slow Pulse Animation
- */
-@keyframes pulse-slow {
-  0%, 100% {
-    opacity: 0.3;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.5;
-    transform: scale(1.05);
-  }
-}
-
-.animate-pulse-slow {
-  animation: pulse-slow 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-/**
- * Scroll Animation for Indicator
- */
-@keyframes scroll {
-  0% {
-    transform: translateY(0);
-    opacity: 0;
-  }
-  40% {
-    opacity: 1;
-  }
-  80% {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-.animate-scroll {
-  animation: scroll 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
-
-/**
- * Smooth Transitions
- */
-* {
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/**
- * Performance Optimization
- */
-.group {
-  will-change: transform;
-}
-
-/**
- * Responsive Typography
- */
 @media (max-width: 640px) {
-  h1 {
-    font-size: 2.5rem;
-    line-height: 1.2;
-  }
+  h1 { font-size: 3rem; }
 }
-
-/**
- * Reduced Motion Support
- */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
 </style>

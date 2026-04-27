@@ -1,15 +1,31 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./components/**/*.{vue,js,ts}", // Include all Vue components
-    "./layouts/**/*.{vue,js,ts}", // Include layout files
-    "./pages/**/*.{vue,js,ts}", // Include pages
-    "./app.vue", // Main app fil
+    "./components/**/*.{vue,js,ts}",
+    "./layouts/**/*.{vue,js,ts}",
+    "./pages/**/*.{vue,js,ts}",
+    "./app.vue",
   ],
   theme: {
     extend: {
       fontFamily: {
         National_Park: ['National_Park', 'sans-serif'],
+      },
+      colors: {
+        /* Theme colors - controlled via CSS variables in assets/css/tailwind.css */
+        primary: {
+          50: 'var(--color-primary-50)',
+          100: 'var(--color-primary-100)',
+          200: 'var(--color-primary-200)',
+          300: 'var(--color-primary-300)',
+          400: 'var(--color-primary-400)',
+          500: 'var(--color-primary-500)',
+          600: 'var(--color-primary-600)',
+          700: 'var(--color-primary-700)',
+          800: 'var(--color-primary-800)',
+          900: 'var(--color-primary-900)',
+          950: 'var(--color-primary-950)',
+        },
       },
     },
   },

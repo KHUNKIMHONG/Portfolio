@@ -3,8 +3,9 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   // Site configuration (Fixes: Sitemap Site URL missing!)
+  // url must be origin only (no path); base path is set in app.baseURL
   site: {
-    url: 'https://khun-kimhong.github.io/Portfolio', // Replace with your actual GitHub domain
+    url: 'https://khun-kimhong.github.io',
     name: 'KHUN KIMHONG'
   },
 
@@ -65,6 +66,8 @@ export default defineNuxtConfig({
   // Note: Most of these AOS settings can be moved to the nuxt-aos module config directly
   runtimeConfig: {
     public: {
+      // Formspree form ID - create at formspree.io and replace
+      formspreeFormId: process.env.NUXT_PUBLIC_FORMSPREE_ID || 'your-form-id',
       aos: {
         globalSettings: {
           duration: 600,
