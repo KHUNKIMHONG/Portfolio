@@ -3560,7 +3560,7 @@ export const BLOGPOSTS: BlogPost[] = ([
     content:
       "Insomnia makes API development faster and more reliable by providing a dedicated workspace for crafting requests, inspecting responses, and organizing collections — all without writing a single line of code.",
     categories: ["Tools", "Backend"],
-    image: "/Blog/insomnia.png",
+    image: "/Portfolio/Blog/insomnia.png",
     description: [
       {
         title: "1. What is Insomnia?",
@@ -3651,7 +3651,7 @@ export const BLOGPOSTS: BlogPost[] = ([
     content:
       "DBeaver brings all your database workflows into one place — connecting to multiple databases, writing and optimizing SQL queries, visualizing schemas, and managing data — all through a clean and extensible desktop application.",
     categories: ["Tools", "Database"],
-    image: "/Blog/dbeaver.png",
+    image: "/Portfolio/Blog/dbeaver.png",
     description: [
       {
         title: "1. What is DBeaver?",
