@@ -6,7 +6,7 @@ export const EXPERIENCE_DATA: Job[] = [
     position: 'Developer Full Time',
     logo: '/Portfolio/Experience/bongloy_logo.png',
     company: 'Bongloy Payments PLC',
-    duration: 'Jan 2025 – Present',
+    duration: 'July 2025 – Present',
     shortDescription:
       'Developed a document and payment testing simulator using Elixir Phoenix, Next.js, Tailwind CSS, PostgreSQL, and Docker on Ubuntu, with CI/CD automation via GitLab Docker.',
     description: [
@@ -38,7 +38,7 @@ export const EXPERIENCE_DATA: Job[] = [
     position: 'Full Stack Developer Intern',
     logo: '/Portfolio/Experience/ITC.png',
     company: 'ITC',
-    duration: 'Jun 2024 – Dec 2024',
+    duration: 'July 2024 – October 2024',
     shortDescription:
       'Built a fully functional e-commerce platform using Laravel, Tailwind CSS, MySQL, and Docker, with CI/CD integration via GitLab pipelines.',
     description: [
@@ -53,7 +53,7 @@ export const EXPERIENCE_DATA: Job[] = [
     position: 'Frontend Developer Intern',
     logo: '/Portfolio/Experience/FinTech.png',
     company: 'FinTech Center',
-    duration: 'Jun 2023 – Dec 2023',
+    duration: 'July 2023 – September 2023',
     shortDescription:
       'Developed a responsive bilingual website with Nuxt.js, integrated APIs, and collaborated with the team to enhance user experience.',
     description: [
